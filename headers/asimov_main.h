@@ -24,6 +24,8 @@ private slots:
 
     void on_actionAbrir_triggered();
 
+    void on_buttomMetanode_clicked();
+
 private:
     Ui::asimov_Main *ui;
 };
