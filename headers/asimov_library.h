@@ -6,8 +6,22 @@
 
 #endif // ASIMOV_LIBRARY_H
 
-class TPathway;
+// --------------------------------------------------------
+//                     TPathway
+// --------------------------------------------------------
+class TPathway
+{
+    private:
 
+    public:
+        // constructors
+
+        // getters/setters
+
+        //public methods
+
+};
+//=========================================================
 
 
 // --------------------------------------------------------
@@ -15,20 +29,21 @@ class TPathway;
 // --------------------------------------------------------
 class TRawInput
 {
-    private:    // private members
+    private:
         bool m_loaded;
         QString* m_source;
 
-    public:     // constructors
+    public:
+        // constructors
         TRawInput(QString* v_source = nullptr);
         ~TRawInput();
 
-    public:     // getters/setters
+        // getters/setters
         QString getSource();
         void setSource(QString* v_source);
         bool getLoaded();
 
-    public:     //public methods
+        //public methods
         bool loadFromFile();
         void setToFile();
         void Edit(QTextEdit* editor);
@@ -43,14 +58,11 @@ class TRawInput
 // --------------------------------------------------------
 //                     TModelMetabolite
 // --------------------------------------------------------
-
-
 class TModelMetabolite
 {
-    private:    // private members
-        short int m_index;
+    private:
+        QString m_name;
         QString m_id;
-        QString m_description;
         double m_initValue;
         double m_topValue;
         double m_bottomValue;
@@ -58,48 +70,37 @@ class TModelMetabolite
         double m_precision;
         bool m_tag;
 
-    public:     // constructors
-        TModelMetabolite(const short int v_index = -1,
-                         const QString v_id = "Undefined",
-                         const QString v_description = "", const double v_initValue= 0,
-                         const double v_topValue = 0, const double v_bottomValue = 0,
-                         const double v_value = 0, const double v_precision = 0,
-                         const bool v_tag = false);
+    public:
+        // constructor
+        TModelMetabolite(QString m_name, QString m_id, double m_initValue, double m_topValue,
+                         double m_bottomValue, double m_value, double m_precision, bool m_tag);
 
-    public:     // getters/setters
-        short int getIndex();
-        void setIndex(short int v_index);
+        // getters/setters
+        QString getName();
         QString getId();
-        void setid(QString v_id);
-        QString getDescription();
-        void setDescription(QString v_description);
         double getInitValue();
-        void setInitValue(double v_initValue);
         double getTopValue();
-        void setTopValue(double v_topValue);
         double getBottomValue();
-        void setBottomlue(double v_bottomValue);
         double getValue();
-        void setValue(double v_value);
         double getPrecision();
-        void setPrecision(double v_precision);
         bool getTag();
+
+        void setValue(double v_value);
         void setTag(bool v_tag);
 
-    public:     //public methods
+        // other methods
         double range();
 
 };
+//=========================================================
 
 
 // --------------------------------------------------------
 //                     TModelParameter
 // --------------------------------------------------------
-
-
 class TModelParameter
 {
-    private:    // private members
+    private:
         short int m_index;
         QString m_id;
         QString m_description;
@@ -107,12 +108,13 @@ class TModelParameter
         double m_precision;
         bool m_tag;
 
-    public:     // constructors
+    public:
+        // constructors
         TModelParameter(short int v_Index = -1, QString m_ID = "",
                         QString m_Description = "", double m_Value = 0,
                         double m_Precision = 0, bool m_Tag = false);
 
-    public:     // getters/setters
+        // getters/setters
         short int getIndex();
         void setIndex(short int v_index);
         QString getId();
@@ -127,20 +129,18 @@ class TModelParameter
         void setTag(bool v_tag);
 
 
-    public:     //public methods
+        //public methods
 
 };
-
+//=========================================================
 
 
 // --------------------------------------------------------
 //                    TModelReaction
 // --------------------------------------------------------
-
-
 class TModelReaction
 {
-    private:    // private members
+    private:
         short int m_index;
         QString m_id;
         QString m_description;
@@ -150,14 +150,15 @@ class TModelReaction
         QString m_equation;
         bool m_tag;
 
-    public:     // constructors
+    public:
+        // constructors
         TModelReaction(short int v_Index = -1, QString v_ID = "",
                        QString v_Description = "", std::vector<int> v_Reagent= { 0 },
                        std::vector<int> v_Product = { 0 },
                        std::vector<int> v_Parameter= { 0 }, QString v_Equation= "",
                        bool v_Tag = false);
 
-    public:     // getters/setters
+        // getters/setters
         short int getIndex();
         void setIndex(short int v_index);
         QString getId();
@@ -181,7 +182,7 @@ class TModelReaction
         bool getTag();
         void setTag(bool v_tag);
 
-    public:     //public methods
+        //public methods
         int ReagentsCount();
         int ProductsCount();
         int ParametersCount();
@@ -190,29 +191,29 @@ class TModelReaction
         TModelMetabolite &Parameter(const int index);
 
 };
+//=========================================================
 
 
 // --------------------------------------------------------
 //                     TRunConfig
 // --------------------------------------------------------
-
-
 class TRunConfig
 {
-    private:    // private members
+    private:
         double m_initTime;
         double m_endTime;
         size_t m_cycles;
         QString m_paramList;
 
 
-    public:     // constructors
+    public:
+        // constructors
         TRunConfig(double v_initTime = 0, double v_endTime    = 0,
                    size_t v_cycles   = 0, QString v_paramList = ""):
                    m_initTime(v_initTime), m_endTime (v_endTime),
                    m_cycles (v_cycles), m_paramList (v_paramList){};
 
-    public:     // getters/setters
+        // getters/setters
         double getInitTime();
         void setInitTime(double t);
         double getEndTime();
@@ -223,44 +224,30 @@ class TRunConfig
         void setParamList(QString pList);
 
 
-    public:     //public methods
+        //public methods
 
 };
+//=========================================================
 
 
 // --------------------------------------------------------
 //                     TFrameData
 // --------------------------------------------------------
-
-
 class TFrameData
 {
-private:    // private members
+    private:
 
-public:     // constructors
+    public:
+        // constructors
 
-public:     // getters/setters
+        // getters/setters
 
-public:     //public methods
-
-};
-
-
-// --------------------------------------------------------
-//                     TPathway
-// --------------------------------------------------------
-
-
-class TPathway
-{
-private:    // private members
-
-public:     // constructors
-
-public:     // getters/setters
-
-public:     //public methods
+        //public methods
 
 };
+//=========================================================
+
+
+
 
 
