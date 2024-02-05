@@ -13,7 +13,7 @@ class TPathway;
 // --------------------------------------------------------
 //                       TRawInput
 // --------------------------------------------------------
-class TRawInput
+/*class TRawInput
 {
     private:    // private members
         bool m_loaded;
@@ -36,7 +36,7 @@ class TRawInput
         unsigned short verifyModel();
         bool createModel(TPathway& v_model);
         void clean();
-};
+};*/
 //=========================================================
 
 
@@ -47,47 +47,36 @@ class TRawInput
 
 class TModelMetabolite
 {
-    private:    // private members
-        short int m_index;
-        QString m_id;
-        QString m_description;
-        double m_initValue;
-        double m_topValue;
-        double m_bottomValue;
-        double m_value;
-        double m_precision;
-        bool m_tag;
+private:
+    QString m_name;
+    QString m_id;
+    double m_initValue;
+    double m_topValue;
+    double m_bottomValue;
+    double m_value;
+    double m_precision;
+    bool m_tag;
 
-    public:     // constructors
-        TModelMetabolite(const short int v_index = -1,
-                         const QString v_id = "Undefined",
-                         const QString v_description = "", const double v_initValue= 0,
-                         const double v_topValue = 0, const double v_bottomValue = 0,
-                         const double v_value = 0, const double v_precision = 0,
-                         const bool v_tag = false);
+public:
+    // constructor
+    TModelMetabolite(QString m_name, QString m_id, double m_initValue, double m_topValue,
+                     double m_bottomValue, double m_value, double m_precision, bool m_tag);
 
-    public:     // getters/setters
-        short int getIndex();
-        void setIndex(short int v_index);
-        QString getId();
-        void setid(QString v_id);
-        QString getDescription();
-        void setDescription(QString v_description);
-        double getInitValue();
-        void setInitValue(double v_initValue);
-        double getTopValue();
-        void setTopValue(double v_topValue);
-        double getBottomValue();
-        void setBottomlue(double v_bottomValue);
-        double getValue();
-        void setValue(double v_value);
-        double getPrecision();
-        void setPrecision(double v_precision);
-        bool getTag();
-        void setTag(bool v_tag);
+    // getters/setters
+    QString getName();
+    QString getId();
+    double getInitValue();
+    double getTopValue();
+    double getBottomValue();
+    double getValue();
+    double getPrecision();
+    bool getTag();
 
-    public:     //public methods
-        double range();
+    void setValue(double v_value);
+    void setTag(bool v_tag);
+
+    // other methods
+    double range();
 
 };
 
@@ -107,14 +96,16 @@ class TModelParameter
         double m_precision;
         bool m_tag;
 
-    public:     // constructors
-        TModelParameter(short int v_Index = -1, QString m_ID = "",
+    public:
+        // constructor por defecto
+       /* TModelParameter(/*short int v_Index = -1 QString m_ID = "",
                         QString m_Description = "", double m_Value = 0,
-                        double m_Precision = 0, bool m_Tag = false);
+                        double m_Precision = 0, bool m_Tag = false);*/
 
-    public:     // getters/setters
-        short int getIndex();
-        void setIndex(short int v_index);
+        TModelParameter(QString m_ID, QString m_Description, double m_Value,double m_Precision, bool m_Tag);
+
+        /*short int getIndex();
+        void setIndex(short int v_index);*/
         QString getId();
         void setid(QString v_id);
         QString getDescription();
@@ -125,10 +116,6 @@ class TModelParameter
         void setPrecision(double v_precision);
         bool getTag();
         void setTag(bool v_tag);
-
-
-    public:     //public methods
-
 };
 
 
