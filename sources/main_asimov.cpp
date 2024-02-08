@@ -90,14 +90,16 @@ void main_asimov::on_buttomMetanode_clicked()
 {
     // Variables
     QString texto = ui->textBody->document()->toPlainText();
-    QString key = "METANODE";
-    QString salida_metanodos;
+    QString keyM = "METANODE";
+
     QString info_metanodo;
+    QStringList elementosM;
     QString nd = "nd";
     QString name, id, valor_ini_str, valor_max_str, valor_min_str, precision_str;
     double valor_ini, valor_max, valor_min, precision;
-    int num_metanodos = texto.count(key);
-    std::vector<TModelMetabolite> metanodos_recogidos;
+
+    int num_metanodos = texto.count(keyM);
+    QVector<TModelMetabolite> metanodos;
 
     if (num_metanodos==0) // No hay metanodos en el texto seleccionado
     {
@@ -105,74 +107,68 @@ void main_asimov::on_buttomMetanode_clicked()
     }
     else // Sí hay metanodos
     {
-        salida_metanodos.append("Metanodos encontrados:\n\n");
-
         for (int i=1; i<num_metanodos; i++)
         {
-            // Por cada metanodo encontrado, recogemos sus datos
-            info_metanodo = texto.section(key, i, i);
-            salida_metanodos.append(info_metanodo);
+            // Por cada metanodo encontrado, recogemos sus datos usando section
+            info_metanodo = texto.section(keyM, i, i);
+            //Separamos por tabulaciones
+            elementosM = info_metanodo.split("\t");
+            //Eliminamos otros elementos tales como saltos de linea y otros
+            for (QString& elementoM : elementosM) {
+                elementoM = elementoM.simplified();
+            }
+            //Eliminamos cadenas en blanco
+            elementosM.removeAll("");
 
-            name          = info_metanodo.section("\t", 0, 0, QString::SectionSkipEmpty);
-            id            = info_metanodo.section("\t", 1, 1, QString::SectionSkipEmpty);
-            valor_ini_str = info_metanodo.section("\t", 2, 2, QString::SectionSkipEmpty);
-            valor_max_str = info_metanodo.section("\t", 3, 3, QString::SectionSkipEmpty);
-            valor_min_str = info_metanodo.section("\t", 4, 4, QString::SectionSkipEmpty);
-            precision_str = info_metanodo.section("\t", 5, 5, QString::SectionSkipEmpty);
+            //Escogemos los que nos interesan
+            for (int j = 0; j < elementosM.size(); j += 6) {
+                name = elementosM.value(j, "");
+                id = elementosM.value(j+1, "");
+                valor_ini_str = elementosM.value(j+2, "");
+                valor_max_str = elementosM.value(j+3, "");
+                valor_min_str = elementosM.value(j+4, "");
+                precision_str = elementosM.value(j+5, "");
 
-            // le quitamos el salto de línea que se guarda al final del nombre
-            name.chop(1);
+                // falta comprobar que el id es único para cada metanodo!!!
 
-            // falta comprobar que el id es único para cada metanodo!!!!
+                // si algún dato numérico es nd, ponemos su valor por defecto
+                if (valor_ini_str == nd)
+                    valor_ini = 0;
+                else
+                    valor_ini = valor_ini_str.toDouble();
 
-            // si algún dato numérico es nd, ponemos su valor por defecto
-            if (valor_ini_str == nd)
-                valor_ini = 0;
-            else
-                valor_ini = valor_ini_str.toDouble();
+                if (valor_max_str == nd)
+                    valor_max = INT_MAX;
+                else
+                    valor_max = valor_max_str.toDouble();
 
-            if (valor_max_str == nd)
-                valor_max = INT_MAX;
-            else
-                valor_max = valor_max_str.toDouble();
+                if (valor_min_str == nd)
+                    valor_min = 0;
+                else
+                    valor_min = valor_min_str.toDouble();
 
-            if (valor_min_str == nd)
-                valor_min = 0;
-            else
-                valor_min = valor_min_str.toDouble();
+                if (precision_str == nd)
+                    precision = 0.0000001;
+                else
+                    precision = precision_str.toDouble();
 
-            if (precision_str == nd)
-                precision = 0.00001;
-            else
-                precision = precision_str.toDouble();
-
-            // Creamos el metanodo y lo añadimos a la lista de metanodos
-            TModelMetabolite metanodo = TModelMetabolite(name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
-            metanodos_recogidos.push_back( metanodo );
-
-            // Mostramos la info detallada de cada metanodo por separado
-            QString info_detallada = "- Nombre: ";
-            info_detallada.append(metanodos_recogidos[i-1].getName());
-            info_detallada.append(" - Id: ");
-            info_detallada.append(metanodos_recogidos[i-1].getId());
-            info_detallada.append(" - Valor inicial: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getInitValue()));
-            info_detallada.append(" - Valor max: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getTopValue()));
-            info_detallada.append(" - Valor min: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getBottomValue()));
-            info_detallada.append(" - Valor: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getValue()));
-            info_detallada.append(" - Precisión: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getPrecision()));
-            info_detallada.append(" - Etiqueta: ");
-            info_detallada.append(std::to_string(metanodos_recogidos[i-1].getTag()));
-            info_detallada.append("\n\n");
-            salida_metanodos.append(info_detallada);
+                // Creamos el metanodo y lo añadimos a la lista de metanodos
+                TModelMetabolite metanodo = TModelMetabolite(name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
+                metanodos.push_back( metanodo );
+            }
         }
 
         // Una vez recogida la info de todos los metanodos, mostramos los datos por pantalla
-        ui->selectData->append(salida_metanodos);
+        for (int i=0; i<metanodos.size(); i++){
+            ui->selectData->append("METANODO " + QString::number(i+1));
+            ui->selectData->append("nombre: " + metanodos[i].getName());
+            ui->selectData->append("id: " + metanodos[i].getId());
+            ui->selectData->append("valor inicial: " + QString::number(metanodos[i].getInitValue()));
+            ui->selectData->append("valor maximo: " + QString::number(metanodos[i].getTopValue()));
+            ui->selectData->append("valor minimo: " + QString::number(metanodos[i].getBottomValue()));
+            ui->selectData->append("precision: " + QString::number(metanodos[i].getPrecision()));
+            ui->selectData->append("tag: " + QString::number(metanodos[i].getTag()) + "\n");
+        }
     }
 }
 
