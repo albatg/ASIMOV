@@ -1,0 +1,212 @@
+\doxysection{TModel\+Parameter Class Reference}
+\hypertarget{class_t_model_parameter}{}\label{class_t_model_parameter}\index{TModelParameter@{TModelParameter}}
+
+
+Esta clase encapsula información sobre un parámetro y se usa para representar y manipular parámetros específicos relacionados con la glucólisis.  
+
+
+
+
+{\ttfamily \#include $<$asimov\+\_\+library.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e}{TModel\+Parameter}} (QString m\+\_\+\+ID, QString m\+\_\+\+Description, double m\+\_\+\+Value, double m\+\_\+\+Precision, bool m\+\_\+\+Tag)
+\item 
+short int \mbox{\hyperlink{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f}{get\+Index}} ()
+\item 
+QString \mbox{\hyperlink{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493}{get\+Id}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c}{setid}} (QString v\+\_\+id)
+\item 
+QString \mbox{\hyperlink{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8}{get\+Description}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_parameter_a5f40720f839e5867532969ada144c197}{set\+Description}} (QString v\+\_\+description)
+\item 
+double \mbox{\hyperlink{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308}{get\+Value}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4}{set\+Value}} (double v\+\_\+value)
+\item 
+double \mbox{\hyperlink{class_t_model_parameter_a482544720d3a37088ae717cae45f4096}{get\+Precision}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84}{set\+Precision}} (double v\+\_\+precision)
+\item 
+bool \mbox{\hyperlink{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c}{get\+Tag}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_parameter_a267b8c5d64744d5d80db833696219254}{set\+Tag}} (bool v\+\_\+tag)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short int \mbox{\hyperlink{class_t_model_parameter_ad386a1692d31aeaf14a7f3ed4e54e19b}{m\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Índice del parámetro. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identificación única para el parámetro. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039}{m\+\_\+description}}
+\begin{DoxyCompactList}\small\item\em Decripción del parámetro. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea}{m\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Valor numértico del parámetro. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c}{m\+\_\+precision}}
+\begin{DoxyCompactList}\small\item\em Precición asociada al valor del parámetro. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b}{m\+\_\+tag}}
+\begin{DoxyCompactList}\small\item\em Etiqueta para marcar en caso de que queramos hacer un uso específico de ese parámetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static short int \mbox{\hyperlink{class_t_model_parameter_aea49f0eb41ff510e342ae01e2ac07893}{s\+\_\+counter}} = 1
+\begin{DoxyCompactList}\small\item\em Contador estático utilizado internamente para el índice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase encapsula información sobre un parámetro y se usa para representar y manipular parámetros específicos relacionados con la glucólisis. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e}\label{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e} 
+\index{TModelParameter@{TModelParameter}!TModelParameter@{TModelParameter}}
+\index{TModelParameter@{TModelParameter}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{TModelParameter()}{TModelParameter()}}
+{\footnotesize\ttfamily TModel\+Parameter\+::\+TModel\+Parameter (\begin{DoxyParamCaption}\item[{QString}]{m\+\_\+\+ID,  }\item[{QString}]{m\+\_\+\+Description,  }\item[{double}]{m\+\_\+\+Value,  }\item[{double}]{m\+\_\+\+Precision,  }\item[{bool}]{m\+\_\+\+Tag }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8}\label{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8} 
+\index{TModelParameter@{TModelParameter}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily QString TModel\+Parameter\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493}\label{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493} 
+\index{TModelParameter@{TModelParameter}!getId@{getId}}
+\index{getId@{getId}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily QString TModel\+Parameter\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f}\label{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f} 
+\index{TModelParameter@{TModelParameter}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily short int TModel\+Parameter\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a482544720d3a37088ae717cae45f4096}\label{class_t_model_parameter_a482544720d3a37088ae717cae45f4096} 
+\index{TModelParameter@{TModelParameter}!getPrecision@{getPrecision}}
+\index{getPrecision@{getPrecision}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getPrecision()}{getPrecision()}}
+{\footnotesize\ttfamily double TModel\+Parameter\+::get\+Precision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c}\label{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c} 
+\index{TModelParameter@{TModelParameter}!getTag@{getTag}}
+\index{getTag@{getTag}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily bool TModel\+Parameter\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308}\label{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308} 
+\index{TModelParameter@{TModelParameter}!getValue@{getValue}}
+\index{getValue@{getValue}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double TModel\+Parameter\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a5f40720f839e5867532969ada144c197}\label{class_t_model_parameter_a5f40720f839e5867532969ada144c197} 
+\index{TModelParameter@{TModelParameter}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void TModel\+Parameter\+::set\+Description (\begin{DoxyParamCaption}\item[{QString}]{v\+\_\+description }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c}\label{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c} 
+\index{TModelParameter@{TModelParameter}!setid@{setid}}
+\index{setid@{setid}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{setid()}{setid()}}
+{\footnotesize\ttfamily void TModel\+Parameter\+::setid (\begin{DoxyParamCaption}\item[{QString}]{v\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84}\label{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84} 
+\index{TModelParameter@{TModelParameter}!setPrecision@{setPrecision}}
+\index{setPrecision@{setPrecision}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{setPrecision()}{setPrecision()}}
+{\footnotesize\ttfamily void TModel\+Parameter\+::set\+Precision (\begin{DoxyParamCaption}\item[{double}]{v\+\_\+precision }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a267b8c5d64744d5d80db833696219254}\label{class_t_model_parameter_a267b8c5d64744d5d80db833696219254} 
+\index{TModelParameter@{TModelParameter}!setTag@{setTag}}
+\index{setTag@{setTag}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
+{\footnotesize\ttfamily void TModel\+Parameter\+::set\+Tag (\begin{DoxyParamCaption}\item[{bool}]{v\+\_\+tag }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4}\label{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4} 
+\index{TModelParameter@{TModelParameter}!setValue@{setValue}}
+\index{setValue@{setValue}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void TModel\+Parameter\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{v\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039}\label{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039} 
+\index{TModelParameter@{TModelParameter}!m\_description@{m\_description}}
+\index{m\_description@{m\_description}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_description}{m\_description}}
+{\footnotesize\ttfamily QString TModel\+Parameter\+::m\+\_\+description\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Decripción del parámetro. 
+
+\Hypertarget{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34}\label{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34} 
+\index{TModelParameter@{TModelParameter}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily QString TModel\+Parameter\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identificación única para el parámetro. 
+
+\Hypertarget{class_t_model_parameter_ad386a1692d31aeaf14a7f3ed4e54e19b}\label{class_t_model_parameter_ad386a1692d31aeaf14a7f3ed4e54e19b} 
+\index{TModelParameter@{TModelParameter}!m\_index@{m\_index}}
+\index{m\_index@{m\_index}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_index}{m\_index}}
+{\footnotesize\ttfamily short int TModel\+Parameter\+::m\+\_\+index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Índice del parámetro. 
+
+\Hypertarget{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c}\label{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c} 
+\index{TModelParameter@{TModelParameter}!m\_precision@{m\_precision}}
+\index{m\_precision@{m\_precision}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_precision}{m\_precision}}
+{\footnotesize\ttfamily double TModel\+Parameter\+::m\+\_\+precision\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Precición asociada al valor del parámetro. 
+
+\Hypertarget{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b}\label{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b} 
+\index{TModelParameter@{TModelParameter}!m\_tag@{m\_tag}}
+\index{m\_tag@{m\_tag}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_tag}{m\_tag}}
+{\footnotesize\ttfamily bool TModel\+Parameter\+::m\+\_\+tag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Etiqueta para marcar en caso de que queramos hacer un uso específico de ese parámetro. 
+
+\Hypertarget{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea}\label{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea} 
+\index{TModelParameter@{TModelParameter}!m\_value@{m\_value}}
+\index{m\_value@{m\_value}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{m\_value}{m\_value}}
+{\footnotesize\ttfamily double TModel\+Parameter\+::m\+\_\+value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valor numértico del parámetro. 
+
+\Hypertarget{class_t_model_parameter_aea49f0eb41ff510e342ae01e2ac07893}\label{class_t_model_parameter_aea49f0eb41ff510e342ae01e2ac07893} 
+\index{TModelParameter@{TModelParameter}!s\_counter@{s\_counter}}
+\index{s\_counter@{s\_counter}!TModelParameter@{TModelParameter}}
+\doxysubsubsection{\texorpdfstring{s\_counter}{s\_counter}}
+{\footnotesize\ttfamily short int TModel\+Parameter\+::s\+\_\+counter = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Contador estático utilizado internamente para el índice. 
+

@@ -10,14 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     asimov_library.cpp \
-    asimov_main.cpp
+    main.cpp \
+    main_asimov.cpp
 
 HEADERS += \
     asimov_library.h \
-    asimov_main.h
+    main_asimov.h
 
 FORMS += \
-    asimov_main.ui
+    main_asimov.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

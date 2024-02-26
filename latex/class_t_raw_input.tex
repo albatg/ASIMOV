@@ -1,0 +1,219 @@
+\doxysection{TRaw\+Input Class Reference}
+\hypertarget{class_t_raw_input}{}\label{class_t_raw_input}\index{TRawInput@{TRawInput}}
+
+
+Definición de la clase \doxylink{class_t_raw_input}{TRaw\+Input} que implementa un tipo de dato para poder gestionar los archivos de entrada del programa.  
+
+
+
+
+{\ttfamily \#include $<$asimov\+\_\+library.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef}{TRaw\+Input}} (QString \texorpdfstring{$\ast$}{*}v\+\_\+source=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de la clase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20}{\texorpdfstring{$\sim$}{\string~}\+TRaw\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de instancias de tipo \doxylink{class_t_raw_input}{TRaw\+Input}. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}{get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Método que devuelve el contenido de una fuente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}{set\+Source}} (QString \texorpdfstring{$\ast$}{*}v\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Método que establece el valor de la fuente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_t_raw_input_aef337842048b587b0af19eee3d699a49}{get\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Método que devuelve si se ha cargado una fuente(archivo) o no. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}{load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Intenta cargar contenido desde un archivo a m\+\_\+source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_raw_input_ac92594411aec2a07f7801bf2461f9949}{set\+To\+File}} ()
+\item 
+void \mbox{\hyperlink{class_t_raw_input_ab6cf77c0f90de42b84ccc2ff36ec7653}{Edit}} (QText\+Edit \texorpdfstring{$\ast$}{*}editor)
+\item 
+void \mbox{\hyperlink{class_t_raw_input_afc6bf83aa164dc26c7d93ecd721d6436}{new\+Raw\+Input}} ()
+\item 
+unsigned short \mbox{\hyperlink{class_t_raw_input_ab0fca192912cc2708c7fca02a4584e68}{verify\+Model}} ()
+\item 
+bool \mbox{\hyperlink{class_t_raw_input_a6273c65ca67e2138072887389115fce2}{create\+Model}} (\mbox{\hyperlink{class_t_pathway}{TPathway}} \&v\+\_\+model)
+\item 
+void \mbox{\hyperlink{class_t_raw_input_a0ae3ca2047005d91d1363b5aec6ab398}{clean}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\+\_\+loaded}}
+\begin{DoxyCompactList}\small\item\em Variable booleana que indica si se ha cargado un archivo. \end{DoxyCompactList}\item 
+QString \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em Variable de tipo QString en el que se guardará el contenido del archivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definición de la clase \doxylink{class_t_raw_input}{TRaw\+Input} que implementa un tipo de dato para poder gestionar los archivos de entrada del programa. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef}\label{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef} 
+\index{TRawInput@{TRawInput}!TRawInput@{TRawInput}}
+\index{TRawInput@{TRawInput}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{TRawInput()}{TRawInput()}}
+{\footnotesize\ttfamily TRaw\+Input\+::\+TRaw\+Input (\begin{DoxyParamCaption}\item[{QString \texorpdfstring{$\ast$}{*}}]{v\+\_\+source = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto de la clase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+\_\+source} & Apunta a nullptr por defecto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Genera una instancia de la clase \doxylink{class_t_raw_input}{TRaw\+Input} con su contenido vacío. 
+\end{DoxyPostcond}
+\Hypertarget{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20}\label{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20} 
+\index{TRawInput@{TRawInput}!````~TRawInput@{\texorpdfstring{$\sim$}{\string~}TRawInput}}
+\index{````~TRawInput@{\texorpdfstring{$\sim$}{\string~}TRawInput}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TRawInput()}{\string~TRawInput()}}
+{\footnotesize\ttfamily TRaw\+Input\+::\texorpdfstring{$\sim$}{\string~}\+TRaw\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de instancias de tipo \doxylink{class_t_raw_input}{TRaw\+Input}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_raw_input_a0ae3ca2047005d91d1363b5aec6ab398}\label{class_t_raw_input_a0ae3ca2047005d91d1363b5aec6ab398} 
+\index{TRawInput@{TRawInput}!clean@{clean}}
+\index{clean@{clean}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void TRaw\+Input\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_raw_input_a6273c65ca67e2138072887389115fce2}\label{class_t_raw_input_a6273c65ca67e2138072887389115fce2} 
+\index{TRawInput@{TRawInput}!createModel@{createModel}}
+\index{createModel@{createModel}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{createModel()}{createModel()}}
+{\footnotesize\ttfamily bool TRaw\+Input\+::create\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_pathway}{TPathway}} \&}]{v\+\_\+model }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_raw_input_ab6cf77c0f90de42b84ccc2ff36ec7653}\label{class_t_raw_input_ab6cf77c0f90de42b84ccc2ff36ec7653} 
+\index{TRawInput@{TRawInput}!Edit@{Edit}}
+\index{Edit@{Edit}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}}
+{\footnotesize\ttfamily void TRaw\+Input\+::\+Edit (\begin{DoxyParamCaption}\item[{QText\+Edit \texorpdfstring{$\ast$}{*}}]{editor }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_raw_input_aef337842048b587b0af19eee3d699a49}\label{class_t_raw_input_aef337842048b587b0af19eee3d699a49} 
+\index{TRawInput@{TRawInput}!getLoaded@{getLoaded}}
+\index{getLoaded@{getLoaded}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{getLoaded()}{getLoaded()}}
+{\footnotesize\ttfamily bool TRaw\+Input\+::get\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método que devuelve si se ha cargado una fuente(archivo) o no. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve true en función de si m\+\_\+source tiene contenido, en caso contrario devuelve false. 
+\end{DoxyReturn}
+\Hypertarget{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}\label{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3} 
+\index{TRawInput@{TRawInput}!getSource@{getSource}}
+\index{getSource@{getSource}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily QString TRaw\+Input\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método que devuelve el contenido de una fuente. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve un QString que se corresponde con el valor de la fuente. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}\label{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2} 
+\index{TRawInput@{TRawInput}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool TRaw\+Input\+::load\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Intenta cargar contenido desde un archivo a m\+\_\+source. 
+
+Este método verifica que m\+\_\+source esté configurada y no esté vacía. Luego intenta abrir el archivo indicado por m\+\_\+source en modo de solo lectura. Si la apertura del archivo es exitosa, lee su contenido y lo almacena en m\+\_\+source. Finalmente, marca m\+\_\+loaded como verdadero y muestra un mensaje de éxito en la consola. \begin{DoxyReturn}{Returns}
+Devuelve true si la carga desde el archivo fue exitosa, false en caso contrario. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_raw_input_afc6bf83aa164dc26c7d93ecd721d6436}\label{class_t_raw_input_afc6bf83aa164dc26c7d93ecd721d6436} 
+\index{TRawInput@{TRawInput}!newRawInput@{newRawInput}}
+\index{newRawInput@{newRawInput}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{newRawInput()}{newRawInput()}}
+{\footnotesize\ttfamily void TRaw\+Input\+::new\+Raw\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}\label{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060} 
+\index{TRawInput@{TRawInput}!setSource@{setSource}}
+\index{setSource@{setSource}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}}
+{\footnotesize\ttfamily void TRaw\+Input\+::set\+Source (\begin{DoxyParamCaption}\item[{QString \texorpdfstring{$\ast$}{*}}]{v\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Método que establece el valor de la fuente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+\_\+source} & Puntero a un objeto QString que se asignará como fuente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+El objeto m\+\_\+source queda apuntando al objeto QString proporcionado. 
+\end{DoxyPostcond}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_raw_input_ac92594411aec2a07f7801bf2461f9949}\label{class_t_raw_input_ac92594411aec2a07f7801bf2461f9949} 
+\index{TRawInput@{TRawInput}!setToFile@{setToFile}}
+\index{setToFile@{setToFile}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{setToFile()}{setToFile()}}
+{\footnotesize\ttfamily void TRaw\+Input\+::set\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_raw_input_ab0fca192912cc2708c7fca02a4584e68}\label{class_t_raw_input_ab0fca192912cc2708c7fca02a4584e68} 
+\index{TRawInput@{TRawInput}!verifyModel@{verifyModel}}
+\index{verifyModel@{verifyModel}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{verifyModel()}{verifyModel()}}
+{\footnotesize\ttfamily unsigned short TRaw\+Input\+::verify\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}\label{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b} 
+\index{TRawInput@{TRawInput}!m\_loaded@{m\_loaded}}
+\index{m\_loaded@{m\_loaded}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{m\_loaded}{m\_loaded}}
+{\footnotesize\ttfamily bool TRaw\+Input\+::m\+\_\+loaded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable booleana que indica si se ha cargado un archivo. 
+
+\Hypertarget{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}\label{class_t_raw_input_a95d9236484fdd8209ed370fc91636260} 
+\index{TRawInput@{TRawInput}!m\_source@{m\_source}}
+\index{m\_source@{m\_source}!TRawInput@{TRawInput}}
+\doxysubsubsection{\texorpdfstring{m\_source}{m\_source}}
+{\footnotesize\ttfamily QString\texorpdfstring{$\ast$}{*} TRaw\+Input\+::m\+\_\+source\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable de tipo QString en el que se guardará el contenido del archivo. 
+

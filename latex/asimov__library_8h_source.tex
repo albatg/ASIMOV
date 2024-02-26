@@ -1,0 +1,258 @@
+\doxysection{asimov\+\_\+library.\+h}
+\hypertarget{asimov__library_8h_source}{}\label{asimov__library_8h_source}\mbox{\hyperlink{asimov__library_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ ASIMOV\_LIBRARY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ASIMOV\_LIBRARY\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QTextEdit>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include<QString>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ASIMOV\_LIBRARY\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_pathway}{TPathway}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_raw_input}{TRawInput}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\_loaded}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ QString*\ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef}{TRawInput}}(QString*\ v\_source\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20}{\string~TRawInput}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//getters/setters}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}{getSource}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}{setSource}}(QString*\ v\_source);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_aef337842048b587b0af19eee3d699a49}{getLoaded}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//public\ methods}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}{loadFromFile}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_ac92594411aec2a07f7801bf2461f9949}{setToFile}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_ab6cf77c0f90de42b84ccc2ff36ec7653}{Edit}}(QTextEdit*\ editor);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_afc6bf83aa164dc26c7d93ecd721d6436}{newRawInput}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{class_t_raw_input_ab0fca192912cc2708c7fca02a4584e68}{verifyModel}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_a6273c65ca67e2138072887389115fce2}{createModel}}(\mbox{\hyperlink{class_t_pathway}{TPathway}}\&\ v\_model);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_a0ae3ca2047005d91d1363b5aec6ab398}{clean}}();}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ \textcolor{comment}{//=========================================================}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TModelMetabolite}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00098\ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_metabolite_a8c0f7242a47542dfe5123ffcc46cdf35}{m\_name}};}
+\DoxyCodeLine{00099\ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_metabolite_a7b242c850ea6edbbdedc86d5d1fe6ec5}{m\_id}};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_aa9784874f167db7046b7601baa70be6d}{m\_initValue}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a54de4cf73ae6a19ec6d1bd4583a11de4}{m\_topValue}};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a2c85bef444bdf00dca57fba60f882254}{m\_bottomValue}};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a6fbb66fcdc91bb1a3303d3ee8ac09464}{m\_value}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a6fd9eeaedd7cc1485064efa869afb868}{m\_precision}};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_metabolite_a6413752e93c73a0d2de52aca0d065667}{m\_tag}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ constructor}}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite_ad3a834cfaa0027c0c001f79ed5b1c171}{TModelMetabolite}}(QString\ \mbox{\hyperlink{class_t_model_metabolite_a8c0f7242a47542dfe5123ffcc46cdf35}{m\_name}},\ QString\ \mbox{\hyperlink{class_t_model_metabolite_a7b242c850ea6edbbdedc86d5d1fe6ec5}{m\_id}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_aa9784874f167db7046b7601baa70be6d}{m\_initValue}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a54de4cf73ae6a19ec6d1bd4583a11de4}{m\_topValue}},}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a2c85bef444bdf00dca57fba60f882254}{m\_bottomValue}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a6fbb66fcdc91bb1a3303d3ee8ac09464}{m\_value}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a6fd9eeaedd7cc1485064efa869afb868}{m\_precision}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_metabolite_a6413752e93c73a0d2de52aca0d065667}{m\_tag}});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ getters/setters}}
+\DoxyCodeLine{00113\ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_metabolite_aa3061efa2014955817e152e36c79aa77}{getName}}();}
+\DoxyCodeLine{00114\ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_metabolite_a9fae442b0b9ec026d447e441d7c909b0}{getId}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a70f136938c33b64f302afa5022e5867f}{getInitValue}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0}{getTopValue}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f}{getBottomValue}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_af93f896beec1e7d05956777949cf15c5}{getValue}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a1d422f83319a42d9f69c3035b05d4100}{getPrecision}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_metabolite_a94a2ae0e59f9e28b53ed20d38d52085c}{getTag}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_metabolite_a48fb3378cb1bacaf23ab6ae3d10153c7}{setValue}}(\textcolor{keywordtype}{double}\ v\_value);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_metabolite_a86ba2fb244eeee839dd5672e981f4504}{setTag}}(\textcolor{keywordtype}{bool}\ v\_tag);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ other\ methods}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772}{range}}();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TModelParameter}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_model_parameter}{TModelParameter}}}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_parameter_aea49f0eb41ff510e342ae01e2ac07893}{s\_counter}};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_parameter_ad386a1692d31aeaf14a7f3ed4e54e19b}{m\_index}};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34}{m\_id}};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039}{m\_description}};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea}{m\_value}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c}{m\_precision}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b}{m\_tag}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constructor\ por\ defecto}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ TModelParameter(/*short\ int\ v\_Index\ =\ -\/1\ QString\ m\_ID\ =\ "{}"{},}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ m\_Description\ =\ "{}"{},\ double\ m\_Value\ =\ 0,}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ m\_Precision\ =\ 0,\ bool\ m\_Tag\ =\ false);*/}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e}{TModelParameter}}(QString\ m\_ID,\ QString\ m\_Description,\ \textcolor{keywordtype}{double}\ m\_Value,\textcolor{keywordtype}{double}\ m\_Precision,\ \textcolor{keywordtype}{bool}\ m\_Tag);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f}{getIndex}}();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ setIndex(short\ int\ v\_index);}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493}{getId}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c}{setid}}(QString\ v\_id);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8}{getDescription}}();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a5f40720f839e5867532969ada144c197}{setDescription}}(QString\ v\_description);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308}{getValue}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4}{setValue}}(\textcolor{keywordtype}{double}\ v\_value);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_a482544720d3a37088ae717cae45f4096}{getPrecision}}();}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84}{setPrecision}}(\textcolor{keywordtype}{double}\ v\_precision);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c}{getTag}}();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a267b8c5d64744d5d80db833696219254}{setTag}}(\textcolor{keywordtype}{bool}\ v\_tag);}
+\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TModelReaction}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_model_reaction}{TModelReaction}}}
+\DoxyCodeLine{00201\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_aac329f524d56fe31d592ea444a1f8da1}{m\_index}};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_a868e1ccbd7fcd2d44ee7722e3390c690}{m\_id}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_afdc5f6337358497e01a4605ba06e24b6}{m\_description}};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_a1df105c2d741491664dd326a891eebc1}{m\_reagent}};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_a182eb456e8ee0853c2da52a960533b6f}{m\_product}};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_a6be0aa853081689d8076037ef6b9358e}{m\_parameter}};}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_ac8a99201b8b01c50cae88ecfc296448f}{m\_equation}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_reaction_a259ca69e89ebb900e41d5c149cf91a5f}{m\_tag}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_reaction_afb2a71d79b3fe0d9b760792fdcb0335b}{TModelReaction}}(\textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ v\_Index\ =\ -\/1,\ QString\ v\_ID\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ v\_Description\ =\ \textcolor{stringliteral}{"{}"{}},\ std::vector<int>\ v\_Reagent=\ \{\ 0\ \},}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ v\_Product\ =\ \{\ 0\ \},}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ v\_Parameter=\ \{\ 0\ \},\ QString\ v\_Equation=\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ v\_Tag\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ getters/setters}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_ac0b74857eec34d997f40a0bdac98bf17}{getIndex}}();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_afcfbac8e337085033f234a245ad00dbb}{setIndex}}(\textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ v\_index);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_a5709b2a298ca9aed702cca4cb31b614e}{getId}}();}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_ac7b90a14f975f21900a91e6ede506cbd}{setid}}(QString\ v\_id);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_af48ed273a510c38e51dc64ce271bb2ab}{getDescription}}();}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_affd6ecdfea4245c56ef3ccc31871b698}{setDescription}}(QString\ v\_description);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_a904b7efdb4bf4685577dced0f0ae0a71}{getAllReagents}}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_ac4842dd0bb26a71e66a0c819d5c0cbd9}{setAllReagents}}(std::vector<int>\ v\_reagents);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_a4c7746fd369ff6e53cf58d90eb508f85}{getAllProducts}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_a88bb57dd2cf92a7354aa1346b911490a}{setAllProducts}}(std::vector<int>\ v\_products);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_t_model_reaction_abd7f91aad06a4be7ac4f444c0cb25386}{getAllParameters}}();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_adf174b192a68c75f89a336a2bb48f713}{setAllParameters}}(std::vector<int>\ v\_parameters);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_a22dc80bc07c01724c4d02abf06a15f85}{GetReagentNo}}\ ();}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_af72a8731d27bc69e6e2f20d0665b6c6f}{SetReagentNo}}(std::vector<int>(\textcolor{keywordtype}{int}\ i));}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_ad23a02f76f73aec7de09a1a7377e509d}{GetProductNo}}\ ();}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_ab7c9844d1cfa02c1990f451a599c383c}{SetProductNo}}(std::vector<int>(\textcolor{keywordtype}{int}\ i));}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_ab0b6f9ed6289b4abd345f180cc734ff5}{GetOarameterNo}}\ ();}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_a0b1071883982dd42940f464a8899ff9d}{SetParameterNo}}(std::vector<int>(\textcolor{keywordtype}{int}\ i));}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_model_reaction_a217141c413e36649e0664f64d6b52126}{getEquation}}();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_ab2192ff548e18cacaf005577facffdef}{setEquation}}(QString\ v\_equation);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_reaction_a1f0d0f1cef3a55934878af1081aaf215}{getTag}}();}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_reaction_a088d68fadcaeea117be64d50849a2859}{setTag}}(\textcolor{keywordtype}{bool}\ v\_tag);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//public\ methods}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_afe8293cde952e583612a9a3b7de796ea}{ReagentsCount}}();}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_a482b6b4c3f854bdcef67800b12247344}{ProductsCount}}();}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_reaction_a31f98e15570d45fc3b71594c0e6b15da}{ParametersCount}}();}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}\ \&\mbox{\hyperlink{class_t_model_reaction_ae4f740c1f06792d905c12eee14ac41c3}{Reagent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}\ \&\mbox{\hyperlink{class_t_model_reaction_a01cccc2c415c288f25a47cce172149b4}{Product}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}\ \&\mbox{\hyperlink{class_t_model_reaction_aa82251cc49355abca82e9ad8bc5089aa}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TRunConfig}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_run_config}{TRunConfig}}}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_run_config_ac5e52b4d67c64404def1147e1f5e2858}{m\_initTime}};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_run_config_a309f230bacb6cebfbfad20d96a17dac4}{m\_endTime}};}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_t_run_config_ac535715104f3a26baa59483496473e90}{m\_cycles}};}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_run_config_a9ad519152dc0a5877a7625ee6a59420a}{m\_paramList}};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_run_config_a2a8ed033adf65f510078100ee34c5793}{TRunConfig}}(\textcolor{keywordtype}{double}\ v\_initTime\ =\ 0,\ \textcolor{keywordtype}{double}\ v\_endTime\ \ \ \ =\ 0,}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ v\_cycles\ \ \ =\ 0,\ QString\ v\_paramList\ =\ \textcolor{stringliteral}{"{}"{}}):}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_run_config_ac5e52b4d67c64404def1147e1f5e2858}{m\_initTime}}(v\_initTime),\ \mbox{\hyperlink{class_t_run_config_a309f230bacb6cebfbfad20d96a17dac4}{m\_endTime}}\ (v\_endTime),}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_run_config_ac535715104f3a26baa59483496473e90}{m\_cycles}}\ (v\_cycles),\ \mbox{\hyperlink{class_t_run_config_a9ad519152dc0a5877a7625ee6a59420a}{m\_paramList}}\ (v\_paramList)\{\};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ getters/setters}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_run_config_a4cb7c55bccc7433208333f40d8eb3471}{getInitTime}}();}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_run_config_a194673a9c298103ef516d2dc0863b908}{setInitTime}}(\textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_run_config_a2f1fe74f2da9faaa60be080856d3dcbe}{getEndTime}}();}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_run_config_a5e00b2cef60f619768db84073748e3fa}{setEndTime}}(\textcolor{keywordtype}{double}\ t);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_t_run_config_a2ba007b5bba4d8a12f12183543f06977}{getCycles}}();}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_run_config_acedfffb4b6fc65cc18b753e418fe5127}{setCycles}}(\textcolor{keywordtype}{size\_t}\ value);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_t_run_config_ad0a6f0e9954f151f1627945bd14db9a2}{getParamList}}();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_run_config_ab114a3bf710bfbd54e984ddd05eced7e}{setParamList}}(QString\ pList);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//public\ methods}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TFrameData}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_frame_data}{TFrameData}}}
+\DoxyCodeLine{00296\ \{}
+\DoxyCodeLine{00297\ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ getters/setters}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//public\ methods}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00309\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TPathway}}
+\DoxyCodeLine{00310\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_pathway}{TPathway}}}
+\DoxyCodeLine{00314\ \{}
+\DoxyCodeLine{00315\ \textcolor{keyword}{private}:\ \ \ \ \textcolor{comment}{//\ private\ members}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//\ getters/setters}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \textcolor{keyword}{public}:\ \ \ \ \ \textcolor{comment}{//public\ methods}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \};}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ }
+
+\end{DoxyCode}

@@ -1,0 +1,317 @@
+\doxysection{TModel\+Reaction Class Reference}
+\hypertarget{class_t_model_reaction}{}\label{class_t_model_reaction}\index{TModelReaction@{TModelReaction}}
+
+
+{\ttfamily \#include $<$asimov\+\_\+library.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_model_reaction_afb2a71d79b3fe0d9b760792fdcb0335b}{TModel\+Reaction}} (short int v\+\_\+\+Index=-\/1, QString v\+\_\+\+ID="{}"{}, QString v\+\_\+\+Description="{}"{}, std\+::vector$<$ int $>$ v\+\_\+\+Reagent=\{ 0 \}, std\+::vector$<$ int $>$ v\+\_\+\+Product=\{ 0 \}, std\+::vector$<$ int $>$ v\+\_\+\+Parameter=\{ 0 \}, QString v\+\_\+\+Equation="{}"{}, bool v\+\_\+\+Tag=false)
+\item 
+short int \mbox{\hyperlink{class_t_model_reaction_ac0b74857eec34d997f40a0bdac98bf17}{get\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_afcfbac8e337085033f234a245ad00dbb}{set\+Index}} (short int v\+\_\+index)
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_a5709b2a298ca9aed702cca4cb31b614e}{get\+Id}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_ac7b90a14f975f21900a91e6ede506cbd}{setid}} (QString v\+\_\+id)
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_af48ed273a510c38e51dc64ce271bb2ab}{get\+Description}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_affd6ecdfea4245c56ef3ccc31871b698}{set\+Description}} (QString v\+\_\+description)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_a904b7efdb4bf4685577dced0f0ae0a71}{get\+All\+Reagents}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_ac4842dd0bb26a71e66a0c819d5c0cbd9}{set\+All\+Reagents}} (std\+::vector$<$ int $>$ v\+\_\+reagents)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_a4c7746fd369ff6e53cf58d90eb508f85}{get\+All\+Products}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_a88bb57dd2cf92a7354aa1346b911490a}{set\+All\+Products}} (std\+::vector$<$ int $>$ v\+\_\+products)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_abd7f91aad06a4be7ac4f444c0cb25386}{get\+All\+Parameters}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_adf174b192a68c75f89a336a2bb48f713}{set\+All\+Parameters}} (std\+::vector$<$ int $>$ v\+\_\+parameters)
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_a22dc80bc07c01724c4d02abf06a15f85}{Get\+Reagent\+No}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_af72a8731d27bc69e6e2f20d0665b6c6f}{Set\+Reagent\+No}} (std\+::vector$<$ int $>$(int i))
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_ad23a02f76f73aec7de09a1a7377e509d}{Get\+Product\+No}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_ab7c9844d1cfa02c1990f451a599c383c}{Set\+Product\+No}} (std\+::vector$<$ int $>$(int i))
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_ab0b6f9ed6289b4abd345f180cc734ff5}{Get\+Oarameter\+No}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_a0b1071883982dd42940f464a8899ff9d}{Set\+Parameter\+No}} (std\+::vector$<$ int $>$(int i))
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_a217141c413e36649e0664f64d6b52126}{get\+Equation}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_ab2192ff548e18cacaf005577facffdef}{set\+Equation}} (QString v\+\_\+equation)
+\item 
+bool \mbox{\hyperlink{class_t_model_reaction_a1f0d0f1cef3a55934878af1081aaf215}{get\+Tag}} ()
+\item 
+void \mbox{\hyperlink{class_t_model_reaction_a088d68fadcaeea117be64d50849a2859}{set\+Tag}} (bool v\+\_\+tag)
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_afe8293cde952e583612a9a3b7de796ea}{Reagents\+Count}} ()
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_a482b6b4c3f854bdcef67800b12247344}{Products\+Count}} ()
+\item 
+int \mbox{\hyperlink{class_t_model_reaction_a31f98e15570d45fc3b71594c0e6b15da}{Parameters\+Count}} ()
+\item 
+\mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& \mbox{\hyperlink{class_t_model_reaction_ae4f740c1f06792d905c12eee14ac41c3}{Reagent}} (const int index)
+\item 
+\mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& \mbox{\hyperlink{class_t_model_reaction_a01cccc2c415c288f25a47cce172149b4}{Product}} (const int index)
+\item 
+\mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& \mbox{\hyperlink{class_t_model_reaction_aa82251cc49355abca82e9ad8bc5089aa}{Parameter}} (const int index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short int \mbox{\hyperlink{class_t_model_reaction_aac329f524d56fe31d592ea444a1f8da1}{m\+\_\+index}}
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_a868e1ccbd7fcd2d44ee7722e3390c690}{m\+\_\+id}}
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_afdc5f6337358497e01a4605ba06e24b6}{m\+\_\+description}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_a1df105c2d741491664dd326a891eebc1}{m\+\_\+reagent}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_a182eb456e8ee0853c2da52a960533b6f}{m\+\_\+product}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_t_model_reaction_a6be0aa853081689d8076037ef6b9358e}{m\+\_\+parameter}}
+\item 
+QString \mbox{\hyperlink{class_t_model_reaction_ac8a99201b8b01c50cae88ecfc296448f}{m\+\_\+equation}}
+\item 
+bool \mbox{\hyperlink{class_t_model_reaction_a259ca69e89ebb900e41d5c149cf91a5f}{m\+\_\+tag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_model_reaction_afb2a71d79b3fe0d9b760792fdcb0335b}\label{class_t_model_reaction_afb2a71d79b3fe0d9b760792fdcb0335b} 
+\index{TModelReaction@{TModelReaction}!TModelReaction@{TModelReaction}}
+\index{TModelReaction@{TModelReaction}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{TModelReaction()}{TModelReaction()}}
+{\footnotesize\ttfamily TModel\+Reaction\+::\+TModel\+Reaction (\begin{DoxyParamCaption}\item[{short int}]{v\+\_\+\+Index = {\ttfamily -\/1},  }\item[{QString}]{v\+\_\+\+ID = {\ttfamily "{}"{}},  }\item[{QString}]{v\+\_\+\+Description = {\ttfamily "{}"{}},  }\item[{std\+::vector$<$ int $>$}]{v\+\_\+\+Reagent = {\ttfamily \{~0~\}},  }\item[{std\+::vector$<$ int $>$}]{v\+\_\+\+Product = {\ttfamily \{~0~\}},  }\item[{std\+::vector$<$ int $>$}]{v\+\_\+\+Parameter = {\ttfamily \{~0~\}},  }\item[{QString}]{v\+\_\+\+Equation = {\ttfamily "{}"{}},  }\item[{bool}]{v\+\_\+\+Tag = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_model_reaction_abd7f91aad06a4be7ac4f444c0cb25386}\label{class_t_model_reaction_abd7f91aad06a4be7ac4f444c0cb25386} 
+\index{TModelReaction@{TModelReaction}!getAllParameters@{getAllParameters}}
+\index{getAllParameters@{getAllParameters}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getAllParameters()}{getAllParameters()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ TModel\+Reaction\+::get\+All\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a4c7746fd369ff6e53cf58d90eb508f85}\label{class_t_model_reaction_a4c7746fd369ff6e53cf58d90eb508f85} 
+\index{TModelReaction@{TModelReaction}!getAllProducts@{getAllProducts}}
+\index{getAllProducts@{getAllProducts}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getAllProducts()}{getAllProducts()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ TModel\+Reaction\+::get\+All\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a904b7efdb4bf4685577dced0f0ae0a71}\label{class_t_model_reaction_a904b7efdb4bf4685577dced0f0ae0a71} 
+\index{TModelReaction@{TModelReaction}!getAllReagents@{getAllReagents}}
+\index{getAllReagents@{getAllReagents}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getAllReagents()}{getAllReagents()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ TModel\+Reaction\+::get\+All\+Reagents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_af48ed273a510c38e51dc64ce271bb2ab}\label{class_t_model_reaction_af48ed273a510c38e51dc64ce271bb2ab} 
+\index{TModelReaction@{TModelReaction}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a217141c413e36649e0664f64d6b52126}\label{class_t_model_reaction_a217141c413e36649e0664f64d6b52126} 
+\index{TModelReaction@{TModelReaction}!getEquation@{getEquation}}
+\index{getEquation@{getEquation}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getEquation()}{getEquation()}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::get\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a5709b2a298ca9aed702cca4cb31b614e}\label{class_t_model_reaction_a5709b2a298ca9aed702cca4cb31b614e} 
+\index{TModelReaction@{TModelReaction}!getId@{getId}}
+\index{getId@{getId}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ac0b74857eec34d997f40a0bdac98bf17}\label{class_t_model_reaction_ac0b74857eec34d997f40a0bdac98bf17} 
+\index{TModelReaction@{TModelReaction}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily short int TModel\+Reaction\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ab0b6f9ed6289b4abd345f180cc734ff5}\label{class_t_model_reaction_ab0b6f9ed6289b4abd345f180cc734ff5} 
+\index{TModelReaction@{TModelReaction}!GetOarameterNo@{GetOarameterNo}}
+\index{GetOarameterNo@{GetOarameterNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{GetOarameterNo()}{GetOarameterNo()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Get\+Oarameter\+No (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ad23a02f76f73aec7de09a1a7377e509d}\label{class_t_model_reaction_ad23a02f76f73aec7de09a1a7377e509d} 
+\index{TModelReaction@{TModelReaction}!GetProductNo@{GetProductNo}}
+\index{GetProductNo@{GetProductNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{GetProductNo()}{GetProductNo()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Get\+Product\+No (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a22dc80bc07c01724c4d02abf06a15f85}\label{class_t_model_reaction_a22dc80bc07c01724c4d02abf06a15f85} 
+\index{TModelReaction@{TModelReaction}!GetReagentNo@{GetReagentNo}}
+\index{GetReagentNo@{GetReagentNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{GetReagentNo()}{GetReagentNo()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Get\+Reagent\+No (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a1f0d0f1cef3a55934878af1081aaf215}\label{class_t_model_reaction_a1f0d0f1cef3a55934878af1081aaf215} 
+\index{TModelReaction@{TModelReaction}!getTag@{getTag}}
+\index{getTag@{getTag}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily bool TModel\+Reaction\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_aa82251cc49355abca82e9ad8bc5089aa}\label{class_t_model_reaction_aa82251cc49355abca82e9ad8bc5089aa} 
+\index{TModelReaction@{TModelReaction}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& TModel\+Reaction\+::\+Parameter (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a31f98e15570d45fc3b71594c0e6b15da}\label{class_t_model_reaction_a31f98e15570d45fc3b71594c0e6b15da} 
+\index{TModelReaction@{TModelReaction}!ParametersCount@{ParametersCount}}
+\index{ParametersCount@{ParametersCount}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{ParametersCount()}{ParametersCount()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Parameters\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a01cccc2c415c288f25a47cce172149b4}\label{class_t_model_reaction_a01cccc2c415c288f25a47cce172149b4} 
+\index{TModelReaction@{TModelReaction}!Product@{Product}}
+\index{Product@{Product}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{Product()}{Product()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& TModel\+Reaction\+::\+Product (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a482b6b4c3f854bdcef67800b12247344}\label{class_t_model_reaction_a482b6b4c3f854bdcef67800b12247344} 
+\index{TModelReaction@{TModelReaction}!ProductsCount@{ProductsCount}}
+\index{ProductsCount@{ProductsCount}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{ProductsCount()}{ProductsCount()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Products\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ae4f740c1f06792d905c12eee14ac41c3}\label{class_t_model_reaction_ae4f740c1f06792d905c12eee14ac41c3} 
+\index{TModelReaction@{TModelReaction}!Reagent@{Reagent}}
+\index{Reagent@{Reagent}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{Reagent()}{Reagent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_t_model_metabolite}{TModel\+Metabolite}} \& TModel\+Reaction\+::\+Reagent (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_afe8293cde952e583612a9a3b7de796ea}\label{class_t_model_reaction_afe8293cde952e583612a9a3b7de796ea} 
+\index{TModelReaction@{TModelReaction}!ReagentsCount@{ReagentsCount}}
+\index{ReagentsCount@{ReagentsCount}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{ReagentsCount()}{ReagentsCount()}}
+{\footnotesize\ttfamily int TModel\+Reaction\+::\+Reagents\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_adf174b192a68c75f89a336a2bb48f713}\label{class_t_model_reaction_adf174b192a68c75f89a336a2bb48f713} 
+\index{TModelReaction@{TModelReaction}!setAllParameters@{setAllParameters}}
+\index{setAllParameters@{setAllParameters}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setAllParameters()}{setAllParameters()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+All\+Parameters (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{v\+\_\+parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a88bb57dd2cf92a7354aa1346b911490a}\label{class_t_model_reaction_a88bb57dd2cf92a7354aa1346b911490a} 
+\index{TModelReaction@{TModelReaction}!setAllProducts@{setAllProducts}}
+\index{setAllProducts@{setAllProducts}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setAllProducts()}{setAllProducts()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+All\+Products (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{v\+\_\+products }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ac4842dd0bb26a71e66a0c819d5c0cbd9}\label{class_t_model_reaction_ac4842dd0bb26a71e66a0c819d5c0cbd9} 
+\index{TModelReaction@{TModelReaction}!setAllReagents@{setAllReagents}}
+\index{setAllReagents@{setAllReagents}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setAllReagents()}{setAllReagents()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+All\+Reagents (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{v\+\_\+reagents }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_affd6ecdfea4245c56ef3ccc31871b698}\label{class_t_model_reaction_affd6ecdfea4245c56ef3ccc31871b698} 
+\index{TModelReaction@{TModelReaction}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+Description (\begin{DoxyParamCaption}\item[{QString}]{v\+\_\+description }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ab2192ff548e18cacaf005577facffdef}\label{class_t_model_reaction_ab2192ff548e18cacaf005577facffdef} 
+\index{TModelReaction@{TModelReaction}!setEquation@{setEquation}}
+\index{setEquation@{setEquation}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setEquation()}{setEquation()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+Equation (\begin{DoxyParamCaption}\item[{QString}]{v\+\_\+equation }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ac7b90a14f975f21900a91e6ede506cbd}\label{class_t_model_reaction_ac7b90a14f975f21900a91e6ede506cbd} 
+\index{TModelReaction@{TModelReaction}!setid@{setid}}
+\index{setid@{setid}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setid()}{setid()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::setid (\begin{DoxyParamCaption}\item[{QString}]{v\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_afcfbac8e337085033f234a245ad00dbb}\label{class_t_model_reaction_afcfbac8e337085033f234a245ad00dbb} 
+\index{TModelReaction@{TModelReaction}!setIndex@{setIndex}}
+\index{setIndex@{setIndex}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setIndex()}{setIndex()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+Index (\begin{DoxyParamCaption}\item[{short int}]{v\+\_\+index }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a0b1071883982dd42940f464a8899ff9d}\label{class_t_model_reaction_a0b1071883982dd42940f464a8899ff9d} 
+\index{TModelReaction@{TModelReaction}!SetParameterNo@{SetParameterNo}}
+\index{SetParameterNo@{SetParameterNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{SetParameterNo()}{SetParameterNo()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::\+Set\+Parameter\+No (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{int i }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_ab7c9844d1cfa02c1990f451a599c383c}\label{class_t_model_reaction_ab7c9844d1cfa02c1990f451a599c383c} 
+\index{TModelReaction@{TModelReaction}!SetProductNo@{SetProductNo}}
+\index{SetProductNo@{SetProductNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{SetProductNo()}{SetProductNo()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::\+Set\+Product\+No (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{int i }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_af72a8731d27bc69e6e2f20d0665b6c6f}\label{class_t_model_reaction_af72a8731d27bc69e6e2f20d0665b6c6f} 
+\index{TModelReaction@{TModelReaction}!SetReagentNo@{SetReagentNo}}
+\index{SetReagentNo@{SetReagentNo}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{SetReagentNo()}{SetReagentNo()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::\+Set\+Reagent\+No (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{int i }\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_model_reaction_a088d68fadcaeea117be64d50849a2859}\label{class_t_model_reaction_a088d68fadcaeea117be64d50849a2859} 
+\index{TModelReaction@{TModelReaction}!setTag@{setTag}}
+\index{setTag@{setTag}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
+{\footnotesize\ttfamily void TModel\+Reaction\+::set\+Tag (\begin{DoxyParamCaption}\item[{bool}]{v\+\_\+tag }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_t_model_reaction_afdc5f6337358497e01a4605ba06e24b6}\label{class_t_model_reaction_afdc5f6337358497e01a4605ba06e24b6} 
+\index{TModelReaction@{TModelReaction}!m\_description@{m\_description}}
+\index{m\_description@{m\_description}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_description}{m\_description}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::m\+\_\+description\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_ac8a99201b8b01c50cae88ecfc296448f}\label{class_t_model_reaction_ac8a99201b8b01c50cae88ecfc296448f} 
+\index{TModelReaction@{TModelReaction}!m\_equation@{m\_equation}}
+\index{m\_equation@{m\_equation}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_equation}{m\_equation}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::m\+\_\+equation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_a868e1ccbd7fcd2d44ee7722e3390c690}\label{class_t_model_reaction_a868e1ccbd7fcd2d44ee7722e3390c690} 
+\index{TModelReaction@{TModelReaction}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily QString TModel\+Reaction\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_aac329f524d56fe31d592ea444a1f8da1}\label{class_t_model_reaction_aac329f524d56fe31d592ea444a1f8da1} 
+\index{TModelReaction@{TModelReaction}!m\_index@{m\_index}}
+\index{m\_index@{m\_index}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_index}{m\_index}}
+{\footnotesize\ttfamily short int TModel\+Reaction\+::m\+\_\+index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_a6be0aa853081689d8076037ef6b9358e}\label{class_t_model_reaction_a6be0aa853081689d8076037ef6b9358e} 
+\index{TModelReaction@{TModelReaction}!m\_parameter@{m\_parameter}}
+\index{m\_parameter@{m\_parameter}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_parameter}{m\_parameter}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ TModel\+Reaction\+::m\+\_\+parameter\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_a182eb456e8ee0853c2da52a960533b6f}\label{class_t_model_reaction_a182eb456e8ee0853c2da52a960533b6f} 
+\index{TModelReaction@{TModelReaction}!m\_product@{m\_product}}
+\index{m\_product@{m\_product}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_product}{m\_product}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ TModel\+Reaction\+::m\+\_\+product\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_a1df105c2d741491664dd326a891eebc1}\label{class_t_model_reaction_a1df105c2d741491664dd326a891eebc1} 
+\index{TModelReaction@{TModelReaction}!m\_reagent@{m\_reagent}}
+\index{m\_reagent@{m\_reagent}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_reagent}{m\_reagent}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ TModel\+Reaction\+::m\+\_\+reagent\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_t_model_reaction_a259ca69e89ebb900e41d5c149cf91a5f}\label{class_t_model_reaction_a259ca69e89ebb900e41d5c149cf91a5f} 
+\index{TModelReaction@{TModelReaction}!m\_tag@{m\_tag}}
+\index{m\_tag@{m\_tag}!TModelReaction@{TModelReaction}}
+\doxysubsubsection{\texorpdfstring{m\_tag}{m\_tag}}
+{\footnotesize\ttfamily bool TModel\+Reaction\+::m\+\_\+tag\hspace{0.3cm}{\ttfamily [private]}}
+
