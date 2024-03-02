@@ -1,5 +1,4 @@
 #include "main_asimov.h"
-#include "asimov_library.h"
 #include "ui_main_asimov.h"
 #include <QFileDialog>
 #include <QMessageBox>
@@ -20,21 +19,49 @@ main_asimov::~main_asimov()
 
 void main_asimov::on_actionAbrir_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName(this, "Título del Menú", "./", "All (*.*)");
-    QFile file(filename);
+    QString fname = QFileDialog::getOpenFileName(this, "Título del Menú", "./", "All (*.*)");
 
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, "Error", "No se pudo abrir el archivo.");
+    if (fname.isEmpty()) {
+        // El usuario canceló la selección del archivo
         return;
     }
 
-    QTextStream ReadFile(&file);
-    QString fileContent = ReadFile.readAll();
+    rawInput.setSource(&fname);
 
-    // Limpiar el contenido actual del QTextEdit
+    bool loaded = rawInput.loadFromFile();
+
+    if (!loaded) {
+        QMessageBox::warning(this, "Error", "No se pudo cargar correctamente el archivo.");
+        return;
+    }
+
+    // Accede a los datos
+    QString rawData = rawInput.getSource();
+
     ui->textBody->clear();
+    ui->textBody->setText(rawData);
+}
 
-    ui->textBody->insertPlainText(fileContent);
+
+void main_asimov::on_actionGuardar_triggered(){
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Guardar archivo"), "", tr("Archivos de texto (*.txt);;Todos los archivos (*)"));
+
+    if (fileName.isEmpty()) {
+        // El usuario canceló la operación
+        return;
+    }
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, tr("Error"), tr("No se pudo abrir el archivo para escribir"));
+        return;
+    }
+
+    QTextStream out(&file);
+    out << ui->textBody->toPlainText(); // Guardar el contenido del QTextEdit en el archivo
+
+    file.close();
+    QMessageBox::information(this, tr("Éxito"), tr("Archivo guardado exitosamente"));
 }
 
 
@@ -176,7 +203,6 @@ void main_asimov::on_buttomMetanode_clicked()
     }
 }
 
-
 void main_asimov::on_parameter_button_clicked()
 {
     QString texto = ui->textBody->toPlainText();
@@ -222,7 +248,7 @@ void main_asimov::on_parameter_button_clicked()
             }
 
             // Creamos el parametro y lo añadimos a la lista de parametros
-            TModelParameter param = TModelParameter(index, id, description, value.toDouble(), precision.toDouble(), false);
+            TModelParameter param = TModelParameter(id, description, value.toDouble(), precision.toDouble(), false);
             parameters.push_back(param);
         }
 
@@ -237,3 +263,7 @@ void main_asimov::on_parameter_button_clicked()
         }
     }
 }
+
+
+
+

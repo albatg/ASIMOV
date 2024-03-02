@@ -1,32 +1,37 @@
-#ifndef ASIMOV_MAIN_H
-#define ASIMOV_MAIN_H
+#ifndef MAIN_ASIMOV_H
+#define MAIN_ASIMOV_H
 
 #include <QMainWindow>
 #include "asimov_library.h"
-#include <QFileDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class asimov_Main;
+class main_asimov;
 }
 QT_END_NAMESPACE
 
-class asimov_Main : public QMainWindow
+class main_asimov : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    asimov_Main(QWidget *parent = nullptr);
-    ~asimov_Main();
+    main_asimov(QWidget *parent = nullptr);
+    ~main_asimov();
+
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_actionAbrir_triggered();
+
+    void on_pushButton_clicked();
 
     void on_buttomMetanode_clicked();
 
+    void on_parameter_button_clicked();
+
+    void on_actionGuardar_triggered();
+
 private:
-    Ui::asimov_Main *ui;
+    Ui::main_asimov *ui;
+    TRawInput rawInput;
 };
-#endif // ASIMOV_MAIN_H
+#endif // MAIN_ASIMOV_H
