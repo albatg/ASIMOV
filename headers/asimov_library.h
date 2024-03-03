@@ -17,6 +17,10 @@
 class TPathway;
 
 
+// --------------------------------------------------------
+//                     TRawInput
+// --------------------------------------------------------
+
 /**
  *@brief Definición de la clase TRawInput que implementa un tipo de dato
  *       para poder gestionar los archivos de entrada del programa.
@@ -91,6 +95,7 @@ class TRawInput
 // --------------------------------------------------------
 //                     TModelMetabolite
 // --------------------------------------------------------
+
 /**
  *@brief La clase TModelMetabolite implementa un tipo de dato para almacenar los
  *       metabolitos de una reacción y poder trabajar con ellos.
@@ -98,6 +103,12 @@ class TRawInput
 class TModelMetabolite
 {
     private:    // private members
+        /**
+         * @brief Contador numérico estático único para cada metabolito.
+         *        Coincide con el índice.
+         */
+        static short int s_counter;
+
         /**
          * @brief Nombre largo del metabolito.
          */
@@ -109,8 +120,7 @@ class TModelMetabolite
         QString m_id;
 
         /**
-         * @brief Índice numérico y único para cada metabolito.
-         * @post Todos los metabolitos procesados deben tener índices correlativos.
+         * @brief Índice numérico único del metabolico.
          */
         short int m_index;
 
@@ -155,7 +165,6 @@ class TModelMetabolite
          *        con los parámetros proporcionados.
          * @param m_name nombre largo del metabolito.
          * @param m_id nombre corto del metabolito, único.
-         * @param m_index índice numérico único asociado al metabolito.
          * @param m_initValue valor inicial del metabolito.
          * @param m_topValue valor máximo que puede alcanzar el metabolito.
          * @param m_bottomValue valor mínimo que puede alcanzar el metabolito.
@@ -163,7 +172,7 @@ class TModelMetabolite
          * @param m_precision precisión asociada al valor del metabolito.
          * @param m_tag etiqueta asociada al metabolito.
          */
-        TModelMetabolite(QString m_name, QString m_id, short int m_index, double m_initValue, double m_topValue,
+        TModelMetabolite(QString m_name, QString m_id, double m_initValue, double m_topValue,
                          double m_bottomValue, double m_value, double m_precision, bool m_tag);
 
         // getters/setters
@@ -239,6 +248,7 @@ class TModelMetabolite
          */
         double range();
 };
+//=========================================================
 
 
 // --------------------------------------------------------
@@ -246,8 +256,8 @@ class TModelMetabolite
 // --------------------------------------------------------
 
 /**
- *@brief Esta clase encapsula información sobre un parámetro y se usa para representar y manipular parámetros específicos
- *      relacionados con la glucólisis.
+ *@brief Esta clase encapsula información sobre un parámetro y se usa para representar
+ *       y manipular parámetros específicos relacionados con la glucólisis.
 */
 class TModelParameter
 {
@@ -339,18 +349,28 @@ class TModelParameter
          */
         bool getTag();
 };
-
+//=========================================================
 
 
 // --------------------------------------------------------
 //                    TModelReaction
 // --------------------------------------------------------
 
-
+/**
+ * @brief La clase TModelReaction encapsula la información necesaria
+ *        para gestionar una reacción metabólica.
+ */
 class TModelReaction
 {
     private:    // private members
-        short int m_index;
+
+        /**
+         * @brief s_counter Contador numérico del número de reacciones almacenadas.
+         *        Se actualiza en el constructor de la clase, sumando uno con cada
+         *        reacción creada.
+         */
+        static short int s_counter;
+
         QString m_id;
         QString m_description;
         std::vector<int> m_reagent;

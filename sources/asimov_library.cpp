@@ -79,9 +79,11 @@ bool TRawInput::loadFromFile()
 
 
 //METANODOS
-TModelMetabolite::TModelMetabolite(QString name, QString id, short int index, double initValue, double topValue,
+short int TModelMetabolite::s_counter = 1;
+
+TModelMetabolite::TModelMetabolite(QString name, QString id, double initValue, double topValue,
                                    double bottomValue, double value, double precision, bool tag)
-    : m_name(name), m_id(id), m_index(index), m_initValue(initValue), m_topValue(topValue), m_bottomValue(bottomValue),
+    : m_name(name), m_id(id), m_index(s_counter++), m_initValue(initValue), m_topValue(topValue), m_bottomValue(bottomValue),
     m_value(value), m_precision(precision), m_tag(tag)
 {}
 

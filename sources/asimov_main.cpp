@@ -147,7 +147,7 @@ void main_asimov::on_buttomMetanode_clicked()
 
             // Comprobación del índice y recogida de datos
             index = elementosM.value(0, "").toInt();
-            if ( index == elementosM.value(2, "").toInt() && index == i)
+            if ( index == elementosM.value(2, "").toInt() && index == i )
             {
                 name = elementosM.value(1, "");
                 id = elementosM.value(3, "");
@@ -155,36 +155,36 @@ void main_asimov::on_buttomMetanode_clicked()
                 valor_max_str = elementosM.value(5, "");
                 valor_min_str = elementosM.value(6, "");
                 precision_str = elementosM.value(7, "");
+
+                // si algún dato numérico es nd, ponemos su valor por defecto
+                if (valor_ini_str == nd)
+                    valor_ini = 0;
+                else
+                    valor_ini = valor_ini_str.toDouble();
+
+                if (valor_max_str == nd)
+                    valor_max = INT_MAX;
+                else
+                    valor_max = valor_max_str.toDouble();
+
+                if (valor_min_str == nd)
+                    valor_min = 0;
+                else
+                    valor_min = valor_min_str.toDouble();
+
+                if (precision_str == nd)
+                    precision = 0.0000001;
+                else
+                    precision = precision_str.toDouble();
+
+                // Creamos el metanodo y lo añadimos a la lista de metanodos
+                TModelMetabolite metanodo = TModelMetabolite(name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
+                metanodos.push_back( metanodo );
             }
             else
             {
                 ui->selectData->append("Error al obtener el METANODO" + QString::number(i));
             }
-
-            // si algún dato numérico es nd, ponemos su valor por defecto
-            if (valor_ini_str == nd)
-                valor_ini = 0;
-            else
-                valor_ini = valor_ini_str.toDouble();
-
-            if (valor_max_str == nd)
-                valor_max = INT_MAX;
-            else
-                valor_max = valor_max_str.toDouble();
-
-            if (valor_min_str == nd)
-                valor_min = 0;
-            else
-                valor_min = valor_min_str.toDouble();
-
-            if (precision_str == nd)
-                precision = 0.0000001;
-            else
-                precision = precision_str.toDouble();
-
-            // Creamos el metanodo y lo añadimos a la lista de metanodos
-            TModelMetabolite metanodo = TModelMetabolite(name, id, index, valor_ini, valor_max, valor_min, valor_ini, precision, false);
-            metanodos.push_back( metanodo );
         }
 
         // Una vez recogida la info de todos los metanodos, mostramos los datos por pantalla
@@ -241,15 +241,15 @@ void main_asimov::on_parameter_button_clicked()
                 id = elementos.value(3, "");
                 value = elementos.value(4, "");
                 precision = elementos.value(5, "");
+
+                // Creamos el parametro y lo añadimos a la lista de parametros
+                TModelParameter param = TModelParameter(id, description, value.toDouble(), precision.toDouble(), false);
+                parameters.push_back(param);
             }
             else
             {
                 ui->selectData->append("Error al obtener el PARAMETRO" + QString::number(i));
             }
-
-            // Creamos el parametro y lo añadimos a la lista de parametros
-            TModelParameter param = TModelParameter(id, description, value.toDouble(), precision.toDouble(), false);
-            parameters.push_back(param);
         }
 
         // Una vez recogida la informacion, mostramos los datos por pantalla
