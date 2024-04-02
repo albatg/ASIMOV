@@ -139,13 +139,13 @@ void main_asimov::on_buttomMetanode_clicked()
             //Separamos por tabulaciones
             elementosM = info_metanodo.split("\t");
 
-            //Eliminamos otros elementos tales como saltos de linea y otros
+            //Eliminamos otros elementos tales como saltos de línea y otros
             for (QString& elementoM : elementosM) {
                 elementoM = elementoM.simplified();
             }
             elementosM.removeAll("");
 
-            // Comprobación del índice y recogida de datos
+            // Comprobación del índice (único y correlativo) y recogida de datos
             index = elementosM.value(0, "").toInt();
             if ( index == elementosM.value(2, "").toInt() && index == i )
             {
@@ -178,7 +178,7 @@ void main_asimov::on_buttomMetanode_clicked()
                     precision = precision_str.toDouble();
 
                 // Creamos el metanodo y lo añadimos a la lista de metanodos
-                TModelMetabolite metanodo = TModelMetabolite(name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
+                TModelMetabolite metanodo = TModelMetabolite(index, name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
                 metanodos.push_back( metanodo );
             }
             else
@@ -193,7 +193,7 @@ void main_asimov::on_buttomMetanode_clicked()
             ui->selectData->append("METANODO " + QString::number(i+1));
             ui->selectData->append("nombre: " + metanodos[i].getName());
             ui->selectData->append("id: " + metanodos[i].getId());
-            ui->selectData->append("index: " + QString::number(metanodos[i].getIndex()));
+            ui->selectData->append("index: " + QString::number(i+1));
             ui->selectData->append("valor inicial: " + QString::number(metanodos[i].getInitValue()));
             ui->selectData->append("valor maximo: " + QString::number(metanodos[i].getTopValue()));
             ui->selectData->append("valor minimo: " + QString::number(metanodos[i].getBottomValue()));
@@ -233,7 +233,7 @@ void main_asimov::on_parameter_button_clicked()
             }
             elementos.removeAll("");
 
-            // Comprobación del índice y recogida de datos
+            // Comprobación del índice (único y correlativo) y recogida de datos
             int index = elementos.value(0, "").toInt();
             if ( index == elementos.value(2, "").toInt() && index == i)
             {
@@ -243,7 +243,7 @@ void main_asimov::on_parameter_button_clicked()
                 precision = elementos.value(5, "");
 
                 // Creamos el parametro y lo añadimos a la lista de parametros
-                TModelParameter param = TModelParameter(id, description, value.toDouble(), precision.toDouble(), false);
+                TModelParameter param = TModelParameter(index, id, description, value.toDouble(), precision.toDouble(), false);
                 parameters.push_back(param);
             }
             else
@@ -265,5 +265,70 @@ void main_asimov::on_parameter_button_clicked()
 }
 
 
+void main_asimov::on_formalism_button_clicked()
+{
+    // Variables
+    QString texto = ui->textBody->document()->toPlainText();
+    QString keyF = "FORMALISM";
 
+    QString info_formalism;
+    QStringList elementosF;
+
+    int num_formalisms = texto.count(keyF);
+    QVector<TFormalism> formalisms;
+
+    if (num_formalisms==0) // No hay formalismos en el texto seleccionado
+    {
+        ui->selectData->append("No se encontraron formalismos");
+    }
+    else // Sí hay formalismos
+    {
+        for (int i=1; i<=num_formalisms; i++)
+        {
+            // Por cada metanodo encontrado, recogemos sus datos usando section
+            info_formalism = texto.section(keyF, i, i);
+
+            //Separamos por tabulaciones
+            elementosF = info_formalism.split("\t");
+
+            //Eliminamos otros elementos tales como saltos de línea y otros
+            for (QString& elementoF : elementosF) {
+                elementoF = elementoF.simplified();
+            }
+
+            // Recogida de los datos
+            QString m_id = elementosF.value(0, "");
+            QString m_name = elementosF.value(1, "");
+            QString formula_completa = elementosF.value(2,"");
+
+            //*************  FALLA  ******************
+            QStringList par = formula_completa.split('=');
+            QString m_formalism = par.last().simplified();
+
+            par.first().remove("[()]");
+            QStringList variables = par.first().split(',');
+            std::vector<QString> m_variables;
+            for (QString& var : variables)
+            {
+                var = var.simplified();
+                m_variables.push_back(var);
+            }
+            //***********************************************
+
+            // Creamos el objeto formalismo y lo añadimos a la lista de formalismos
+            TFormalism form = TFormalism(m_id, m_name, m_formalism, m_variables);
+            formalisms.push_back( form );
+        }
+
+        // Una vez recogida la info de todos los metanodos, mostramos los datos por pantalla
+        for (int i=0; i<formalisms.size(); i++)
+        {
+            ui->selectData->append("FORMALISMO " + QString::number(i+1));
+            ui->selectData->append("id: " + formalisms[i].getId());
+            ui->selectData->append("nombre: " + formalisms[i].getName());
+            ui->selectData->append("formalismo: " + formalisms[i].getFormalism());
+            ui->selectData->append("variables: " + formalisms[i].getVariables() + "\n");
+        }
+    }
+}
 

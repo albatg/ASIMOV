@@ -104,11 +104,9 @@ class TModelMetabolite
 {
     private:    // private members
         /**
-         * @brief Contador numérico estático único para cada metabolito.
-         *        Coincide con el índice.
+         * @brief s_metabolites Vector estático de la clase con todos los metabolitos creados.
          */
-        static short int s_counter;
-
+        static std::vector<TModelMetabolite> s_metabolites;
         /**
          * @brief Nombre largo del metabolito.
          */
@@ -118,12 +116,10 @@ class TModelMetabolite
          * @brief Nombre corto del metabolito, es único.
          */
         QString m_id;
-
         /**
-         * @brief Índice numérico único del metabolico.
+         * @brief Índice numérico único del metabolito.
          */
         short int m_index;
-
         /**
          * @brief Valor inicial del metabolito.
          * @pre Toma el valor por defecto 0.
@@ -135,24 +131,20 @@ class TModelMetabolite
          * @pre Toma el valor por defecto INT_MAX,
          */
         double m_topValue;
-
         /**
          * @brief Valor mínimo que puede alcanzar el metabolito.
          * @pre Toma el valor por defecto 0.
          */
         double m_bottomValue;
-
         /**
          * @brief Valor actual del metabolito, comienza siendo m_initValue.
          */
         double m_value;
-
         /**
          * @brief Precisión asociada a los valores del metabolito.
          * @pre Toma el valor por defecto 0.0000001.
          */
         double m_precision;
-
         /**
          * @brief Etiqueta del metabolito.
          * @pre Toma el valor por defecto false.
@@ -161,19 +153,26 @@ class TModelMetabolite
 
     public:
         /**
-         * @brief TModelMetabolite constructor de la clase, crea un objeto metabolito válido
+         * @brief TModelMetabolite Constructor de la clase, crea un objeto metabolito válido
          *        con los parámetros proporcionados.
-         * @param m_name nombre largo del metabolito.
-         * @param m_id nombre corto del metabolito, único.
-         * @param m_initValue valor inicial del metabolito.
-         * @param m_topValue valor máximo que puede alcanzar el metabolito.
-         * @param m_bottomValue valor mínimo que puede alcanzar el metabolito.
-         * @param m_value valor actual del metabolito.
-         * @param m_precision precisión asociada al valor del metabolito.
-         * @param m_tag etiqueta asociada al metabolito.
+         * @param m_index Índice numérico único del metabolito.
+         * @param m_name Nombre largo del metabolito.
+         * @param m_id Nombre corto del metabolito, único.
+         * @param m_initValue Valor inicial del metabolito.
+         * @param m_topValue Valor máximo que puede alcanzar el metabolito.
+         * @param m_bottomValue Valor mínimo que puede alcanzar el metabolito.
+         * @param m_value Valor actual del metabolito.
+         * @param m_precision Precisión asociada al valor del metabolito.
+         * @param m_tag Etiqueta asociada al metabolito.
          */
-        TModelMetabolite(QString m_name, QString m_id, double m_initValue, double m_topValue,
+        TModelMetabolite(short int m_index, QString m_name, QString m_id, double m_initValue, double m_topValue,
                          double m_bottomValue, double m_value, double m_precision, bool m_tag);
+
+        /**
+         * @brief check Comprueba la consistencia de los datos recogidos del metabolito.
+         * @return true si los datos son válidos, false en caso contrario.
+         */
+        bool check();
 
         // getters/setters
         /**
@@ -247,6 +246,8 @@ class TModelMetabolite
          * @return double resultante de restar (m_topValue - m_bottomValue).
          */
         double range();
+
+        friend class TProcess;
 };
 //=========================================================
 
@@ -263,9 +264,9 @@ class TModelParameter
 {
     private:    // private members
         /**
-         *@brief Contador estático utilizado internamente para el índice.
-        */
-        static short int s_counter;
+         * @brief s_params Vector estático de la clase con todos los parámetros creados.
+         */
+        static std::vector<TModelParameter> s_params;
         /**
          *@brief Índice del parámetro.
         */
@@ -292,20 +293,23 @@ class TModelParameter
         bool m_tag;
 
     public:
-        // constructor por defecto
-        /* TModelParameter(/*short int v_Index = -1 QString m_ID = "",
-                        QString m_Description = "", double m_Value = 0,
-                        double m_Precision = 0, bool m_Tag = false);*/
 
         /**
          * @brief TModelParameter constructor de la clase, crea un objeto parámetro válido.
+         * @param m_index índice numérico único del parámetro.
          * @param m_ID nombre corto del parámetro, es único.
          * @param m_Description nombre largo del parámetro.
          * @param m_Value valor actual del parámetro.
          * @param m_Precision precisión asociada al parámetro.
          * @param m_Tag etiqueta asociada al parámetro.
          */
-        TModelParameter(QString m_ID, QString m_Description, double m_Value,double m_Precision, bool m_Tag);
+        TModelParameter(short int m_index, QString m_ID, QString m_Description, double m_Value,double m_Precision, bool m_Tag);
+
+        /**
+         * @brief check Comprueba la consistencia de los datos recogidos del parámetro.
+         * @return true si los datos son válidos, false en caso contrario.
+         */
+        bool check();
 
         /**
          * @brief getIndex devuelve el índice numérico del parámetro.
@@ -332,12 +336,6 @@ class TModelParameter
         double getValue();
 
         /**
-         * @brief setValue modifica el valor actual del parámetro.
-         * @param v_value valor nuevo del parámetro.
-         */
-        void setValue(double v_value);
-
-        /**
          * @brief getPrecision devuelve la precisión asociada al parámetro.
          * @return atributo m_precision.
          */
@@ -348,8 +346,186 @@ class TModelParameter
          * @return atributo m_tag.
          */
         bool getTag();
+
+        /**
+         * @brief setTag modifica el valor actual de la etiqueta.
+         * @param v_tag valor nuevo de etiqueta para el parámetro.
+         */
+        void setTag(bool v_tag);
+
+        /**
+         * @brief setValue modifica el valor actual del parámetro.
+         * @param v_value valor nuevo del parámetro.
+         */
+        void setValue(double v_value);
+
+        friend class TProcess;
 };
 //=========================================================
+
+
+// --------------------------------------------------------
+//                    TFormalism
+// --------------------------------------------------------
+
+class TFormalism
+{
+    private:
+        /**
+         * @brief s_formalisms Vector con todos los formalismos creados.
+         *        Su posición en el vector coincide con su id.
+         */
+        static std::vector<TFormalism> s_formalisms;
+
+        /**
+         * @brief m_id Identificador del formalismo.
+         */
+        QString m_id;
+
+        /**
+         * @brief m_name Nombre bioquímico del formalismo.
+         */
+        QString m_name;
+
+        /**
+         * @brief m_formalism Cadena de caracteres que representa la ecuación del formalismo.
+         */
+        QString m_formalism;
+
+        /**
+         * @brief m_variables Vector de nombres de variables que aparecen en el formalismo.
+         */
+        std::vector<QString> m_variables;
+
+    public:
+        /**
+         * @brief TFormalism Constructor de la clase TFormalism. Crea un objeto formalismo válido.
+         * @param m_id Identificador del formalismo.
+         * @param m_name Nombre largo del formalismo.
+         * @param m_formalism Ecuación del formalismo.
+         * @param m_variables Vector de nombres de variables que aparecen en la ecuación.
+         */
+        TFormalism(QString m_id, QString m_name, QString m_formalism, std::vector<QString> m_variables);
+
+        /**
+         * @brief check Método que comprueba la consistencia entre las variables y la ecuación
+         *        proporcionadas. En el formalismo deben aparecer todas las variables proporcionadas
+         *        y sólo esas. Es llamado dentro del constructor antes de crear el objeto.
+         * @return true si los datos del formalismo son correctos, false en caso contrario.
+         */
+        bool check();
+
+        /**
+         * @brief getId Devuelve el identificador del formalismo.
+         * @return devuelve el QString m_id
+         */
+        QString getId();
+
+        /**
+         * @brief getName Devuelve el nombre del formalismo.
+         * @return devuelve el QString m_name
+         */
+        QString getName();
+
+        /**
+         * @brief getFormalism Devuelve la ecuación del formalismo.
+         * @return devuelve el QString m_formalism
+         */
+        QString getFormalism();
+
+        /**
+         * @brief getVariables Devuelve una lista de las variables que participan
+         * @return devuelve lista de variables
+         */
+        QString getVariables();
+
+        /**
+         * @brief Clase amiga que puede acceder a los datos privados de TFormalism.
+         */
+        friend class TProcess;
+
+};
+//=========================================================
+
+
+// --------------------------------------------------------
+//                    TProcess
+// --------------------------------------------------------
+
+class TProcess
+{
+    private:
+        /**
+         * @brief s_processes Vector con todos los procesos creados.
+         *        Su posición en el vector coincide con su id.
+         */
+        static std::vector<TProcess> s_processes;
+
+        /**
+         * @brief m_id Identificador del proceso.
+         */
+        QString m_id;
+
+        /**
+         * @brief m_name Nombre corto del proceso.
+         */
+        QString m_name;
+
+        /**
+         * @brief m_description Nombre bioquímico del proceso.
+         */
+        QString m_description;
+
+        /**
+         * @brief m_idForm Identificador del formalismo al que hace referencia.
+         */
+        QString m_idForm;
+
+        /**
+         * @brief m_substances Vector de identificadores de las sustancias (metanodos y parámetros)
+         *        que aparecen en el proceso.
+         */
+        std::vector<QString> m_substances;
+
+    public:
+
+        /**
+         * @brief TProcess Constructor de la clase TProcess. Crea un proceso válido.
+         * @param m_id Identificador del proceso.
+         * @param m_name Nombre corto del proceso.
+         * @param m_description Nombre bioquímico del proceso.
+         * @param m_idForm Identificador del formalismo que usa.
+         * @param m_substances Vector de las sustancias que aparecen en el proceso.
+         */
+        TProcess(QString m_id, QString m_name, QString m_description, QString m_idForm, std::vector<QString> m_substances);
+
+        /**
+         * @brief check Método que comprueba la consistencia de los datos del proceso recogidos.
+         *        El formalismo y las variables (metanodos y parámetros) recogidas deben existir.
+         *        Se llama dentro del constructor, para crear un objeto Proceso válido.
+         * @return true si los datos del proceso son correctos, false en caso contrario.
+         */
+        bool check();
+
+        /**
+         * @brief getFormalism Método que devuelve el objeto formalismo asociado al proceso.
+         * @param QString Identificador del formalismo asociado al proceso.
+         * @return Objeto TFormalismo asociado al proceso.
+         */
+        TFormalism getFormalism(QString m_idForm);
+
+        /**
+         * @brief getProcess Método que construye la ecuación del proceso basada en el formalismo y las
+         *        variables del objeto Proceso que lo llama.
+         * @return Cadena de caracteres con la ecuación del proceso, donde las variables son las especificadas.
+         */
+        QString getProcess();
+};
+//=========================================================
+
+
+
+
 
 
 // --------------------------------------------------------
@@ -360,6 +536,7 @@ class TModelParameter
  * @brief La clase TModelReaction encapsula la información necesaria
  *        para gestionar una reacción metabólica.
  */
+
 class TModelReaction
 {
     private:    // private members

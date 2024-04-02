@@ -1,6 +1,7 @@
 #include "asimov_library.h"
 #include <QString>
 #include <QFile>
+#include <QRegularExpression>
 
 // RAWINPUT
 // Constructor de la clase
@@ -79,13 +80,28 @@ bool TRawInput::loadFromFile()
 
 
 //METANODOS
-short int TModelMetabolite::s_counter = 1;
+std::vector<TModelMetabolite> TModelMetabolite::s_metabolites;
 
-TModelMetabolite::TModelMetabolite(QString name, QString id, double initValue, double topValue,
+TModelMetabolite::TModelMetabolite(short int index, QString name, QString id, double initValue, double topValue,
                                    double bottomValue, double value, double precision, bool tag)
-    : m_name(name), m_id(id), m_index(s_counter++), m_initValue(initValue), m_topValue(topValue), m_bottomValue(bottomValue),
-    m_value(value), m_precision(precision), m_tag(tag)
-{}
+    : m_name(name), m_id(id), m_index(index), m_initValue(initValue), m_topValue(topValue), m_bottomValue(bottomValue),
+     m_value(value), m_precision(precision), m_tag(tag)
+{
+    if (check())
+        s_metabolites.push_back(*this);
+    //else
+
+}
+
+bool TModelMetabolite::check()
+{
+    bool ok = true;
+
+    // Comprobar que la numeración del identificador es correlativa
+    // ... (hacer aquí las comprobaciones)
+
+    return ok;
+}
 
 QString TModelMetabolite::getName()
 {
@@ -148,11 +164,25 @@ double TModelMetabolite::range()
 }
 
 //PARAMETROS
-short int TModelParameter::s_counter = 1;
+std::vector<TModelParameter> TModelParameter::s_params;
 
-TModelParameter::TModelParameter(QString ID, QString description, double value,double precision, bool tag)
-    :m_index(s_counter++),m_id(ID), m_description(description), m_value(value), m_precision(precision), m_tag(tag)
+TModelParameter::TModelParameter(short int index, QString ID, QString description, double value,double precision, bool tag)
+    :m_index(index), m_id(ID), m_description(description), m_value(value), m_precision(precision), m_tag(tag)
 {
+    if (check())
+        s_params.push_back(*this);
+    //else
+        // Mensaje de error?
+}
+
+bool TModelParameter::check()
+{
+    bool ok = true;
+
+    // Comprobar que la numeración del identificador es correlativa
+    // ...
+
+    return ok;
 }
 
 short int TModelParameter::getIndex(){
@@ -171,14 +201,161 @@ double TModelParameter::getValue(){
     return m_value;
 }
 
-void TModelParameter::setValue(double v_value){
-    m_value = v_value;
-}
-
 double TModelParameter::getPrecision(){
     return m_precision;
 }
 
 bool TModelParameter::getTag(){
     return m_tag;
+}
+
+void TModelParameter::setTag(bool v_tag){
+    m_tag = v_tag;
+}
+
+void TModelParameter::setValue(double v_value){
+    m_value = v_value;
+}
+
+
+// FORMALISMOS
+std::vector<TFormalism> TFormalism::s_formalisms;
+
+TFormalism::TFormalism(QString id, QString name, QString formalism, std::vector<QString> variables)
+    :m_id(id), m_name(name), m_formalism(formalism), m_variables(variables)
+{
+    if (check())
+        s_formalisms.push_back(*this);
+    //else
+        // Mostrar mensaje de error, por dónde? ("Error al obtener el formalismo" + QString::number(m_id))
+}
+
+bool TFormalism::check()
+{
+    bool ok = true;
+    QString formalism_copy = m_formalism; // Trabajamos con una copia del formalismo
+
+    // Comprobamos que todas las variables que se proporcionan están en el formalismo
+    for (unsigned int i=0; i<m_variables.size(); i++)
+    {
+        if (formalism_copy.contains(m_variables[i]))
+            formalism_copy.remove(m_variables[i]);
+        else
+            ok = false;
+    }
+
+    // Comprobamos que no hay más variables en el formalismo de las que se proporcionan
+    // Si eliminamos los operadores y espacios en blanco, debe quedar un QString vacío
+    formalism_copy.remove("[+-*/()]");
+    QString formalism_empty = formalism_copy.simplified();
+    if (!formalism_empty.isEmpty())
+        ok = false;
+
+    // Comprobar que la numeración del identificador es correlativa
+    // ...
+
+    return ok;
+}
+
+QString TFormalism::getId()
+{
+    return m_id;
+}
+
+QString TFormalism::getName()
+{
+    return m_name;
+}
+
+QString TFormalism::getFormalism()
+{
+    return m_formalism;
+}
+
+QString TFormalism::getVariables()
+{
+    QString lista_var;
+
+    for (unsigned int i=0; i<m_variables.size(); i++)
+    {
+        lista_var.append(m_variables[i] + ',');
+    }
+    lista_var.removeLast();
+
+    return lista_var;
+}
+
+
+// PROCESOS
+std::vector<TProcess> TProcess::s_processes;
+
+TProcess::TProcess(QString id, QString name, QString description, QString idForm, std::vector<QString> substances)
+    :m_id(id), m_name(name), m_description(description), m_idForm(idForm), m_substances(substances)
+{
+    if (check())
+        s_processes.push_back(*this);
+    //else
+        // Mostrar mensaje de error, por dónde? ("Error al obtener el proceso" + QString::number(m_id))
+}
+
+bool TProcess::check()
+{
+    bool ok = true;
+
+    // Comprobar que la numeración del identificador es correlativa
+    // ...
+
+    // La longitud del vector de variables del formalismo asociado debe coincidir
+    // con la longitud del vector de sustancias del proceso (implícitamente se
+    // comprueba que el formalismo existe)
+    TFormalism objForm = getFormalism(m_idForm);
+
+    if (objForm.m_variables.size() != m_substances.size())
+        ok = false;
+
+    // Comprobamos que todos metabolitos y parámetros que indica el proceso existen:
+    // Creamos un QString de identificadores de metabolitos y parámetros, y buscamos en él
+    QString id_meta_params;
+
+    for (unsigned int i=0; i<TModelMetabolite::s_metabolites.size(); i++)
+    {
+        id_meta_params.append(TModelMetabolite::s_metabolites[i].getId());
+    }
+
+    for (unsigned int j=0; j<TModelParameter::s_params.size(); j++)
+    {
+        id_meta_params.append(TModelParameter::s_params[j].getId());
+    }
+
+    for (unsigned int k=0; k<m_substances.size(); k++)
+    {
+        if (!id_meta_params.contains(m_substances[k]))
+            ok = false;
+    }
+
+    return ok;
+}
+
+TFormalism TProcess::getFormalism(QString m_idForm)
+{
+    QString id_copy = m_idForm; // m_idForm es de la forma "F1"
+    id_copy.remove('F');        // obtenemos "1"
+
+    return TFormalism::s_formalisms[ id_copy.toInt() - 1 ];
+}
+
+QString TProcess::getProcess()
+{
+    // El proceso comienza siendo igual que el formalismo asociado
+    TFormalism objForm = getFormalism(m_idForm);
+    QString process = objForm.m_formalism;
+
+    // Reemplazamos el valor de las variables del formalismo
+    // por las del proceso específicas, respetando el orden
+    for (unsigned int i=0; i<m_substances.size(); i++)
+    {
+        process.replace(objForm.m_variables[i], m_substances[i]);
+    }
+
+    return process;
 }
