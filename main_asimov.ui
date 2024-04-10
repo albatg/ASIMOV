@@ -50,28 +50,45 @@
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="textBody"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QFrame" name="frame_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QTextEdit" name="selectData"/>
+        <widget class="QFrame" name="frame_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QTextEdit" name="textBody">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="selectData">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -119,6 +136,45 @@
       </layout>
      </widget>
     </item>
+    <item alignment="Qt::AlignBottom">
+     <widget class="QPushButton" name="helpButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 0px;
+	padding: 3px;
+}
+
+QPushButton:hover
+{
+	background-color: #003333;
+	border: 1px solid #59AD59;
+	color: #fff;
+
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>Help</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/images.qrc">
+        <normaloff>:/help100.png</normaloff>:/help100.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -134,7 +190,10 @@
     <property name="title">
      <string>Fichero</string>
     </property>
+    <addaction name="actionNuevo_2"/>
     <addaction name="actionAbrir"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="actionSalir"/>
    </widget>
    <addaction name="menuFichero"/>
   </widget>
@@ -144,7 +203,29 @@
     <string>Abrir</string>
    </property>
   </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionNuevo_2">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="img/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

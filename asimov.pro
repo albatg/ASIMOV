@@ -10,17 +10,27 @@ CONFIG += c++17
 
 SOURCES += \
     asimov_library.cpp \
+    help_dialog.cpp \
     main.cpp \
     main_asimov.cpp
 
 HEADERS += \
     asimov_library.h \
+    help_dialog.h \
     main_asimov.h
 
 FORMS += \
+    help_dialog.ui \
     main_asimov.ui
+
+RESOURCES += \
+    img/images.qrc \
+    img/style.qrc
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
