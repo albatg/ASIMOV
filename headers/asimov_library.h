@@ -435,9 +435,9 @@ class TFormalism
 
         /**
          * @brief getVariables Devuelve una lista de las variables que participan
-         * @return devuelve lista de variables
+         * @return devuelve un vector con los id de las variables
          */
-        QString getVariables();
+        std::vector<QString>& getVariables();
 
         /**
          * @brief Clase amiga que puede acceder a los datos privados de TFormalism.
@@ -498,6 +498,37 @@ class TProcess
          * @param m_substances Vector de las sustancias que aparecen en el proceso.
          */
         TProcess(QString m_id, QString m_name, QString m_description, QString m_idForm, std::vector<QString> m_substances);
+
+        /**
+         * @brief getId Devuelve el id del proceso
+         * @return QString
+         */
+        QString getId();
+
+        /**
+         * @brief getName Devuelve el nombre corto del proceso
+         * @return QString
+         */
+        QString getName();
+
+        /**
+         * @brief getDescription Devuelve el nombre largo del proceso
+         * @return QString
+         */
+        QString getDescription();
+
+        /**
+         * @brief getIDForm Devuelve el id del formalismo asociado al proceso
+         * @return QString
+         */
+        QString getIDForm();
+
+        /**
+         * @brief getSubstances Devuelve por referencia un vector con los id de las sustancias que
+         *        participan en el proceso
+         * @return vector de QString con los id de las sustancias
+         */
+        std::vector<QString>& getSubstances();
 
         /**
          * @brief check Método que comprueba la consistencia de los datos del proceso recogidos.
@@ -668,5 +699,4 @@ public:     // getters/setters
 public:     //public methods
 
 };
-
 
