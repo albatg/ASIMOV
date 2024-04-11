@@ -32,6 +32,8 @@ private slots:
 
     void on_formalism_button_clicked();
 
+    void on_process_button_clicked();  
+
 private:
     Ui::main_asimov *ui;
     TRawInput rawInput;
