@@ -163,6 +163,7 @@ double TModelMetabolite::range()
     return (getTopValue() - getBottomValue());
 }
 
+
 //PARAMETROS
 std::vector<TModelParameter> TModelParameter::s_params;
 
@@ -272,17 +273,9 @@ QString TFormalism::getFormalism()
     return m_formalism;
 }
 
-QString TFormalism::getVariables()
+std::vector<QString>& TFormalism::getVariables()
 {
-    QString lista_var;
-
-    for (unsigned int i=0; i<m_variables.size(); i++)
-    {
-        lista_var.append(m_variables[i] + ',');
-    }
-    lista_var.removeLast();
-
-    return lista_var;
+    return m_variables;
 }
 
 
@@ -292,7 +285,7 @@ std::vector<TProcess> TProcess::s_processes;
 TProcess::TProcess(QString id, QString name, QString description, QString idForm, std::vector<QString> substances)
     :m_id(id), m_name(name), m_description(description), m_idForm(idForm), m_substances(substances)
 {
-    if (check())
+    //if (check())
         s_processes.push_back(*this);
     //else
         // Mostrar mensaje de error, por dónde? ("Error al obtener el proceso" + QString::number(m_id))
@@ -310,7 +303,7 @@ bool TProcess::check()
     // comprueba que el formalismo existe)
     TFormalism objForm = getFormalism(m_idForm);
 
-    if (objForm.m_variables.size() != m_substances.size())
+    if (objForm.getVariables().size() != getSubstances().size())
         ok = false;
 
     // Comprobamos que todos metabolitos y parámetros que indica el proceso existen:
@@ -358,4 +351,29 @@ QString TProcess::getProcess()
     }
 
     return process;
+}
+
+QString TProcess::getId()
+{
+    return m_id;
+}
+
+QString TProcess::getName()
+{
+    return m_name;
+}
+
+QString TProcess::getDescription()
+{
+    return m_description;
+}
+
+QString TProcess::getIDForm()
+{
+    return m_idForm;
+}
+
+std::vector<QString>& TProcess::getSubstances()
+{
+    return m_substances;
 }
