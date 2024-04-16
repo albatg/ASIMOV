@@ -51,21 +51,25 @@ private slots:
      *          y muestra la información en un QLabel.
      */
 
-    void on_pushButton_clicked();
+   // void on_pushButton_clicked();
 
     /**
      * @brief Extrae información sobre los METANODOS del contenido del área de texto y la muestra en la ventana de salida.
      * @details Utiliza una lista de palabras clave (METANODE) para buscar e interpretar la información correspondiente en el contenido del área de texto.
      */
 
-    void on_buttomMetanode_clicked();
 
     /**
      * @brief Extrae información sobre los PARÁMETROS del contenido del área de texto y la muestra en la ventana de salida.
      * @details Utiliza una lista de palabras clave (PARAMETER) para buscar e interpretar la información correspondiente en el contenido del área de texto.
      */
     void on_parameter_button_clicked();
-    void processKeyword(QString &keyword,QString info);
+
+
+    std::vector<std::string> split(const std::string& s, char delimiter);
+    std::string trim(const std::string& str);
+
+    void processKeyword(std::string &keyword,std::string info);
 
     void on_actionNuevo_2_triggered();
 
@@ -76,8 +80,6 @@ private:
     Ui::main_asimov *ui;
     HelpDialog *helpDialog;
     TRawInput rawInput;
-    QVector<TModelParameter> parameters;
-    QVector<TModelMetabolite> metanodos;
-    //std::vector<TModelParameter> parameters;
+    std::string head_file;
 };
 #endif // MAIN_ASIMOV_H
