@@ -13,6 +13,7 @@
 #include <QMainWindow>
 #include "asimov_library.h"
 #include <help_dialog.h>
+#include <QProcess>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -58,6 +59,7 @@ private slots:
      * @details Utiliza una lista de palabras clave (METANODE) para buscar e interpretar la información correspondiente en el contenido del área de texto.
      */
 
+    void getParagraph();
 
     /**
      * @brief Extrae información sobre los PARÁMETROS del contenido del área de texto y la muestra en la ventana de salida.
@@ -65,8 +67,10 @@ private slots:
      */
     void on_parameter_button_clicked();
 
+    void clearAll();
 
     std::vector<std::string> split(const std::string& s, char delimiter);
+
     std::string trim(const std::string& str);
 
     void processKeyword(std::string &keyword,std::string info);
@@ -75,6 +79,10 @@ private slots:
 
 
     void on_helpButton_clicked();
+
+    void runScript();
+
+    void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
 private:
     Ui::main_asimov *ui;

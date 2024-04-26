@@ -2,6 +2,7 @@
 #define HELP_DIALOG_H
 
 #include <QDialog>
+#include <asimov_library.h>
 
 namespace Ui {
 class HelpDialog;
@@ -15,8 +16,15 @@ public:
     explicit HelpDialog(QWidget *parent = nullptr);
     ~HelpDialog();
 
+private slots:
+    void setInfo(std::string filePath);
+    void on_next_button_clicked();
+
+    void on_previous_button_clicked();
+
 private:
     Ui::HelpDialog *ui;
+    TRawInput help_rawInput;
 };
 
 #endif // HELP_DIALOG_H

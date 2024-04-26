@@ -1,0 +1,15 @@
+HEAD: Título o encabezado
+
+DESCRIPTION: Descripción del modelo en análisis.
+
+REMARKS: Comentarios u observaciones adicionales relevantes.
+
+METANODE: Metabolitos o entidades representadas en el modelo.
+
+PARAMETER: Parámetros específicos del modelo.
+
+FORMALISM: Formalismo matemático que describe las interacciones dentro del modelo.
+
+PROCESS: Procesos o reacciones representados en el modelo.
+
+EQUATION: Ecuaciones que rigen la dinámica del modelo.

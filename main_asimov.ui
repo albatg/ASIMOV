@@ -36,13 +36,19 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="title_label">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="text">
           <string>TextLabel</string>
@@ -111,23 +117,9 @@
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string>Leer</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttomMetanode">
-           <property name="text">
-            <string>Metanodos</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="parameter_button">
            <property name="text">
-            <string>Parametros</string>
+            <string>Calcular</string>
            </property>
           </widget>
          </item>

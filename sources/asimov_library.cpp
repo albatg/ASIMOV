@@ -7,6 +7,9 @@
 *
 */
 
+#ifndef ASIVMOV_LIBRARY_H
+#define ASIVMOV_LIBRARY_H
+
 #include "asimov_library.h"
 #include <QString>
 #include <QFile>
@@ -14,6 +17,10 @@
 #include <QMessageBox>
 #include <QObject>
 #include <fstream>
+
+#endif // ASIVMOV_LIBRARY_H
+
+
 
 
 // Constructor de la clase
@@ -159,14 +166,32 @@ TModelMetabolite::TModelMetabolite(short int index, std::string name, std::strin
     }
     //else
 
-    }
+}
+
+TModelMetabolite::TModelMetabolite()
+{
+    m_index = -1;
+    m_name = "";
+    m_id = "";
+    m_initValue = -1;
+    m_topValue = -1;
+    m_bottomValue = -1;
+    m_value = -1;
+    m_precision = -1;
+    m_tag = false;
+}
 
 bool TModelMetabolite::check()
 {
     bool ok = true;
 
-    // Comprobar que la numeración del identificador es correlativa
-    // ... (hacer aquí las comprobaciones)
+    // El índice del metabolito debe corresponder con la posición que le toca en el vector s_metabolites
+    if ( m_index != (s_metabolites.size() + 1.0) )
+        ok = false;
+
+    // El valor inicial del metabolito no debe salirse de su rango especificado
+    if ( m_initValue < m_bottomValue  &&  m_initValue > m_topValue)
+        ok = false;
 
     return ok;
 }
@@ -225,6 +250,10 @@ double TModelMetabolite::range()
     return (getTopValue() - getBottomValue());
 }
 
+void TModelMetabolite::clear() {
+    s_metabolites.clear();
+}
+
 //PARAMETROS
 short int TModelParameter::s_counter = 1;
 std::vector<TModelParameter> TModelParameter::s_params;
@@ -238,13 +267,23 @@ TModelParameter::TModelParameter(std::string ID, std::string description, double
     //else
     // Mensaje de error?
 }
+TModelParameter::TModelParameter()
+{
+    m_index = -1;
+    m_id = "";
+    m_description = "";
+    m_value = -1;
+    m_precision = -1;
+    m_tag = false;
+}
 
 bool TModelParameter::check()
 {
     bool ok = true;
 
-    // Comprobar que la numeración del identificador es correlativa
-    // ...
+    // El índice del parámetro debe corresponder con la posición que le toca en el vector s_params
+    if ( m_index != (s_params.size() + 1.0) )
+        ok = false;
 
     return ok;
 }
@@ -292,6 +331,10 @@ void TModelParameter::setTag(bool v_tag){
     m_tag = v_tag;
 }
 
+void TModelParameter::clear() {
+    s_params.clear();
+}
+
 // FORMALISMOS
 std::vector<TFormalism> TFormalism::s_formalisms;
 
@@ -305,30 +348,52 @@ TFormalism::TFormalism(std::string id, std::string name, std::string formalism, 
     // Mostrar mensaje de error, por dónde? ("Error al obtener el formalismo" + QString::number(m_id))
 }
 
+TFormalism::TFormalism()
+{
+    m_id = "F";
+    m_name = "";
+    m_formalism = "";
+    m_variables = {};
+}
+
 bool TFormalism::check()
 {
     bool ok = true;
+
+    std::string id_copy = m_id;
     std::string formalism_copy = m_formalism; // Trabajamos con una copia del formalismo
 
-    // Comprobamos que todas las variables que se proporcionan están en el formalismo
-    for (unsigned int i = 0; i < m_variables.size(); i++)
-    {
-        size_t pos = formalism_copy.find(m_variables[i]);
-        if (pos != std::string::npos)
-            formalism_copy.erase(pos, m_variables[i].length());
-        else
-            ok = false;
+    size_t found = id_copy.find('F'); // Busca la posición de 'F' en id_copy
+    if (found != std::string::npos) { // Verifica si se encontró 'F'
+        id_copy.erase(found, 1); // Borra el carácter 'F'
+
+        // Creamos una copia del vector de variables para no modificar el original
+        std::vector<std::string> variables_copy = m_variables;
+
+        for (const auto& variable : variables_copy)
+        {
+            // Buscamos la variable en formalism_copy y la eliminamos si se encuentra
+            size_t pos = formalism_copy.find(variable);
+            while (pos != std::string::npos)
+            {
+                formalism_copy.erase(pos, variable.length());
+                pos = formalism_copy.find(variable, pos); // Buscamos la siguiente ocurrencia de la variable
+            }
+        }
+
+        // Eliminamos los dígitos de formalism_copy
+        formalism_copy.erase(std::remove_if(formalism_copy.begin(), formalism_copy.end(), [](char c) { return std::isdigit(c); }), formalism_copy.end());
+
+        // Comprobamos que no hay más variables en el formalismo de las que se proporcionan
+        // Si eliminamos los operadores y espacios en blanco, debe quedar un std::string vacío
+        formalism_copy.erase(std::remove_if(formalism_copy.begin(), formalism_copy.end(), [](char c) { return c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')' || c == '[' || c == ']'; }), formalism_copy.end());
+        formalism_copy.erase(std::remove_if(formalism_copy.begin(), formalism_copy.end(), [](char c) { return std::isspace(c); }), formalism_copy.end());
+
+        if (!formalism_copy.empty())
+            //preguntar a Elena
+            ok = false; //false;
+
     }
-
-    // Comprobamos que no hay más variables en el formalismo de las que se proporcionan
-    // Si eliminamos los operadores y espacios en blanco, debe quedar un std::string vacío
-    formalism_copy.erase(std::remove_if(formalism_copy.begin(), formalism_copy.end(), [](char c) { return c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')'; }), formalism_copy.end());
-    formalism_copy.erase(std::remove_if(formalism_copy.begin(), formalism_copy.end(), [](char c) { return std::isspace(c); }), formalism_copy.end());
-
-    if (!formalism_copy.empty())
-        //preguntar a Elena
-        ok = true; //false;
-
     return ok;
 }
 
@@ -358,6 +423,10 @@ std::vector<std::string>& TFormalism::getVariables()
     return m_variables;
 }
 
+void TFormalism::clear() {
+    s_formalisms.clear();
+}
+
 
 // PROCESOS
 std::vector<TProcess> TProcess::s_processes;
@@ -371,38 +440,50 @@ TProcess::TProcess(std::string id, std::string name, std::string description, st
     // Mostrar mensaje de error, por dónde? ("Error al obtener el proceso" + QString::number(m_id))
 }
 
+TProcess::TProcess()
+{
+    m_id = "P";
+    m_name = "";
+    m_description = "";
+    m_idForm = "";
+    m_substances = {};
+}
+
 bool TProcess::check()
 {
     bool ok = true;
+    std::string id_copy = m_id;
 
-    // Comprobar que la numeración del identificador es correlativa
-    // ...
+    size_t found = id_copy.find('P'); // Busca la posición de 'P' en id_copy
+    if (found != std::string::npos) { // Verifica si se encontró 'F'
+        id_copy.erase(found, 1); // Borra el carácter 'P'
+    }
 
-    // La longitud del vector de variables del formalismo asociado debe coincidir
-    // con la longitud del vector de sustancias del proceso (implícitamente se
-    // comprueba que el formalismo existe)
     TFormalism objForm = getFormalism(m_idForm);
+
+    if (objForm.m_id == "F")
+        ok = false;
 
     if (objForm.getVariables().size() != getSubstances().size())
         ok = false;
 
     // Comprobamos que todos metabolitos y parámetros que indica el proceso existen:
     // Creamos un std::string de identificadores de metabolitos y parámetros, y buscamos en él
-    std::string id_meta_params;
+    std::string id_stored;
 
     for (unsigned int i = 0; i < TModelMetabolite::s_metabolites.size(); i++)
     {
-        id_meta_params.append(TModelMetabolite::s_metabolites[i].getId());
+        id_stored.append(TModelMetabolite::s_metabolites[i].getId());
     }
 
     for (unsigned int j = 0; j < TModelParameter::s_params.size(); j++)
     {
-        id_meta_params.append(TModelParameter::s_params[j].getId());
+        id_stored.append(TModelParameter::s_params[j].getId());
     }
 
     for (unsigned int k = 0; k < m_substances.size(); k++)
     {
-        if (id_meta_params.find(m_substances[k]) == std::string::npos)
+        if (id_stored.find(m_substances[k]) == std::string::npos)
             ok = false;
     }
 
@@ -426,22 +507,35 @@ std::string TProcess::getProcess()
 {
     // El proceso comienza siendo igual que el formalismo asociado
     TFormalism objForm = getFormalism(m_idForm);
-    std::string process = objForm.m_formalism;
+    //qDebug() << "Formalismo obtenido para m_idForm" << m_idForm << ":" << objForm.m_formalism;
 
+    std::string process = objForm.m_formalism;
     // Reemplazamos el valor de las variables del formalismo
     // por las del proceso específicas, respetando el orden
-    for (unsigned int i = 0; i < m_substances.size(); i++)
+    for (unsigned int i = 0; i < objForm.m_variables.size(); i++)
     {
-        size_t pos = process.find(objForm.m_variables[i]);
-        if (pos != std::string::npos)
+        std::string variable = objForm.m_variables[i];
+        size_t pos = 0;
+
+        // Buscar y reemplazar todas las ocurrencias de la variable en el proceso
+        while ((pos = process.find(variable, pos)) != std::string::npos)
         {
-            process.replace(pos, objForm.m_variables[i].size(), m_substances[i]);
+            // Verificar que la variable esté delimitada por caracteres que no sean alfanuméricos
+            if ((pos == 0 || !std::isalnum(process[pos - 1])) &&
+                (pos + variable.size() == process.size() || !std::isalnum(process[pos + variable.size()])))
+            {
+                // Reemplazar la ocurrencia de la variable en el proceso
+                process.replace(pos, variable.size(), m_substances[i]);
+            }
+            // Mover la posición más allá de la sustitución
+            pos += m_substances[i].size();
         }
     }
 
+    //qDebug() << process << "\n";
+
     return process;
 }
-
 
 std::string TProcess::getId()
 {
@@ -471,3 +565,118 @@ std::vector<std::string>& TProcess::getSubstances()
 std::vector<TProcess> TProcess::getProcesses(){
     return s_processes;
 }
+
+void TProcess::clear() {
+    s_processes.clear();
+}
+
+
+// ECUACIONES
+std::vector<TEquation> TEquation::s_equations;
+
+TEquation::TEquation(int index, std::string equation, std::string variable, std::string expression)
+    :m_index(index), m_equation(equation), m_variable(variable), m_expression(expression)
+{
+    //if (check())
+    s_equations.push_back(*this);
+
+}
+
+TEquation::TEquation()
+{
+    m_index = -1;
+    m_equation = "";
+    m_variable = "";
+    m_expression = "";
+}
+
+int TEquation::getIndex(){
+    return m_index;
+}
+
+std::string TEquation::getEquation(){
+    return m_equation;
+}
+
+std::string TEquation::getExpression(){
+    return m_expression;
+}
+
+std::string TEquation::getVariable(){
+    return m_variable;
+}
+
+std::vector<TEquation> TEquation::getEquations(){
+    return s_equations;
+}
+
+
+TProcess TEquation::getProcess(std::string m_IdProc){
+    std::string id_copy = m_IdProc;
+   // qDebug() <<  "id copy" << m_IdProc;
+    int index = 0;
+    size_t pos = id_copy.find_first_of("0123456789");
+    if (pos != std::string::npos){
+        // Extraer el número que sigue después de la posición encontrada
+        std::string num_process = id_copy.substr(pos);
+        index = std::stoi(num_process) - 1;
+    }
+    //qDebug() << TProcess::getProcesses().at(index).getProcess();
+
+    // Retornamos el formalismo correspondiente
+    return TProcess::getProcesses().at(index);
+}
+
+std::vector<std::string> TEquation::getSplittedExpression(std::string expression){
+    std::vector<std::string> processes;
+    size_t i = 0;
+    //qDebug() << "EXPRESION: " << expression;
+    // Bucle para buscar y extraer procesos
+
+    while (i < expression.size()) {
+        // Buscamos 'P' seguido de uno o más dígitos
+        if (expression[i] == 'P' && i + 1 < expression.size() && std::isdigit(expression[i + 1])) {
+            size_t start = i;
+            processes.push_back(expression.substr(start, start + 1));
+        }
+        // Busca '-' o '+' seguido de 'P' y uno o más dígitos
+        else if ((expression[i] == '-' || expression[i] == '+') && i + 2 < expression.size() && expression[i + 1] == 'P' && std::isdigit(expression[i + 2])) {
+            size_t start = i;
+            // Avanza hasta encontrar el siguiente espacio
+            while (i + 1 < expression.size() && !std::isspace(expression[i + 2]) && expression[i + 2] != '-' && expression[i + 2] != '+') {
+                ++i;
+            }
+            processes.push_back(expression.substr(start, i - start + 2)); // Incluimos el signo, 'P' y el número
+            ++i; // Avanza al siguiente caracter después del número
+        }
+        ++i;
+    }
+    return processes;
+}
+std::string TEquation::getEquationChanged(){
+    std::string expression = getExpression();
+    std::vector<std::string> processes = getSplittedExpression(expression);
+
+    std::string equationChanged;
+
+    // Itera sobre cada proceso y obtener su formalismo
+    for (const auto& process : processes) {
+        // Obtiene el formalismo asociado al proceso
+        std::string formalism = getProcess(process).getProcess();
+
+        // Agrega el formalismo al resultado, manteniendo el signo del proceso
+        if((process.front() == '+' || process.front() == '-'))
+            equationChanged.append(1, process.front()).append("(").append(formalism).append(")").append(" ");
+        else
+            equationChanged.append(formalism).append(" ");
+    }
+
+    //qDebug() << "Equation changed: " << equationChanged;
+    return equationChanged;
+}
+
+void TEquation::clear() {
+    s_equations.clear();
+}
+
+

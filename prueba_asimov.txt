@@ -1,0 +1,68 @@
+HEAD 		Glucolysis Human
+
+DESCRIPTION 	Model of Glucolysis in human hepatocytes based…
+REMARKS		Reference 
+REMARKS		Hormone regulation not implemented
+
+
+		
+METANODE	1	Glucose		
+                1	Glu		00.56		1000		0		0.0001
+
+METANODE	2	Adenosin-tri-phosphate
+                2	ATP		8.3e-2		nd		0		1e-5
+
+METANODE	3	Adenosin-di-phosphate
+                3	ADP		0.078		nd		0		1e-5
+
+METANODE	4	Glucose-6-phosphate	
+			4	Glu6P		0.33		nd		0		1e-5
+
+METANODE	5	Fructose-6-phosphate
+                5	Fru6P		3.2e-3		nd		0		1e-5
+
+	
+PARAMETER	1	Maximun velocity
+			1	Vm5		23.5		0.001
+	
+PARAMETER	2	Michaelis-Menten constant	
+			2	Km5a		3.5e-5		1e-7
+
+PARAMETER	3	Michaelis-Menten constant	
+			3	Km5b		1.1e-6		1e-7
+
+PARAMETER	4	Maximun velocity
+			4	VmS6		23.55		0.001
+	
+PARAMETER	5	Michaelis-Menten constant	
+			5	KmS6		3.5e-5		1e-7
+
+PARAMETER	6	Maximun velocity
+			6	VmP6		23.55		0.001
+	
+PARAMETER	7	Michaelis-Menten constant	
+			7	KmP6		3.5e-5		1e-7
+
+	
+FORMALISM	F1	bi-substrate sequential ordered			
+	(Vm, A, B, Kma, Kmb) = Vm*A*B/(A*B + Kmb*A + Kma*Kmb)
+
+PARAMETER	8	Maximun velocity
+		8	VmP6		23.55		0.001
+
+FORMALISM	F2	Michaelis-Menten bidirectional 
+	(Vms, Kms, S, Vmp, Kmp, P) = ((Vms*S/Kms)-(Vmp*P/Kmp))/(1+S/Kms+P/Kmp)
+
+
+PROCESS	P1	Hexokinase, Glucokinase
+		P1	HK	F1	(Vm5, Glu, ATP, Km5a, Km5b)	
+				
+PROCESS	P2	Phospho-Fructo-Isomerase
+		P2	PFK	F2	(VmS6, KmS6, G6P, VmP6, KmP6, F6P)
+	
+				
+EQUATION    1	d(Glu)/dt  	-P1
+EQUATION    2	d(ATP)/dt	-P1
+EQUATION    3	d(ADP)/dt	 P1
+EQUATION    4	d(G6P)/dt	 P1 -P2
+EQUATION    5	d(F6P)/dt	 P2

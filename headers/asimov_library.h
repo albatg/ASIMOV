@@ -13,7 +13,7 @@
 #include<QString>
 
 
-#endif // ASIMOV_LIBRARY_H
+
 
 class TPathway;
 
@@ -179,6 +179,11 @@ public:
                      double m_bottomValue, double m_value, double m_precision, bool m_tag);
 
     /**
+         * @brief TModelMetabolite Constructor por defecto. Establece m_index = -1
+         */
+    TModelMetabolite();
+
+    /**
          * @brief check Comprueba la consistencia de los datos recogidos del metabolito.
          * @return true si los datos son válidos, false en caso contrario.
          */
@@ -261,6 +266,8 @@ public:
         return s_metabolites;
     }
 
+    static void clear();
+
     friend class TProcess;
 };
 //=========================================================
@@ -325,6 +332,11 @@ class TModelParameter
          * @param m_Tag Etiqueta para marcar en caso de que queramos hacer un uso específico de ese parámetro.
          */
         TModelParameter(std::string m_ID, std::string m_Description, double m_Value,double m_Precision, bool m_Tag);
+
+        /**
+         * @brief TModelParameter Constructor por defecto. Establece m_index = -1
+         */
+        TModelParameter();
 
         /**
          * @brief check Comprueba la consistencia de los datos recogidos del parámetro.
@@ -402,6 +414,8 @@ class TModelParameter
             return s_params;
         }
 
+        static void clear();
+
         /**
          * @brief Clase amiga que puede acceder a los datos privados de TFormalism.
          */
@@ -453,6 +467,11 @@ public:
     TFormalism(std::string m_id, std::string m_name, std::string m_formalism, std::vector<std::string> m_variables);
 
     /**
+         * @brief TFormalism Constructor por defecto. Establece m_id = "F", el vector m_variables queda vacío.
+         */
+    TFormalism();
+
+    /**
          * @brief check Método que comprueba la consistencia entre las variables y la ecuación
          *        proporcionadas. En el formalismo deben aparecer todas las variables proporcionadas
          *        y sólo esas. Es llamado dentro del constructor antes de crear el objeto.
@@ -485,6 +504,8 @@ public:
          * @return devuelve un vector con los id de las variables
          */
     std::vector<std::string>& getVariables();
+
+    static void clear();
 
     /**
          * @brief Clase amiga que puede acceder a los datos privados de TFormalism.
@@ -547,6 +568,11 @@ public:
     TProcess(std::string m_id, std::string m_name, std::string m_description, std::string m_idForm, std::vector<std::string> m_substances);
 
     /**
+         * @brief TProcess Constructor por defecto. Establece m_id = "P", el vector m_sbustances queda vacío.
+         */
+    TProcess();
+
+    /**
          * @brief getId Devuelve el id del proceso
          * @return QString
          */
@@ -599,8 +625,91 @@ public:
          */
     std::string getProcess();
 
+   static void clear();
+
     static std::vector<TProcess> getProcesses();
 };
+
+class TEquation
+{
+private:
+    /**
+        * @brief Vector con todos las ecuaciones.
+        *        Su posición en el vector coincide con su id.
+    */
+    static std::vector<TEquation> s_equations;
+
+    /**
+        * @brief Index de la ecuación.
+    */
+    int m_index;
+
+    /**
+        * @brief Ecuación diferencial que forma parte del proceso a estudiar.
+    */
+    std::string m_equation;
+
+    std::string m_variable;
+
+    /**
+        * @brief  Vector de identificadores de los procesos que aparecen en la ecuación.
+    */
+    std::string m_expression;
+
+public:
+
+    /**
+         * @brief Constructor de la clase TEcuation.
+         * @param m_id Identificador de la ecuación.
+         * @param m_ecuation Ecuación diferencial de uno o varios procesos
+         * @param m_variable Variable que participa en la ecuacion
+         * @param m_processes Vector de ecuaciones.
+         */
+    TEquation(int m_index, std::string m_equation, std::string m_variable,  std::string m_expression);
+
+    /**
+         * @brief TEquation Constructor por defecto. Establece m_id = "E";
+         */
+    TEquation();
+
+    /**
+         * @brief  Devuelve el index de la ecuacion
+         * @return std::string
+         */
+    int getIndex();
+
+    /**
+         * @brief  Devuelve un string con la expresión de la ecuación diferencial
+         * @return std::string
+         */
+    std::string getEquation();
+
+    /**
+         * @brief  Devuelve un string con la expresión de los procesos que participan en la ecuación
+         * @return std::string
+         */
+
+    std::string getVariable();
+
+    std::string getExpression();
+
+    /**
+         * @brief check Método que comprueba la consistencia de los datos de la ecuación.
+         * @return true si los datos del proceso son correctos, false en caso contrario.
+         */
+    bool check();
+
+    TProcess getProcess(std::string m_IdProc);
+
+    std::vector<std::string> getSplittedExpression(std::string expression);
+
+    std::string getEquationChanged();
+
+    static void clear();
+
+    static std::vector<TEquation> getEquations();
+};
+
 //=========================================================
 
 
@@ -685,12 +794,12 @@ private:    // private members
     double m_initTime;
     double m_endTime;
     size_t m_cycles;
-    QString m_paramList;
+    std::string m_paramList;
 
 
 public:     // constructors
     TRunConfig(double v_initTime = 0, double v_endTime    = 0,
-               size_t v_cycles   = 0, QString v_paramList = ""):
+               size_t v_cycles   = 0, std::string v_paramList = ""):
         m_initTime(v_initTime), m_endTime (v_endTime),
         m_cycles (v_cycles), m_paramList (v_paramList){};
 
@@ -701,47 +810,13 @@ public:     // getters/setters
     void setEndTime(double t);
     size_t getCycles();
     void setCycles(size_t value);
-    QString getParamList();
-    void setParamList(QString pList);
+    std::string getParamList();
+    void setParamList(std::string pList);
 
 
 public:     //public methods
 
 };
 
-
-// --------------------------------------------------------
-//                     TFrameData
-// --------------------------------------------------------
-
-
-class TFrameData
-{
-private:    // private members
-
-public:     // constructors
-
-public:     // getters/setters
-
-public:     //public methods
-
-};
-
-
-// --------------------------------------------------------
-//                     TPathway
-// --------------------------------------------------------
-
-
-class TPathway
-{
-private:    // private members
-
-public:     // constructors
-
-public:     // getters/setters
-
-public:     //public methods
-
-};
+#endif // ASIMOV_LIBRARY_H
 
