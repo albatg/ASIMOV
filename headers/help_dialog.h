@@ -25,6 +25,8 @@ private slots:
 private:
     Ui::HelpDialog *ui;
     TRawInput help_rawInput;
+    int cont;
+    const int cont_max = 2;
 };
 
 #endif // HELP_DIALOG_H

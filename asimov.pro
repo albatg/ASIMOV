@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     asimov_library.cpp \
     help_dialog.cpp \
-    main.cpp \
     main_asimov.cpp
 
 HEADERS += \

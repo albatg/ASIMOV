@@ -60,7 +60,7 @@ class TRawInput : public QObject
          * @param v_source Puntero a un objeto QString que se asignará como fuente.
          * @post El objeto m_source queda apuntando al objeto QString proporcionado.
         */
-        void setSource(std::string& v_source);
+        void setSource(const std::string& v_source);
 
         /**
          * @brief Método que devuelve si se ha cargado una fuente(archivo) o no.
@@ -99,6 +99,21 @@ class TRawInput : public QObject
          */
         void clean();
 };
+
+
+class ErrorHandler {
+
+private:
+    static std::vector<std::string> errorMessages;
+
+public:
+    static void showError(const std::string& errorMessage);
+
+    static void displayErrors();
+
+};
+
+
 //=========================================================
 
 
@@ -331,7 +346,7 @@ class TModelParameter
          * @param m_Precision Precisión asociada al valor del parámetro.
          * @param m_Tag Etiqueta para marcar en caso de que queramos hacer un uso específico de ese parámetro.
          */
-        TModelParameter(std::string m_ID, std::string m_Description, double m_Value,double m_Precision, bool m_Tag);
+        TModelParameter(short int m_index, std::string m_ID, std::string m_Description, double m_Value,double m_Precision, bool m_Tag);
 
         /**
          * @brief TModelParameter Constructor por defecto. Establece m_index = -1

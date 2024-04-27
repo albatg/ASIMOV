@@ -58,7 +58,7 @@ PROCESS	P1	Hexokinase, Glucokinase
 		P1	HK	F1	(Vm5, Glu, ATP, Km5a, Km5b)	
 				
 PROCESS	P2	Phospho-Fructo-Isomerase
-		P2	PFK	F2	(VmS6, KmS6, G6P, VmP6, KmP6, F6P)
+                P2	PFK	F2	(VmS6, KmS6, Glu6P, VmP6, KmP6, Fru6P)
 	
 				
 EQUATION    1	d(Glu)/dt  	-P1

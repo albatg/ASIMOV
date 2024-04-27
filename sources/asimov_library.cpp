@@ -57,7 +57,7 @@ std::string TRawInput::getSource() {
     }
 }
 
-void TRawInput::setSource(std::string& v_source)
+void TRawInput::setSource(const std::string& v_source)
 {
     // Asignamos una nueva fuente de datos
     *m_source = v_source; // Copiamos el contenido del QString proporcionado
@@ -151,6 +151,26 @@ void TRawInput::clean(){
     } 
 }
 
+//MENSAJES DE ERROR
+std::vector<std::string> ErrorHandler::errorMessages;
+
+void ErrorHandler::showError(const std::string& errorMessage) {
+    errorMessages.push_back(errorMessage);
+}
+
+ void ErrorHandler::displayErrors() {
+    if (!errorMessages.empty()) {
+        QString errorText = "Se encontraron los siguientes errores:\n";
+        for (const auto& errorMessage : errorMessages) {
+            errorText += " - " + errorMessage + "\n";
+        }
+
+        QMessageBox::critical(nullptr, "Errores", errorText);
+
+        errorMessages.clear(); // Limpiar los mensajes de error después de mostrarlos.
+    }
+}
+
 
 //METANODOS
 
@@ -161,11 +181,12 @@ TModelMetabolite::TModelMetabolite(short int index, std::string name, std::strin
     : m_name(name), m_id(id), m_index(index), m_initValue(initValue), m_topValue(topValue), m_bottomValue(bottomValue),
     m_value(value), m_precision(precision), m_tag(tag)
 {
-    if (check()){
+    if (check())
         s_metabolites.push_back(*this);
+    else{
+        qDebug() << "entra";
+        ErrorHandler::showError("Error al obtener el metabolito" + std::to_string(index));
     }
-    //else
-
 }
 
 TModelMetabolite::TModelMetabolite()
@@ -186,13 +207,12 @@ bool TModelMetabolite::check()
     bool ok = true;
 
     // El índice del metabolito debe corresponder con la posición que le toca en el vector s_metabolites
-    if ( m_index != (s_metabolites.size() + 1.0) )
+    if ( m_index > (s_metabolites.size() + 1.0) )
         ok = false;
 
     // El valor inicial del metabolito no debe salirse de su rango especificado
     if ( m_initValue < m_bottomValue  &&  m_initValue > m_topValue)
         ok = false;
-
     return ok;
 }
 std::string TModelMetabolite::getName()
@@ -254,18 +274,19 @@ void TModelMetabolite::clear() {
     s_metabolites.clear();
 }
 
+
 //PARAMETROS
-short int TModelParameter::s_counter = 1;
 std::vector<TModelParameter> TModelParameter::s_params;
 
-TModelParameter::TModelParameter(std::string ID, std::string description, double value,double precision, bool tag)
-    :m_index(s_counter++),m_id(ID), m_description(description), m_value(value), m_precision(precision), m_tag(tag)
+TModelParameter::TModelParameter(short int index, std::string ID, std::string description, double value,double precision, bool tag)
+    :m_index(index++),m_id(ID), m_description(description), m_value(value), m_precision(precision), m_tag(tag)
 {
 
     if (check())
         s_params.push_back(*this);
-    //else
-    // Mensaje de error?
+    else
+        ErrorHandler::showError("Error al obtener el parámetro" + std::to_string(index));
+
 }
 TModelParameter::TModelParameter()
 {
@@ -344,8 +365,8 @@ TFormalism::TFormalism(std::string id, std::string name, std::string formalism, 
 
     if (check())
         s_formalisms.push_back(*this);
-    //else
-    // Mostrar mensaje de error, por dónde? ("Error al obtener el formalismo" + QString::number(m_id))
+    else
+        ErrorHandler::showError("Error al obtener el formalismo" + id);
 }
 
 TFormalism::TFormalism()
@@ -434,10 +455,10 @@ std::vector<TProcess> TProcess::s_processes;
 TProcess::TProcess(std::string id, std::string name, std::string description, std::string idForm, std::vector<std::string> substances)
     :m_id(id), m_name(name), m_description(description), m_idForm(idForm), m_substances(substances)
 {
-    //if (check())
-    s_processes.push_back(*this);
-    //else
-    // Mostrar mensaje de error, por dónde? ("Error al obtener el proceso" + QString::number(m_id))
+    if (check())
+        s_processes.push_back(*this);
+    else
+        ErrorHandler::showError("Error al obtener el proceso" + m_id);
 }
 
 TProcess::TProcess()
@@ -464,6 +485,7 @@ bool TProcess::check()
     if (objForm.m_id == "F")
         ok = false;
 
+
     if (objForm.getVariables().size() != getSubstances().size())
         ok = false;
 
@@ -474,6 +496,7 @@ bool TProcess::check()
     for (unsigned int i = 0; i < TModelMetabolite::s_metabolites.size(); i++)
     {
         id_stored.append(TModelMetabolite::s_metabolites[i].getId());
+
     }
 
     for (unsigned int j = 0; j < TModelParameter::s_params.size(); j++)
@@ -485,6 +508,7 @@ bool TProcess::check()
     {
         if (id_stored.find(m_substances[k]) == std::string::npos)
             ok = false;
+        qDebug() << m_substances[k];
     }
 
     return ok;
@@ -577,8 +601,10 @@ std::vector<TEquation> TEquation::s_equations;
 TEquation::TEquation(int index, std::string equation, std::string variable, std::string expression)
     :m_index(index), m_equation(equation), m_variable(variable), m_expression(expression)
 {
-    //if (check())
-    s_equations.push_back(*this);
+    if (check())
+        s_equations.push_back(*this);
+    else
+        ErrorHandler::showError("Error al obtener la ecuación" + std::to_string(index));
 
 }
 
@@ -610,6 +636,9 @@ std::vector<TEquation> TEquation::getEquations(){
     return s_equations;
 }
 
+bool TEquation::check(){
+    return true;
+}
 
 TProcess TEquation::getProcess(std::string m_IdProc){
     std::string id_copy = m_IdProc;

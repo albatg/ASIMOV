@@ -338,96 +338,31 @@ QComboBox::down-arrow
 
 /*-----QDoubleSpinBox & QCalendarWidget-----*/
 QDoubleSpinBox,
-QCalendarWidget QSpinBox 
+QCalendarWidget,QSpinBox
 {
-	background-color: #242424;
-	color : #fff;
-	border: 1px solid #1d1d1d;
-	border-radius: 4px;
-	padding: 3px;
-	padding-left: 5px;
+
+        color : #000;
+        border: 1px solid #1d1d1d;
+        padding: 3px;
+        padding-left: 5px;
+
+}
+
+QDoubleSpinBox:hover,
+QCalendarWidget::hover,
+QSpinBox:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
+
+}
+
+QDoubleSpinBox:hover,
+QCalendarWidget:hover,
+QSpinBox:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
 
 }
 
 
-QDoubleSpinBox::up-button, 
-QCalendarWidget QSpinBox::up-button
-{
-	background-color: #4a5157;
-    width: 16px; 
-	border-top-right-radius: 4px;
-    border-width: 1px;
-	border-color: #1d1d1d;
-
-}
-
-
-QDoubleSpinBox::up-button:hover, 
-QCalendarWidget QSpinBox::up-button:hover
-{
-	background-color: #585858;
-
-}
-
-
-QDoubleSpinBox::up-button:pressed, 
-QCalendarWidget QSpinBox::up-button:pressed
-{
-	background-color: #252525;
-    width: 16px; 
-    border-width: 1px;
-
-}
-
-
-QDoubleSpinBox::up-arrow,
-QCalendarWidget QSpinBox::up-arrow
-{
-    image: url(://arrow-up.png);
-    width: 7px;
-    height: 7px;
-
-}
-
-
-QDoubleSpinBox::down-button, 
-QCalendarWidget QSpinBox::down-button
-{
-	background-color: #4a5157;
-    width: 16px; 
-    border-width: 1px;
-	border-bottom-right-radius: 4px;
-	border-color: #1d1d1d;
-
-}
-
-
-QDoubleSpinBox::down-button:hover, 
-QCalendarWidget QSpinBox::down-button:hover
-{
-	background-color: #585858;
-
-}
-
-
-QDoubleSpinBox::down-button:pressed, 
-QCalendarWidget QSpinBox::down-button:pressed
-{
-	background-color: #252525;
-    width: 16px; 
-    border-width: 1px;
-
-}
-
-
-QDoubleSpinBox::down-arrow,
-QCalendarWidget QSpinBox::down-arrow
-{
-    image: url(://arrow-down.png);
-    width: 7px;
-    height: 7px;
-
-}
 
 
 /*-----QGroupBox-----*/

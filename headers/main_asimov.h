@@ -52,20 +52,7 @@ private slots:
      *          y muestra la información en un QLabel.
      */
 
-   // void on_pushButton_clicked();
-
-    /**
-     * @brief Extrae información sobre los METANODOS del contenido del área de texto y la muestra en la ventana de salida.
-     * @details Utiliza una lista de palabras clave (METANODE) para buscar e interpretar la información correspondiente en el contenido del área de texto.
-     */
-
     void getParagraph();
-
-    /**
-     * @brief Extrae información sobre los PARÁMETROS del contenido del área de texto y la muestra en la ventana de salida.
-     * @details Utiliza una lista de palabras clave (PARAMETER) para buscar e interpretar la información correspondiente en el contenido del área de texto.
-     */
-    void on_parameter_button_clicked();
 
     void clearAll();
 
@@ -77,12 +64,15 @@ private slots:
 
     void on_actionNuevo_2_triggered();
 
-
     void on_helpButton_clicked();
 
     void runScript();
 
     void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
+    void on_calculate_button_clicked();
+
+    void updateSource();
 
 private:
     Ui::main_asimov *ui;

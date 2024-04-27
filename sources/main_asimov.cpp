@@ -13,6 +13,23 @@
 #include <QDebug>
 
 
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    QFile styleSheetFile(":/Diffnes.qss");
+
+    if (styleSheetFile.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(styleSheetFile.readAll());
+        a.setStyleSheet(styleSheet);
+    } else {
+
+        qDebug() << "Error al abrir la hoja de estilos.";
+    }
+    main_asimov w;
+    w.show();
+    return a.exec();
+}
 
 //pushButton_2
 main_asimov::main_asimov(QWidget *parent)
@@ -22,11 +39,15 @@ main_asimov::main_asimov(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("ASIMOV");
 
+    // Conecta la señal textChanged() del QTextEdit a la ranura updateSource()
+    connect(ui->textBody, &QTextEdit::textChanged, this, &main_asimov::updateSource);
+
     ui->title_label->setText("");
+    ui->t_ini_label->setStyleSheet("color: black");
+    ui->t_fin_label->setStyleSheet("color: black");
+    ui->cycles_label->setStyleSheet("color: black");
 
     ui->menubar->setCornerWidget(ui->helpButton);
-
-
 }
 
 main_asimov::~main_asimov()
@@ -81,7 +102,6 @@ void main_asimov::on_actionAbrir_triggered() {
         ui->textBody->setText(QString::fromStdString(rawData));
 
     }
-
 
 }
 
@@ -171,14 +191,14 @@ void main_asimov::processKeyword(std::string &keyword,std::string info){
         }
 
         // Creamos una objeto de TModelParameter que se almacenará en su array interno
-        TModelParameter param = TModelParameter(id, description, std::stod(value), std::stod(precision), false);
+        TModelParameter param = TModelParameter(index,id, description, std::stod(value), std::stod(precision), false);
 
     }else if(keyword == "METANODE"){
         double valor_ini, valor_max, valor_min, precision;
 
         int index = (elementos.size() > 0) ? std::stoi(elementos.at(0)) : 0;
 
-        if (index == ((elementos.size() > 2) ? std::stoi(elementos.at(2)) : 0)) {
+        if (index == std::stoi(elementos.at(2))){
             std::string nd = "nd";
             std::string name = (elementos.size() > 1) ? elementos.at(1) : "";
             std::string id = (elementos.size() > 3) ? elementos.at(3) : "";
@@ -210,6 +230,7 @@ void main_asimov::processKeyword(std::string &keyword,std::string info){
 
             // Creamos el metanodo
             TModelMetabolite metanodo = TModelMetabolite(index, name, id, valor_ini, valor_max, valor_min, valor_ini, precision, false);
+
         }
     }else if(keyword == "FORMALISM"){
         std::string m_id = (elementos.size() > 0) ? elementos.at(0) : "";
@@ -239,7 +260,7 @@ void main_asimov::processKeyword(std::string &keyword,std::string info){
         TFormalism form = TFormalism(m_id, m_name, m_formalism, m_variables);
 
     }else if(keyword == "PROCESS"){
-
+        qDebug() << elementos;
         std::string m_id = (elementos.size() > 0) ? elementos.at(0) : "";
         std::string m_description = (elementos.size() > 1) ? elementos.at(1) : "";
         std::string m_name = (elementos.size() > 3) ?elementos.at(3) : "";
@@ -250,6 +271,8 @@ void main_asimov::processKeyword(std::string &keyword,std::string info){
         if (!substances.empty() && substances.front() == '(' && substances.back() == ')') {
             substances.erase(substances.begin()); // Elimina el paréntesis inicial
             substances.erase(substances.end() - 1); // Elimina el paréntesis final
+
+
         }
         std::vector<std::string> subs = split(substances, ',');
 
@@ -340,9 +363,21 @@ void main_asimov::getParagraph(){
     }
 
 }
-void main_asimov::on_parameter_button_clicked() {
+void main_asimov::on_calculate_button_clicked() {
     getParagraph();
-    std::vector<TEquation> equations = TEquation::getEquations();
+    ErrorHandler::displayErrors();
+
+    float t_ini = ui->t_ini_spinbox->value();
+    float t_fin = ui->t_fin_spinbox->value();
+    int cycles = ui->cycles_spinbox->value();
+
+    //runScript();
+
+    qDebug() << t_ini << "\n";
+    qDebug() << t_fin << "\n";
+    qDebug() << cycles << "\n";
+
+    /*std::vector<TEquation> equations = TEquation::getEquations();
 
     for(int i =0 ; i<equations.size(); i++){
         ui->selectData->append(QString::fromStdString("ECUACION " + std::to_string(i+1)));
@@ -350,7 +385,7 @@ void main_asimov::on_parameter_button_clicked() {
         ui->selectData->append(QString::fromStdString("expresión: " + equations[i].getExpression()));
         ui->selectData->append(QString::fromStdString("variable: " + equations[i].getVariable()));
         ui->selectData->append((QString::fromStdString(equations[i].getEquationChanged())) + "\n");
-    }
+    }*/
     //Esto no iría aquí, es de prueba para mostrar que todo se guardó correctamente
    /*std::vector<TModelParameter>parameters = TModelParameter::getParams();
 
@@ -428,9 +463,9 @@ void main_asimov::on_parameter_button_clicked() {
             var_mostrar = var_mostrar.substr(0, var_mostrar.size() - 2); // Elimina la coma y el espacio al final
 
         ui->selectData->append("variables: " + QString::fromStdString(var_mostrar) + "\n");
-    }*/
+    }
 
-
+*/
 
     std::vector<TProcess> processes = TProcess::getProcesses();
 
@@ -487,13 +522,16 @@ void main_asimov::on_actionNuevo_2_triggered()
     ui->selectData->clear();
 }
 
+void main_asimov::updateSource() {
+    // Actualiza m_source con el texto actual del QTextEdit
+    rawInput.setSource(ui->textBody->toPlainText().toStdString());
+}
+
 
 void main_asimov::on_helpButton_clicked()
 {
     helpDialog = new HelpDialog(this);
     helpDialog->show();
-
-    //runScript();
 }
 void main_asimov::runScript() {
     std::string scriptPath = "../ASIMOV/script.py";
@@ -558,3 +596,5 @@ void main_asimov::onProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
         process->deleteLater();  // Libera la memoria del proceso
     }
 }
+
+
