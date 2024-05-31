@@ -1,5 +1,6 @@
 \begin{theindex}
 
+<<<<<<< Updated upstream
   \item {asimov\_library.h}, \hyperpage{15}
 
   \indexspace
@@ -8,11 +9,195 @@
 
   \indexspace
 
+=======
+  \item {\texorpdfstring{$\sim$}{\string~}TRawInput}
+    \subitem {TRawInput}, \hyperpage{27}
+  \item {\texorpdfstring{$\sim$}{\string~}main\_asimov}
+    \subitem {main\_asimov}, \hyperpage{12}
+
+  \indexspace
+
+  \item {asimov\_library.cpp}, \hyperpage{33}
+  \item {asimov\_library.h}, \hyperpage{33}
+
+  \indexspace
+
+  \item {clean}
+    \subitem {TRawInput}, \hyperpage{27}
+  \item {createModel}
+    \subitem {TRawInput}, \hyperpage{27}
+
+  \indexspace
+
+  \item {Edit}
+    \subitem {TRawInput}, \hyperpage{27}
+
+  \indexspace
+
+  \item {getAllParameters}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getAllProducts}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getAllReagents}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getBottomValue}
+    \subitem {TModelMetabolite}, \hyperpage{14}
+  \item {getCycles}
+    \subitem {TRunConfig}, \hyperpage{30}
+  \item {getDescription}
+    \subitem {TModelParameter}, \hyperpage{18}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getEndTime}
+    \subitem {TRunConfig}, \hyperpage{30}
+  \item {getEquation}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getId}
+    \subitem {TModelMetabolite}, \hyperpage{14}
+    \subitem {TModelParameter}, \hyperpage{18}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getIndex}
+    \subitem {TModelParameter}, \hyperpage{18}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getInitTime}
+    \subitem {TRunConfig}, \hyperpage{30}
+  \item {getInitValue}
+    \subitem {TModelMetabolite}, \hyperpage{14}
+  \item {getLoaded}
+    \subitem {TRawInput}, \hyperpage{27}
+  \item {getName}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+  \item {GetOarameterNo}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {getParamList}
+    \subitem {TRunConfig}, \hyperpage{30}
+  \item {getPrecision}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+    \subitem {TModelParameter}, \hyperpage{19}
+  \item {GetProductNo}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {GetReagentNo}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {getSource}
+    \subitem {TRawInput}, \hyperpage{27}
+  \item {getTag}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+    \subitem {TModelParameter}, \hyperpage{19}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {getTopValue}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+  \item {getValue}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+    \subitem {TModelParameter}, \hyperpage{19}
+
+  \indexspace
+
+  \item {loadFromFile}
+    \subitem {TRawInput}, \hyperpage{28}
+
+  \indexspace
+
+  \item {m\_bottomValue}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+  \item {m\_cycles}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {m\_description}
+    \subitem {TModelParameter}, \hyperpage{20}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_endTime}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {m\_equation}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_id}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+    \subitem {TModelParameter}, \hyperpage{20}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_index}
+    \subitem {TModelParameter}, \hyperpage{20}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_initTime}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {m\_initValue}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+  \item {m\_loaded}
+    \subitem {TRawInput}, \hyperpage{29}
+  \item {m\_name}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+  \item {m\_parameter}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_paramList}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {m\_precision}
+    \subitem {TModelMetabolite}, \hyperpage{17}
+    \subitem {TModelParameter}, \hyperpage{20}
+  \item {m\_product}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_reagent}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_source}
+    \subitem {TRawInput}, \hyperpage{29}
+  \item {m\_tag}
+    \subitem {TModelMetabolite}, \hyperpage{17}
+    \subitem {TModelParameter}, \hyperpage{20}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {m\_topValue}
+    \subitem {TModelMetabolite}, \hyperpage{17}
+  \item {m\_value}
+    \subitem {TModelMetabolite}, \hyperpage{17}
+    \subitem {TModelParameter}, \hyperpage{20}
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{39}
+  \item {main.cpp}, \hyperpage{38}
+    \subitem {main}, \hyperpage{39}
+  \item {main\_asimov}, \hyperpage{11}
+    \subitem {\texorpdfstring{$\sim$}{\string~}main\_asimov}, 
+		\hyperpage{12}
+    \subitem {main\_asimov}, \hyperpage{12}
+    \subitem {on\_actionAbrir\_triggered}, \hyperpage{12}
+    \subitem {on\_actionGuardar\_triggered}, \hyperpage{12}
+    \subitem {on\_buttomMetanode\_clicked}, \hyperpage{12}
+    \subitem {on\_parameter\_button\_clicked}, \hyperpage{12}
+    \subitem {on\_pushButton\_clicked}, \hyperpage{13}
+    \subitem {rawInput}, \hyperpage{13}
+    \subitem {ui}, \hyperpage{13}
+  \item {main\_asimov.cpp}, \hyperpage{39}
+  \item {main\_asimov.h}, \hyperpage{39}
+  \item {mainpage.dox}, \hyperpage{41}
+
+  \indexspace
+
+  \item {newRawInput}
+    \subitem {TRawInput}, \hyperpage{28}
+
+  \indexspace
+
+  \item {on\_actionAbrir\_triggered}
+    \subitem {main\_asimov}, \hyperpage{12}
+  \item {on\_actionGuardar\_triggered}
+    \subitem {main\_asimov}, \hyperpage{12}
+  \item {on\_buttomMetanode\_clicked}
+    \subitem {main\_asimov}, \hyperpage{12}
+  \item {on\_parameter\_button\_clicked}
+    \subitem {main\_asimov}, \hyperpage{12}
+  \item {on\_pushButton\_clicked}
+    \subitem {main\_asimov}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Parameter}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {ParametersCount}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {Product}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {ProductsCount}
+    \subitem {TModelReaction}, \hyperpage{23}
+>>>>>>> Stashed changes
   \item {Proyecto ASIMOV. Aula de simulación y modelado virtual de procesos bio-\/moleculares}, 
 		\hyperpage{1}
 
   \indexspace
 
+<<<<<<< Updated upstream
   \item {TFrameData}, \hyperpage{9}
   \item {TModelMetabolite}, \hyperpage{10}
   \item {TModelParameter}, \hyperpage{10}
@@ -21,5 +206,188 @@
   \item {TRawInput}, \hyperpage{11}
     \subitem {TRawInput}, \hyperpage{12}
   \item {TRunConfig}, \hyperpage{12}
+=======
+  \item {range}
+    \subitem {TModelMetabolite}, \hyperpage{15}
+  \item {rawInput}
+    \subitem {main\_asimov}, \hyperpage{13}
+  \item {Reagent}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {ReagentsCount}
+    \subitem {TModelReaction}, \hyperpage{23}
+
+  \indexspace
+
+  \item {s\_counter}
+    \subitem {TModelParameter}, \hyperpage{20}
+  \item {setAllParameters}
+    \subitem {TModelReaction}, \hyperpage{23}
+  \item {setAllProducts}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setAllReagents}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setCycles}
+    \subitem {TRunConfig}, \hyperpage{30}
+  \item {setDescription}
+    \subitem {TModelParameter}, \hyperpage{19}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setEndTime}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {setEquation}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setid}
+    \subitem {TModelParameter}, \hyperpage{19}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setIndex}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setInitTime}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {SetParameterNo}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setParamList}
+    \subitem {TRunConfig}, \hyperpage{31}
+  \item {setPrecision}
+    \subitem {TModelParameter}, \hyperpage{19}
+  \item {SetProductNo}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {SetReagentNo}
+    \subitem {TModelReaction}, \hyperpage{24}
+  \item {setSource}
+    \subitem {TRawInput}, \hyperpage{28}
+  \item {setTag}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+    \subitem {TModelParameter}, \hyperpage{19}
+    \subitem {TModelReaction}, \hyperpage{25}
+  \item {setToFile}
+    \subitem {TRawInput}, \hyperpage{29}
+  \item {setValue}
+    \subitem {TModelMetabolite}, \hyperpage{16}
+    \subitem {TModelParameter}, \hyperpage{19}
+
+  \indexspace
+
+  \item {TFrameData}, \hyperpage{13}
+  \item {TModelMetabolite}, \hyperpage{13}
+    \subitem {getBottomValue}, \hyperpage{14}
+    \subitem {getId}, \hyperpage{14}
+    \subitem {getInitValue}, \hyperpage{14}
+    \subitem {getName}, \hyperpage{15}
+    \subitem {getPrecision}, \hyperpage{15}
+    \subitem {getTag}, \hyperpage{15}
+    \subitem {getTopValue}, \hyperpage{15}
+    \subitem {getValue}, \hyperpage{15}
+    \subitem {m\_bottomValue}, \hyperpage{16}
+    \subitem {m\_id}, \hyperpage{16}
+    \subitem {m\_initValue}, \hyperpage{16}
+    \subitem {m\_name}, \hyperpage{16}
+    \subitem {m\_precision}, \hyperpage{17}
+    \subitem {m\_tag}, \hyperpage{17}
+    \subitem {m\_topValue}, \hyperpage{17}
+    \subitem {m\_value}, \hyperpage{17}
+    \subitem {range}, \hyperpage{15}
+    \subitem {setTag}, \hyperpage{16}
+    \subitem {setValue}, \hyperpage{16}
+    \subitem {TModelMetabolite}, \hyperpage{14}
+  \item {TModelParameter}, \hyperpage{17}
+    \subitem {getDescription}, \hyperpage{18}
+    \subitem {getId}, \hyperpage{18}
+    \subitem {getIndex}, \hyperpage{18}
+    \subitem {getPrecision}, \hyperpage{19}
+    \subitem {getTag}, \hyperpage{19}
+    \subitem {getValue}, \hyperpage{19}
+    \subitem {m\_description}, \hyperpage{20}
+    \subitem {m\_id}, \hyperpage{20}
+    \subitem {m\_index}, \hyperpage{20}
+    \subitem {m\_precision}, \hyperpage{20}
+    \subitem {m\_tag}, \hyperpage{20}
+    \subitem {m\_value}, \hyperpage{20}
+    \subitem {s\_counter}, \hyperpage{20}
+    \subitem {setDescription}, \hyperpage{19}
+    \subitem {setid}, \hyperpage{19}
+    \subitem {setPrecision}, \hyperpage{19}
+    \subitem {setTag}, \hyperpage{19}
+    \subitem {setValue}, \hyperpage{19}
+    \subitem {TModelParameter}, \hyperpage{18}
+  \item {TModelReaction}, \hyperpage{21}
+    \subitem {getAllParameters}, \hyperpage{22}
+    \subitem {getAllProducts}, \hyperpage{22}
+    \subitem {getAllReagents}, \hyperpage{22}
+    \subitem {getDescription}, \hyperpage{22}
+    \subitem {getEquation}, \hyperpage{22}
+    \subitem {getId}, \hyperpage{22}
+    \subitem {getIndex}, \hyperpage{22}
+    \subitem {GetOarameterNo}, \hyperpage{22}
+    \subitem {GetProductNo}, \hyperpage{23}
+    \subitem {GetReagentNo}, \hyperpage{23}
+    \subitem {getTag}, \hyperpage{23}
+    \subitem {m\_description}, \hyperpage{25}
+    \subitem {m\_equation}, \hyperpage{25}
+    \subitem {m\_id}, \hyperpage{25}
+    \subitem {m\_index}, \hyperpage{25}
+    \subitem {m\_parameter}, \hyperpage{25}
+    \subitem {m\_product}, \hyperpage{25}
+    \subitem {m\_reagent}, \hyperpage{25}
+    \subitem {m\_tag}, \hyperpage{25}
+    \subitem {Parameter}, \hyperpage{23}
+    \subitem {ParametersCount}, \hyperpage{23}
+    \subitem {Product}, \hyperpage{23}
+    \subitem {ProductsCount}, \hyperpage{23}
+    \subitem {Reagent}, \hyperpage{23}
+    \subitem {ReagentsCount}, \hyperpage{23}
+    \subitem {setAllParameters}, \hyperpage{23}
+    \subitem {setAllProducts}, \hyperpage{24}
+    \subitem {setAllReagents}, \hyperpage{24}
+    \subitem {setDescription}, \hyperpage{24}
+    \subitem {setEquation}, \hyperpage{24}
+    \subitem {setid}, \hyperpage{24}
+    \subitem {setIndex}, \hyperpage{24}
+    \subitem {SetParameterNo}, \hyperpage{24}
+    \subitem {SetProductNo}, \hyperpage{24}
+    \subitem {SetReagentNo}, \hyperpage{24}
+    \subitem {setTag}, \hyperpage{25}
+    \subitem {TModelReaction}, \hyperpage{22}
+  \item {TPathway}, \hyperpage{26}
+  \item {TRawInput}, \hyperpage{26}
+    \subitem {\texorpdfstring{$\sim$}{\string~}TRawInput}, 
+		\hyperpage{27}
+    \subitem {clean}, \hyperpage{27}
+    \subitem {createModel}, \hyperpage{27}
+    \subitem {Edit}, \hyperpage{27}
+    \subitem {getLoaded}, \hyperpage{27}
+    \subitem {getSource}, \hyperpage{27}
+    \subitem {loadFromFile}, \hyperpage{28}
+    \subitem {m\_loaded}, \hyperpage{29}
+    \subitem {m\_source}, \hyperpage{29}
+    \subitem {newRawInput}, \hyperpage{28}
+    \subitem {setSource}, \hyperpage{28}
+    \subitem {setToFile}, \hyperpage{29}
+    \subitem {TRawInput}, \hyperpage{27}
+    \subitem {verifyModel}, \hyperpage{29}
+  \item {TRunConfig}, \hyperpage{29}
+    \subitem {getCycles}, \hyperpage{30}
+    \subitem {getEndTime}, \hyperpage{30}
+    \subitem {getInitTime}, \hyperpage{30}
+    \subitem {getParamList}, \hyperpage{30}
+    \subitem {m\_cycles}, \hyperpage{31}
+    \subitem {m\_endTime}, \hyperpage{31}
+    \subitem {m\_initTime}, \hyperpage{31}
+    \subitem {m\_paramList}, \hyperpage{31}
+    \subitem {setCycles}, \hyperpage{30}
+    \subitem {setEndTime}, \hyperpage{31}
+    \subitem {setInitTime}, \hyperpage{31}
+    \subitem {setParamList}, \hyperpage{31}
+    \subitem {TRunConfig}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Ui}, \hyperpage{9}
+  \item {ui}
+    \subitem {main\_asimov}, \hyperpage{13}
+
+  \indexspace
+
+  \item {verifyModel}
+    \subitem {TRawInput}, \hyperpage{29}
+>>>>>>> Stashed changes
 
 \end{theindex}

@@ -1,4 +1,5 @@
 <map id="main_asimov.cpp" name="main_asimov.cpp">
+<<<<<<< Updated upstream
 <area shape="rect" id="Node000001" title=" " alt="" coords="269,5,391,32"/>
 <area shape="rect" id="Node000002" href="$main__asimov_8h.html" title=" " alt="" coords="71,80,178,107"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,35,176,77,174,72,293,30"/>
@@ -8,6 +9,21 @@
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="343,31,376,67,372,70,339,34"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="463,80,570,107"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="363,30,471,71,469,76,362,35"/>
+=======
+<area shape="rect" id="Node000001" title=" " alt="" coords="395,5,516,32"/>
+<area shape="rect" id="Node000002" href="$main__asimov_8h.html" title=" " alt="" coords="71,80,178,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="398,35,194,80,193,74,397,30"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="203,80,327,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="423,35,313,77,311,72,421,30"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="351,80,440,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="447,34,417,70,413,66,443,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="463,80,570,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="468,31,498,66,494,70,464,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="595,80,694,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="489,30,598,71,596,76,487,35"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="719,80,787,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="510,30,704,77,703,82,509,35"/>
+>>>>>>> Stashed changes
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,155,111,181"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,109,82,145,78,141,111,105"/>
 <area shape="rect" id="Node000004" href="$asimov__library_8h.html" title=" " alt="" coords="134,155,249,181"/>

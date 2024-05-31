@@ -1,0 +1,272 @@
+\doxysection{main\+\_\+asimov.\+cpp}
+\hypertarget{main__asimov_8cpp_source}{}\label{main__asimov_8cpp_source}\mbox{\hyperlink{main__asimov_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main__asimov_8h}{main\_asimov.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}ui\_main\_asimov.h"{}}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00007}\mbox{\hyperlink{classmain__asimov_a8eebde73a00ceeec2a807c858d295e30}{00007}}\ \mbox{\hyperlink{classmain__asimov_a8eebde73a00ceeec2a807c858d295e30}{main\_asimov::main\_asimov}}(QWidget\ *parent)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00008}00008\ \ \ \ \ :\ QMainWindow(parent)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00009}00009\ \ \ \ \ ,\ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{classmain__asimov}{main\_asimov}})}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>title\_label-\/>setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00015}\mbox{\hyperlink{classmain__asimov_af93e3300e0e8b3c03334195d090876e7}{00015}}\ \mbox{\hyperlink{classmain__asimov_af93e3300e0e8b3c03334195d090876e7}{main\_asimov::\string~main\_asimov}}()}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00020}\mbox{\hyperlink{classmain__asimov_acffd698a43df1958502abe96beecbc5a}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain__asimov_acffd698a43df1958502abe96beecbc5a}{main\_asimov::on\_actionAbrir\_triggered}}()}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00022}00022\ \ \ \ \ QString\ fname\ =\ QFileDialog::getOpenFileName(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Título\ del\ Menú"{}},\ \textcolor{stringliteral}{"{}./"{}},\ \textcolor{stringliteral}{"{}All\ (*.*)"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (fname.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ El\ usuario\ canceló\ la\ selección\ del\ archivo}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a1aa288059083b8a504dc4b1d4d1485fe}{rawInput}}.\mbox{\hyperlink{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}{setSource}}(\&fname);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ \mbox{\hyperlink{classmain__asimov_a1aa288059083b8a504dc4b1d4d1485fe}{rawInput}}.\mbox{\hyperlink{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}{loadFromFile}}();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!loaded)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ QMessageBox::warning(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}No\ se\ pudo\ cargar\ correctamente\ el\ archivo."{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Accede\ a\ los\ datos}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00039}00039\ \ \ \ \ QString\ rawData\ =\ \mbox{\hyperlink{classmain__asimov_a1aa288059083b8a504dc4b1d4d1485fe}{rawInput}}.\mbox{\hyperlink{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}{getSource}}();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>clear();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>setText(rawData);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00046}\mbox{\hyperlink{classmain__asimov_a9523db62e0cc01cc6573d847886b8776}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain__asimov_a9523db62e0cc01cc6573d847886b8776}{main\_asimov::on\_actionGuardar\_triggered}}()\{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00047}00047\ \ \ \ \ QString\ fileName\ =\ QFileDialog::getSaveFileName(\textcolor{keyword}{this},\ tr(\textcolor{stringliteral}{"{}Guardar\ archivo"{}}),\ \textcolor{stringliteral}{"{}"{}},\ tr(\textcolor{stringliteral}{"{}Archivos\ de\ texto\ (*.txt);;Todos\ los\ archivos\ (*)"{}}));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (fileName.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ El\ usuario\ canceló\ la\ operación}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00054}00054\ \ \ \ \ QFile\ file(fileName);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::WriteOnly\ |\ QIODevice::Text))\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ tr(\textcolor{stringliteral}{"{}Error"{}}),\ tr(\textcolor{stringliteral}{"{}No\ se\ pudo\ abrir\ el\ archivo\ para\ escribir"{}}));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00060}00060\ \ \ \ \ QTextStream\ out(\&file);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00061}00061\ \ \ \ \ out\ <<\ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>toPlainText();\ \textcolor{comment}{//\ Guardar\ el\ contenido\ del\ QTextEdit\ en\ el\ archivo}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00063}00063\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00064}00064\ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ tr(\textcolor{stringliteral}{"{}Éxito"{}}),\ tr(\textcolor{stringliteral}{"{}Archivo\ guardado\ exitosamente"{}}));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00068}\mbox{\hyperlink{classmain__asimov_a3edae83c521b8db2e924e566b970ff3c}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain__asimov_a3edae83c521b8db2e924e566b970ff3c}{main\_asimov::on\_pushButton\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//Recupera\ contenido\ en\ el\ área\ de\ texto\ textBody}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00071}00071\ \ \ \ \ QString\ fileContent\ =\ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>toPlainText();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Lista\ de\ palabras\ clave}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00074}00074\ \ \ \ \ QStringList\ keywords\ =\ \{\textcolor{stringliteral}{"{}HEAD"{}},\ \textcolor{stringliteral}{"{}DESCRIPTION"{}}\};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Texto\ para\ el\ label}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00077}00077\ \ \ \ \ QString\ labelText;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ Itera\ sobre\ la\ lista\ de\ palabras\ clave\ buscando\ cuáles\ coinciden}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keyword}{const}\ QString\ \&keyword,\ keywords)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Busca\ la\ posición\ de\ la\ palabra\ clave\ dentro\ del\ contenido\ del\ archivo}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ keywordIndex\ =\ fileContent.indexOf(keyword);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ ha\ encontrado\ la\ palabra\ (diferente\ ded\ -\/1,\ que\ es\ lo\ que\ devoldería\ si\ no\ encuentra\ nada)}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keywordIndex\ !=\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Aquí\ usammos\ la\ función\ mid\ para\ obtenre\ una\ subcadena\ que\ comience\ justo\ después\ de\ la}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00086}00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ *\ palabra\ clave.}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ *\ keywordIndex\ es\ la\ posición\ donde\ comienza\ y\ le\ sumamos\ su\ longitud}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00088}00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ sectionAfterKeyword\ =\ fileContent.mid(keywordIndex\ +\ keyword.length());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buscar\ el\ índice\ de\ la\ próxima\ línea\ después\ de\ la\ palabra\ clave}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextLineIndex\ =\ sectionAfterKeyword.indexOf(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ lo\ encontramos}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextLineIndex\ !=\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Coge\ la\ subcadena\ y\ corta\ a\ partir\ del\ salto\ de\ línea}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ sectionText\ =\ sectionAfterKeyword.left(nextLineIndex).trimmed();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Agrega\ el\ texto\ al\ label\ solo\ si\ es\ después\ de\ "{}HEAD"{}\ o\ "{}DESCRIPTION"{}}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyword\ ==\ \textcolor{stringliteral}{"{}HEAD"{}}\ ||\ keyword\ ==\ \textcolor{stringliteral}{"{}DESCRIPTION"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ labelText\ +=\ sectionText\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{comment}{//\ Mostrar\ el\ texto\ en\ el\ label}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>title\_label-\/>setText(labelText.trimmed().toUpper());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>title\_label-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00112}00112\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00113}00113\ \textcolor{comment}{\ *\ \ Botón\ para\ extraer\ de\ los\ datos\ la\ info\ de\ los\ METANODOS}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00114}00114\ \textcolor{comment}{\ *\ \ y\ mostrarla\ por\ la\ ventana\ de\ salida}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00115}00115\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00116}\mbox{\hyperlink{classmain__asimov_af0be513f8f920f43d6d4e7a43f4bd87d}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain__asimov_af0be513f8f920f43d6d4e7a43f4bd87d}{main\_asimov::on\_buttomMetanode\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00117}00117\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//\ Variables}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00119}00119\ \ \ \ \ QString\ texto\ =\ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>document()-\/>toPlainText();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00120}00120\ \ \ \ \ QString\ keyM\ =\ \textcolor{stringliteral}{"{}METANODE"{}};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00122}00122\ \ \ \ \ QString\ info\_metanodo;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00123}00123\ \ \ \ \ QStringList\ elementosM;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00124}00124\ \ \ \ \ QString\ nd\ =\ \textcolor{stringliteral}{"{}nd"{}};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00125}00125\ \ \ \ \ QString\ name,\ id,\ valor\_ini\_str,\ valor\_max\_str,\ valor\_min\_str,\ precision\_str;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{double}\ valor\_ini,\ valor\_max,\ valor\_min,\ precision;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_metanodos\ =\ texto.count(keyM);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00129}00129\ \ \ \ \ QVector<TModelMetabolite>\ metanodos;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_metanodos==0)\ \textcolor{comment}{//\ No\ hay\ metanodos\ en\ el\ texto\ seleccionado}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00132}00132\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}No\ se\ encontraron\ metanodos"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ Sí\ hay\ metanodos}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;\ i<num\_metanodos;\ i++)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Por\ cada\ metanodo\ encontrado,\ recogemos\ sus\ datos\ usando\ section}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ info\_metanodo\ =\ texto.section(keyM,\ i,\ i);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Separamos\ por\ tabulaciones}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ elementosM\ =\ info\_metanodo.split(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Eliminamos\ otros\ elementos\ tales\ como\ saltos\ de\ linea\ y\ otros}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (QString\&\ elementoM\ :\ elementosM)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ elementoM\ =\ elementoM.simplified();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Eliminamos\ cadenas\ en\ blanco}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ elementosM.removeAll(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Escogemos\ los\ que\ nos\ interesan}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementosM.size();\ j\ +=\ 6)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ elementosM.value(j,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ elementosM.value(j+1,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_ini\_str\ =\ elementosM.value(j+2,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_max\_str\ =\ elementosM.value(j+3,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_min\_str\ =\ elementosM.value(j+4,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision\_str\ =\ elementosM.value(j+5,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ falta\ comprobar\ que\ el\ id\ es\ único\ para\ cada\ metanodo!!!}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ si\ algún\ dato\ numérico\ es\ nd,\ ponemos\ su\ valor\ por\ defecto}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valor\_ini\_str\ ==\ nd)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_ini\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_ini\ =\ valor\_ini\_str.toDouble();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valor\_max\_str\ ==\ nd)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_max\ =\ INT\_MAX;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_max\ =\ valor\_max\_str.toDouble();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valor\_min\_str\ ==\ nd)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_min\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_min\ =\ valor\_min\_str.toDouble();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (precision\_str\ ==\ nd)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision\ =\ 0.0000001;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision\ =\ precision\_str.toDouble();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creamos\ el\ metanodo\ y\ lo\ añadimos\ a\ la\ lista\ de\ metanodos}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}\ metanodo\ =\ \mbox{\hyperlink{class_t_model_metabolite}{TModelMetabolite}}(name,\ \textcolor{keywordtype}{id},\ valor\_ini,\ valor\_max,\ valor\_min,\ valor\_ini,\ precision,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ metanodos.push\_back(\ metanodo\ );}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Una\ vez\ recogida\ la\ info\ de\ todos\ los\ metanodos,\ mostramos\ los\ datos\ por\ pantalla}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<metanodos.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}METANODO\ "{}}\ +\ QString::number(i+1));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}nombre:\ "{}}\ +\ metanodos[i].getName());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}id:\ "{}}\ +\ metanodos[i].getId());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}valor\ inicial:\ "{}}\ +\ QString::number(metanodos[i].getInitValue()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}valor\ maximo:\ "{}}\ +\ QString::number(metanodos[i].getTopValue()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}valor\ minimo:\ "{}}\ +\ QString::number(metanodos[i].getBottomValue()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}precision:\ "{}}\ +\ QString::number(metanodos[i].getPrecision()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}tag:\ "{}}\ +\ QString::number(metanodos[i].getTag())\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00202}\mbox{\hyperlink{classmain__asimov_aada29951988d29cf8f39345b15c1531f}{00202}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain__asimov_aada29951988d29cf8f39345b15c1531f}{main\_asimov::on\_parameter\_button\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00203}00203\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00204}00204\ \ \ \ \ QString\ texto\ =\ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>textBody-\/>toPlainText();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00205}00205\ \ \ \ \ QString\ keyP\ =\ \textcolor{stringliteral}{"{}PARAMETER"{}};}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_parameters\ =\ texto.count(keyP);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00208}00208\ \ \ \ \ QString\ param\_out;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00209}00209\ \ \ \ \ QString\ info\_param;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00210}00210\ \ \ \ \ std::vector<TModelParameter>\ lista;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00211}00211\ \ \ \ \ QVector<TModelParameter>\ parameters;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_parameters==0)\ \textcolor{comment}{//\ No\ hay\ parametros\ en\ el\ texto\ seleccionado}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00214}00214\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}No\ se\ encontraron\ parametros"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//En\ caso\ de\ que\ sí\ haya\ parámetros}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00218}00218\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=1;\ i<=num\_parameters;\ i++)}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Por\ cada\ parametro\ encontrado,\ recogemos\ sus\ datos\ usando\ section}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ info\_param\ =\ texto.section(keyP,\ i,\ i);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Separamos\ por\ tabulaciones}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ QStringList\ elementos\ =\ info\_param.split(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Eliminamos\ otros\ elementos\ tales\ como\ saltos\ de\ linea\ y\ otros}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (QString\&\ elemento\ :\ elementos)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ elemento\ =\ elemento.simplified();}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Eliminamos\ cadenas\ en\ blanco}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ elementos.removeAll(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ QString\&\ elem\ :\ elementos)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ elem;}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Escogemos\ los\ que\ nos\ interesan}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementos.size();\ j\ +=\ 6)\ \{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ description\ =\ elementos.value(j\ +\ 1,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ \textcolor{keywordtype}{id}\ =\ elementos.value(j\ +\ 3,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ value\ =\ elementos.value(j\ +\ 4,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ precision\ =\ elementos.value(j\ +\ 5,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creamos\ el\ parametro\ y\ lo\ añadimos\ a\ la\ lista\ de\ parametros}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter}{TModelParameter}}\ param\ =\ \mbox{\hyperlink{class_t_model_parameter}{TModelParameter}}(\textcolor{keywordtype}{id},\ description,\ value.toDouble(),\ precision.toDouble(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parameters.push\_back(param);}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Una\ vez\ recogida\ la\ información,\ mostramos\ los\ datos\ por\ pantalla}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<parameters.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}PARAMETRO\ "{}}\ +\ QString::number(i+1));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}index:\ "{}}\ +\ QString::number(parameters[i].getIndex()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}id:\ "{}}\ +\ parameters[i].getId());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}description:\ "{}}\ +\ parameters[i].getDescription());}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}value:\ "{}}\ +\ QString::number(parameters[i].getValue()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}precision:\ "{}}\ +\ QString::number(parameters[i].getPrecision()));}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmain__asimov_a18b4141df062ea62a7c04be436de4948}{ui}}-\/>selectData-\/>append(\textcolor{stringliteral}{"{}tag:\ "{}}\ +\ QString::number(parameters[i].getTag())\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00262}00262\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00263}00263\ \}}
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{main__asimov_8cpp_source_l00267}00267\ }
+
+\end{DoxyCode}

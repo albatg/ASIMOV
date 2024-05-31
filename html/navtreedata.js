@@ -26,12 +26,17 @@ var NAVTREE =
 [
   [ "ASIMOV", "index.html", [
     [ "Proyecto ASIMOV. Aula de simulación y modelado virtual de procesos bio-moleculares", "index.html", "index" ],
+<<<<<<< Updated upstream
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+=======
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+>>>>>>> Stashed changes
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],

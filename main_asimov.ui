@@ -50,6 +50,7 @@
         </widget>
        </item>
        <item>
+<<<<<<< Updated upstream
         <widget class="QTextEdit" name="textBody"/>
        </item>
       </layout>
@@ -72,6 +73,31 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QTextEdit" name="selectData"/>
+=======
+        <widget class="QFrame" name="frame_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QTextEdit" name="textBody">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+>>>>>>> Stashed changes
        </item>
       </layout>
      </widget>
@@ -108,9 +134,64 @@
           </widget>
          </item>
          <item>
+<<<<<<< Updated upstream
           <widget class="QPushButton" name="parameter_button">
            <property name="text">
             <string>Parametros</string>
+=======
+          <widget class="QDoubleSpinBox" name="t_fin_spinbox">
+           <property name="maximum">
+            <double>100.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="cycles_label">
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Ciclos</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="cycles_spinbox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="calculate_button">
+           <property name="text">
+            <string>Calcular</string>
+>>>>>>> Stashed changes
            </property>
           </widget>
          </item>

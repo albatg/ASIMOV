@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.26)  26 FEB 2024 10:41
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.26)  26 FEB 2024 12:24
+>>>>>>> Stashed changes
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,8 +838,33 @@ Package hyperref Info: Option `unicode' set `true' on input line 191.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 196.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 10.79993pt on input line 198.
  [1
+=======
+(Font)              scaled to size 10.79993pt on input line 197.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 197.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 197
+.
+
+(C:\Users\lgome\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 197
+.
+
+(C:\Users\lgome\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 19
+7.
+
+(C:\Users\lgome\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+[1
+>>>>>>> Stashed changes
 
 
 {C:/Users/lgome/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/lgom
@@ -846,6 +875,7 @@ e/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2
 \openout6 = `refman.toc'.
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 8.99994pt on input line 204.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 204
 .
@@ -874,6 +904,16 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 207.
+=======
+(Font)              scaled to size 8.99994pt on input line 205.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 205.
+ [1]
+[2] [3] [4] [5] [6
+
+]
+Package hyperref Info: Option `pageanchor' set `true' on input line 208.
+>>>>>>> Stashed changes
  (index.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -902,6 +942,7 @@ Chapter 4.
 
 ]
 Chapter 5.
+<<<<<<< Updated upstream
 (classmain__asimov.tex
 Package epstopdf Info: Source file: <classmain__asimov.eps>
 (epstopdf)                    date: 2024-02-26 10:22:01
@@ -922,11 +963,33 @@ line 6.
 (pdftex.def)             Requested size: 72.39859pt x 56.9055pt.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
 2.
+=======
+(namespace_ui.tex) [9] [10
+
+]
+Chapter 6.
+(classmain__asimov.tex
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 5.
+
+
+(C:\Users\lgome\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) <./classmain__asimov__coll__graph.pdf>
+<classmain__asimov__coll__graph.pdf, id=957, 238.8925pt x 168.63pt>
+File: classmain__asimov__coll__graph.pdf Graphic file (type pdf)
+<use classmain__asimov__coll__graph.pdf>
+Package pdftex.def Info: classmain__asimov__coll__graph.pdf  used on input line
+ 13.
+(pdftex.def)             Requested size: 238.0pt x 167.99916pt.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+9.
+>>>>>>> Stashed changes
 
 (C:\Users\lgome\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 8.99994pt on input line 12.
 )
 (class_t_frame_data.tex) (class_t_model_metabolite.tex [9])
@@ -974,28 +1037,224 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
 
 Underfull \hbox (badness 10000) detected at line 25
+=======
+(Font)              scaled to size 8.99994pt on input line 19.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 45.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 50.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 50.
+
+[11] <./classmain__asimov_acffd698a43df1958502abe96beecbc5a_cgraph.pdf>
+<classmain__asimov_acffd698a43df1958502abe96beecbc5a_cgraph.pdf, id=993, 381.42
+5pt x 176.66pt>
+File: classmain__asimov_acffd698a43df1958502abe96beecbc5a_cgraph.pdf Graphic fi
+le (type pdf)
+<use classmain__asimov_acffd698a43df1958502abe96beecbc5a_cgraph.pdf>
+Package pdftex.def Info: classmain__asimov_acffd698a43df1958502abe96beecbc5a_cg
+raph.pdf  used on input line 71.
+(pdftex.def)             Requested size: 350.0pt x 162.11134pt.
+
+[12]) (class_t_frame_data.tex) (class_t_model_metabolite.tex
+Underfull \hbox (badness 1087) in paragraph at lines 10--12
+[][] \T1/phv/m/n/10 (QString [], QString [], dou-ble [], dou-ble [], dou-ble
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 60.
+[13] <./class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f_icgraph.pdf>
+<class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f_icgraph.pdf, id=106
+6, 383.4325pt x 112.42pt>
+File: class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f_icgraph.pdf Gr
+aphic file (type pdf)
+<use class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f_icgraph.pdf>
+Package pdftex.def Info: class_t_model_metabolite_a1cb53765ceaffe193b706f390042
+024f_icgraph.pdf  used on input line 75.
+(pdftex.def)             Requested size: 350.0pt x 102.62312pt.
+[14] <./class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0_icgraph.pdf>
+<class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0_icgraph.pdf, id=108
+1, 367.3725pt x 112.42pt>
+File: class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0_icgraph.pdf Gr
+aphic file (type pdf)
+<use class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0_icgraph.pdf>
+Package pdftex.def Info: class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d1
+96f0_icgraph.pdf  used on input line 118.
+(pdftex.def)             Requested size: 350.0pt x 107.11058pt.
+ <./class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772_cgraph.pdf>
+<class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772_cgraph.pdf, id=1089
+, 383.4325pt x 162.6075pt>
+File: class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772_cgraph.pdf Gra
+phic file (type pdf)
+<use class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772_cgraph.pdf>
+Package pdftex.def Info: class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a
+4772_cgraph.pdf  used on input line 137.
+(pdftex.def)             Requested size: 350.0pt x 148.43703pt.
+
+[15] [16]) (class_t_model_parameter.tex
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 43.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 43.
+ [17] [18] [19])
+(class_t_model_reaction.tex [20] [21] [22] [23] [24]) (class_t_pathway.tex)
+(class_t_raw_input.tex [25]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 18.
+ [26]
+Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
 
 
+Underfull \hbox (badness 10000) detected at line 111
+[][][]
+ []
+
+[27]
+Underfull \hbox (badness 10000) detected at line 124
+[][][]
+ []
+
+ <./class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_icgraph.pdf>
+<class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_icgraph.pdf, id=1321, 369.
+38pt x 112.42pt>
+File: class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_icgraph.pdf Graphic f
+ile (type pdf)
+<use class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_icgraph.pdf>
+Package pdftex.def Info: class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3_ic
+graph.pdf  used on input line 131.
+(pdftex.def)             Requested size: 350.0pt x 106.5222pt.
+
+Underfull \hbox (badness 10000) detected at line 144
+[][][]
+ []
+
+ <./class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_icgraph.pdf>
+<class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_icgraph.pdf, id=1329, 381.
+425pt x 112.42pt>
+File: class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_icgraph.pdf Graphic f
+ile (type pdf)
+<use class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_icgraph.pdf>
+Package pdftex.def Info: class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2_ic
+graph.pdf  used on input line 151.
+(pdftex.def)             Requested size: 350.0pt x 103.16176pt.
+ [28]
+Underfull \hbox (badness 10000) detected at line 175
+[][][]
+ []
+
+ <./class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_icgraph.pdf>
+<class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_icgraph.pdf, id=1344, 369.
+38pt x 112.42pt>
+File: class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_icgraph.pdf Graphic f
+ile (type pdf)
+<use class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_icgraph.pdf>
+Package pdftex.def Info: class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060_ic
+graph.pdf  used on input line 182.
+(pdftex.def)             Requested size: 350.0pt x 106.5222pt.
+)
+(class_t_run_config.tex [29] [30]) [31] [32
+
+]
+Chapter 7.
+(asimov__library_8cpp.tex <./asimov__library_8cpp__incl.pdf>
+<asimov__library_8cpp__incl.pdf, id=1400, 262.9825pt x 212.795pt>
+File: asimov__library_8cpp__incl.pdf Graphic file (type pdf)
+<use asimov__library_8cpp__incl.pdf>
+Package pdftex.def Info: asimov__library_8cpp__incl.pdf  used on input line 10.
+
+(pdftex.def)             Requested size: 262.0pt x 212.00868pt.
+)
+(asimov__library_8h.tex <./asimov__library_8h__incl.pdf>
+<asimov__library_8h__incl.pdf, id=1408, 206.7725pt x 156.585pt>
+File: asimov__library_8h__incl.pdf Graphic file (type pdf)
+<use asimov__library_8h__incl.pdf>
+Package pdftex.def Info: asimov__library_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 206.0pt x 156.004pt.
+ [33] <./asimov__library_8h__dep__incl.pdf>
+<asimov__library_8h__dep__incl.pdf, id=1422, 326.21875pt x 212.795pt>
+File: asimov__library_8h__dep__incl.pdf Graphic file (type pdf)
+<use asimov__library_8h__dep__incl.pdf>
+Package pdftex.def Info: asimov__library_8h__dep__incl.pdf  used on input line 
+16.
+(pdftex.def)             Requested size: 325.0pt x 212.01843pt.
+ [34]
+Underfull \hbox (badness 10000) detected at line 39
+>>>>>>> Stashed changes
+[][][]
+ []
+
+
+<<<<<<< Updated upstream
 Underfull \hbox (badness 10000) detected at line 28
+=======
+Underfull \hbox (badness 10000) detected at line 42
+>>>>>>> Stashed changes
 [][][]
  []
 
 
+<<<<<<< Updated upstream
 Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
 
 ) (asimov__library_8h_source.tex [15] [16] [17]) (main__asimov_8h_source.tex
 [18]) [19] [20
+=======
+Underfull \hbox (badness 10000) detected at line 45
+[][][]
+ []
+
+) (asimov__library_8h_source.tex [35] [36] [37]) (main_8cpp.tex <./main_8cpp__i
+ncl.pdf>
+<main_8cpp__incl.pdf, id=1588, 300.12125pt x 269.005pt>
+File: main_8cpp__incl.pdf Graphic file (type pdf)
+<use main_8cpp__incl.pdf>
+Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 299.0pt x 268.0233pt.
+ [38]) (main__asimov_8cpp.tex <./main__asimov_8cpp__incl.pdf>
+<main__asimov_8cpp__incl.pdf, id=1605, 505.89pt x 269.005pt>
+File: main__asimov_8cpp__incl.pdf Graphic file (type pdf)
+<use main__asimov_8cpp__incl.pdf>
+Package pdftex.def Info: main__asimov_8cpp__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 186.11441pt.
+)
+(main__asimov_8h.tex <./main__asimov_8h__incl.pdf>
+<main__asimov_8h__incl.pdf, id=1613, 281.05pt x 212.795pt>
+File: main__asimov_8h__incl.pdf Graphic file (type pdf)
+<use main__asimov_8h__incl.pdf>
+Package pdftex.def Info: main__asimov_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 280.0pt x 212.01193pt.
+ [39] <./main__asimov_8h__dep__incl.pdf>
+<main__asimov_8h__dep__incl.pdf, id=1627, 244.915pt x 156.585pt>
+File: main__asimov_8h__dep__incl.pdf Graphic file (type pdf)
+<use main__asimov_8h__dep__incl.pdf>
+Package pdftex.def Info: main__asimov_8h__dep__incl.pdf  used on input line 16.
+
+(pdftex.def)             Requested size: 244.0pt x 156.004pt.
+) (main__asimov_8h_source.tex [40]) (mainpage_8dox.tex) [41]
+[42
+>>>>>>> Stashed changes
 
 ] (refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
+<<<<<<< Updated upstream
  [21
 
 
+=======
+ [43
+
+
+] [44] [45] [46
+>>>>>>> Stashed changes
 
 ]) (refman.aux)
  ***********
@@ -1003,6 +1262,7 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
+<<<<<<< Updated upstream
 (rerunfilecheck)             Checksum: A9E6ED69DEEB95EFC0A19C8BA1D3A224;5307.
  ) 
 Here is how much of TeX's memory you used:
@@ -1030,4 +1290,34 @@ PDF statistics:
  530 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
  230 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+(rerunfilecheck)             Checksum: C16BA9CAC6093093B3256107E30A00EE;31727.
+ ) 
+Here is how much of TeX's memory you used:
+ 18757 strings out of 474485
+ 319406 string characters out of 5743734
+ 1952542 words of memory out of 5000000
+ 40288 multiletter control sequences out of 15000+600000
+ 612413 words of font info for 103 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 101i,16n,117p,982b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lgome/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi10.pfb><C:/Users/lgome/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb><C:/Users/lgome/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb><C:/Users/lgome/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lgome/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lgome/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lgome/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/lgome/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/lgome/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/lgome/App
+Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Users/lgome
+/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/lg
+ome/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (54 pages, 712536 bytes).
+PDF statistics:
+ 2057 PDF objects out of 2073 (max. 8388607)
+ 383 named destinations out of 1000 (max. 500000)
+ 1404 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 

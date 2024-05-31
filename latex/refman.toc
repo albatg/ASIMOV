@@ -9,6 +9,7 @@
 \contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
 \contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+<<<<<<< Updated upstream
 \contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}%
 \contentsline {section}{\numberline {5.1}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov Class Reference}{9}{section.5.1}%
 \contentsline {section}{\numberline {5.2}TFrame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Class Reference}{9}{section.5.2}%
@@ -27,3 +28,161 @@
 \contentsline {section}{\numberline {6.2}asimov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}library.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{16}{section.6.2}%
 \contentsline {section}{\numberline {6.3}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.6.3}%
 \contentsline {chapter}{Index}{21}{section*.9}%
+=======
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ui Namespace Reference}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Constructor \& Destructor Documentation}{12}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}main\_asimov()}{12}{subsubsection.6.1.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.2}$\sim $main\_asimov()}{12}{subsubsection.6.1.1.2}%
+\contentsline {subsection}{\numberline {6.1.2}Member Function Documentation}{12}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}on\_actionAbrir\_triggered}{12}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}on\_actionGuardar\_triggered}{12}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}on\_buttomMetanode\_clicked}{12}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}on\_parameter\_button\_clicked}{13}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}on\_pushButton\_clicked}{13}{subsubsection.6.1.2.5}%
+\contentsline {subsection}{\numberline {6.1.3}Member Data Documentation}{13}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}rawInput}{13}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}ui}{13}{subsubsection.6.1.3.2}%
+\contentsline {section}{\numberline {6.2}TFrame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Class Reference}{13}{section.6.2}%
+\contentsline {section}{\numberline {6.3}TModel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Metabolite Class Reference}{13}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Constructor \& Destructor Documentation}{14}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}TModelMetabolite()}{14}{subsubsection.6.3.1.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{14}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}getBottomValue()}{14}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}getId()}{14}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}getInitValue()}{15}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}getName()}{15}{subsubsection.6.3.2.4}%
+\contentsline {subsubsection}{\numberline {6.3.2.5}getPrecision()}{15}{subsubsection.6.3.2.5}%
+\contentsline {subsubsection}{\numberline {6.3.2.6}getTag()}{15}{subsubsection.6.3.2.6}%
+\contentsline {subsubsection}{\numberline {6.3.2.7}getTopValue()}{15}{subsubsection.6.3.2.7}%
+\contentsline {subsubsection}{\numberline {6.3.2.8}getValue()}{15}{subsubsection.6.3.2.8}%
+\contentsline {subsubsection}{\numberline {6.3.2.9}range()}{16}{subsubsection.6.3.2.9}%
+\contentsline {subsubsection}{\numberline {6.3.2.10}setTag()}{16}{subsubsection.6.3.2.10}%
+\contentsline {subsubsection}{\numberline {6.3.2.11}setValue()}{16}{subsubsection.6.3.2.11}%
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{16}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}m\_bottomValue}{16}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}m\_id}{16}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}m\_initValue}{16}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}m\_name}{17}{subsubsection.6.3.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.3.5}m\_precision}{17}{subsubsection.6.3.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.3.6}m\_tag}{17}{subsubsection.6.3.3.6}%
+\contentsline {subsubsection}{\numberline {6.3.3.7}m\_topValue}{17}{subsubsection.6.3.3.7}%
+\contentsline {subsubsection}{\numberline {6.3.3.8}m\_value}{17}{subsubsection.6.3.3.8}%
+\contentsline {section}{\numberline {6.4}TModel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parameter Class Reference}{17}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{18}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{18}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}TModelParameter()}{18}{subsubsection.6.4.2.1}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{18}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}getDescription()}{18}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}getId()}{18}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}getIndex()}{19}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}getPrecision()}{19}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}getTag()}{19}{subsubsection.6.4.3.5}%
+\contentsline {subsubsection}{\numberline {6.4.3.6}getValue()}{19}{subsubsection.6.4.3.6}%
+\contentsline {subsubsection}{\numberline {6.4.3.7}setDescription()}{19}{subsubsection.6.4.3.7}%
+\contentsline {subsubsection}{\numberline {6.4.3.8}setid()}{19}{subsubsection.6.4.3.8}%
+\contentsline {subsubsection}{\numberline {6.4.3.9}setPrecision()}{19}{subsubsection.6.4.3.9}%
+\contentsline {subsubsection}{\numberline {6.4.3.10}setTag()}{19}{subsubsection.6.4.3.10}%
+\contentsline {subsubsection}{\numberline {6.4.3.11}setValue()}{19}{subsubsection.6.4.3.11}%
+\contentsline {subsection}{\numberline {6.4.4}Member Data Documentation}{20}{subsection.6.4.4}%
+\contentsline {subsubsection}{\numberline {6.4.4.1}m\_description}{20}{subsubsection.6.4.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.4.2}m\_id}{20}{subsubsection.6.4.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.4.3}m\_index}{20}{subsubsection.6.4.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4.4}m\_precision}{20}{subsubsection.6.4.4.4}%
+\contentsline {subsubsection}{\numberline {6.4.4.5}m\_tag}{20}{subsubsection.6.4.4.5}%
+\contentsline {subsubsection}{\numberline {6.4.4.6}m\_value}{20}{subsubsection.6.4.4.6}%
+\contentsline {subsubsection}{\numberline {6.4.4.7}s\_counter}{20}{subsubsection.6.4.4.7}%
+\contentsline {section}{\numberline {6.5}TModel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reaction Class Reference}{21}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Constructor \& Destructor Documentation}{22}{subsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.1.1}TModelReaction()}{22}{subsubsection.6.5.1.1}%
+\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{22}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}getAllParameters()}{22}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}getAllProducts()}{22}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}getAllReagents()}{22}{subsubsection.6.5.2.3}%
+\contentsline {subsubsection}{\numberline {6.5.2.4}getDescription()}{22}{subsubsection.6.5.2.4}%
+\contentsline {subsubsection}{\numberline {6.5.2.5}getEquation()}{22}{subsubsection.6.5.2.5}%
+\contentsline {subsubsection}{\numberline {6.5.2.6}getId()}{22}{subsubsection.6.5.2.6}%
+\contentsline {subsubsection}{\numberline {6.5.2.7}getIndex()}{22}{subsubsection.6.5.2.7}%
+\contentsline {subsubsection}{\numberline {6.5.2.8}GetOarameterNo()}{23}{subsubsection.6.5.2.8}%
+\contentsline {subsubsection}{\numberline {6.5.2.9}GetProductNo()}{23}{subsubsection.6.5.2.9}%
+\contentsline {subsubsection}{\numberline {6.5.2.10}GetReagentNo()}{23}{subsubsection.6.5.2.10}%
+\contentsline {subsubsection}{\numberline {6.5.2.11}getTag()}{23}{subsubsection.6.5.2.11}%
+\contentsline {subsubsection}{\numberline {6.5.2.12}Parameter()}{23}{subsubsection.6.5.2.12}%
+\contentsline {subsubsection}{\numberline {6.5.2.13}ParametersCount()}{23}{subsubsection.6.5.2.13}%
+\contentsline {subsubsection}{\numberline {6.5.2.14}Product()}{23}{subsubsection.6.5.2.14}%
+\contentsline {subsubsection}{\numberline {6.5.2.15}ProductsCount()}{23}{subsubsection.6.5.2.15}%
+\contentsline {subsubsection}{\numberline {6.5.2.16}Reagent()}{23}{subsubsection.6.5.2.16}%
+\contentsline {subsubsection}{\numberline {6.5.2.17}ReagentsCount()}{23}{subsubsection.6.5.2.17}%
+\contentsline {subsubsection}{\numberline {6.5.2.18}setAllParameters()}{24}{subsubsection.6.5.2.18}%
+\contentsline {subsubsection}{\numberline {6.5.2.19}setAllProducts()}{24}{subsubsection.6.5.2.19}%
+\contentsline {subsubsection}{\numberline {6.5.2.20}setAllReagents()}{24}{subsubsection.6.5.2.20}%
+\contentsline {subsubsection}{\numberline {6.5.2.21}setDescription()}{24}{subsubsection.6.5.2.21}%
+\contentsline {subsubsection}{\numberline {6.5.2.22}setEquation()}{24}{subsubsection.6.5.2.22}%
+\contentsline {subsubsection}{\numberline {6.5.2.23}setid()}{24}{subsubsection.6.5.2.23}%
+\contentsline {subsubsection}{\numberline {6.5.2.24}setIndex()}{24}{subsubsection.6.5.2.24}%
+\contentsline {subsubsection}{\numberline {6.5.2.25}SetParameterNo()}{24}{subsubsection.6.5.2.25}%
+\contentsline {subsubsection}{\numberline {6.5.2.26}SetProductNo()}{24}{subsubsection.6.5.2.26}%
+\contentsline {subsubsection}{\numberline {6.5.2.27}SetReagentNo()}{25}{subsubsection.6.5.2.27}%
+\contentsline {subsubsection}{\numberline {6.5.2.28}setTag()}{25}{subsubsection.6.5.2.28}%
+\contentsline {subsection}{\numberline {6.5.3}Member Data Documentation}{25}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}m\_description}{25}{subsubsection.6.5.3.1}%
+\contentsline {subsubsection}{\numberline {6.5.3.2}m\_equation}{25}{subsubsection.6.5.3.2}%
+\contentsline {subsubsection}{\numberline {6.5.3.3}m\_id}{25}{subsubsection.6.5.3.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.4}m\_index}{25}{subsubsection.6.5.3.4}%
+\contentsline {subsubsection}{\numberline {6.5.3.5}m\_parameter}{25}{subsubsection.6.5.3.5}%
+\contentsline {subsubsection}{\numberline {6.5.3.6}m\_product}{25}{subsubsection.6.5.3.6}%
+\contentsline {subsubsection}{\numberline {6.5.3.7}m\_reagent}{25}{subsubsection.6.5.3.7}%
+\contentsline {subsubsection}{\numberline {6.5.3.8}m\_tag}{26}{subsubsection.6.5.3.8}%
+\contentsline {section}{\numberline {6.6}TPathway Class Reference}{26}{section.6.6}%
+\contentsline {section}{\numberline {6.7}TRaw\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Input Class Reference}{26}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{26}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{27}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}TRawInput()}{27}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}$\sim $TRawInput()}{27}{subsubsection.6.7.2.2}%
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{27}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}clean()}{27}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}createModel()}{27}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}Edit()}{27}{subsubsection.6.7.3.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.4}getLoaded()}{27}{subsubsection.6.7.3.4}%
+\contentsline {subsubsection}{\numberline {6.7.3.5}getSource()}{28}{subsubsection.6.7.3.5}%
+\contentsline {subsubsection}{\numberline {6.7.3.6}loadFromFile()}{28}{subsubsection.6.7.3.6}%
+\contentsline {subsubsection}{\numberline {6.7.3.7}newRawInput()}{28}{subsubsection.6.7.3.7}%
+\contentsline {subsubsection}{\numberline {6.7.3.8}setSource()}{28}{subsubsection.6.7.3.8}%
+\contentsline {subsubsection}{\numberline {6.7.3.9}setToFile()}{29}{subsubsection.6.7.3.9}%
+\contentsline {subsubsection}{\numberline {6.7.3.10}verifyModel()}{29}{subsubsection.6.7.3.10}%
+\contentsline {subsection}{\numberline {6.7.4}Member Data Documentation}{29}{subsection.6.7.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.1}m\_loaded}{29}{subsubsection.6.7.4.1}%
+\contentsline {subsubsection}{\numberline {6.7.4.2}m\_source}{29}{subsubsection.6.7.4.2}%
+\contentsline {section}{\numberline {6.8}TRun\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{29}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Constructor \& Destructor Documentation}{30}{subsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.1}TRunConfig()}{30}{subsubsection.6.8.1.1}%
+\contentsline {subsection}{\numberline {6.8.2}Member Function Documentation}{30}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}getCycles()}{30}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}getEndTime()}{30}{subsubsection.6.8.2.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.3}getInitTime()}{30}{subsubsection.6.8.2.3}%
+\contentsline {subsubsection}{\numberline {6.8.2.4}getParamList()}{30}{subsubsection.6.8.2.4}%
+\contentsline {subsubsection}{\numberline {6.8.2.5}setCycles()}{31}{subsubsection.6.8.2.5}%
+\contentsline {subsubsection}{\numberline {6.8.2.6}setEndTime()}{31}{subsubsection.6.8.2.6}%
+\contentsline {subsubsection}{\numberline {6.8.2.7}setInitTime()}{31}{subsubsection.6.8.2.7}%
+\contentsline {subsubsection}{\numberline {6.8.2.8}setParamList()}{31}{subsubsection.6.8.2.8}%
+\contentsline {subsection}{\numberline {6.8.3}Member Data Documentation}{31}{subsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.1}m\_cycles}{31}{subsubsection.6.8.3.1}%
+\contentsline {subsubsection}{\numberline {6.8.3.2}m\_endTime}{31}{subsubsection.6.8.3.2}%
+\contentsline {subsubsection}{\numberline {6.8.3.3}m\_initTime}{31}{subsubsection.6.8.3.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.4}m\_paramList}{31}{subsubsection.6.8.3.4}%
+\contentsline {chapter}{\numberline {7}File Documentation}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}asimov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}library.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}asimov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}library.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{33}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{35}{subsection.7.2.1}%
+\contentsline {section}{\numberline {7.3}asimov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}library.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{35}{section.7.3}%
+\contentsline {section}{\numberline {7.4}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{38}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Function Documentation}{39}{subsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.1.1}main()}{39}{subsubsection.7.4.1.1}%
+\contentsline {section}{\numberline {7.5}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{39}{section.7.5}%
+\contentsline {section}{\numberline {7.6}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{39}{section.7.6}%
+\contentsline {section}{\numberline {7.7}main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asimov.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{40}{section.7.7}%
+\contentsline {section}{\numberline {7.8}mainpage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dox File Reference}{41}{section.7.8}%
+\contentsline {chapter}{Index}{43}{section*.34}%
+>>>>>>> Stashed changes

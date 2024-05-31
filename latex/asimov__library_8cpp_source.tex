@@ -1,0 +1,189 @@
+\doxysection{asimov\+\_\+library.\+cpp}
+\hypertarget{asimov__library_8cpp_source}{}\label{asimov__library_8cpp_source}\mbox{\hyperlink{asimov__library_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{asimov__library_8h}{asimov\_library.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Constructor\ de\ la\ clase}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00006}\mbox{\hyperlink{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef}{00006}}\ \mbox{\hyperlink{class_t_raw_input_abcdaa32f46a35289ff3e2df8525653ef}{TRawInput::TRawInput}}(QString*\ v\_source)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ La\ variable\ que\ indica\ si\ el\ documento\ está\ cargado\ se\ pone\ a\ false\ como\ precaución}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\_loaded}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ En\ caso\ de\ que\ v\_source\ sea\ nulo,\ se\ asigna\ un\ nuevo\ objeto\ QString\ a\ m\_source}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\_source\ ==\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ =\ \textcolor{keyword}{new}(QString);}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00013}00013\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ v\_source\ no\ es\ nulo,\ se\ asigna\ v\_source\ a\ m\_source\ y\ m\_loaded\ pasa\ a\ ser\ true\ para\ indicar\ que\ se\ ha\ cargado\ un\ documento}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ =\ v\_source;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\_loaded}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00017}00017\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00018}00018\ \};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Destructor\ de\ la\ clase}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00021}\mbox{\hyperlink{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20}{00021}}\ \mbox{\hyperlink{class_t_raw_input_abe9ac078af831a2c3ff93db87eec6c20}{TRawInput::\string~TRawInput}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00023}00023\ \ \ \ \textcolor{comment}{//\ Liberamos\ la\ memoria\ asociada\ al\ objeto\ m\_source}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00025}00025\ \ \ \ \textcolor{comment}{//\ Asignamos\ el\ puntero\ a\ nullptr\ para\ evitar\ posibles\ problemas}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00029}\mbox{\hyperlink{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}{00029}}\ QString\ \mbox{\hyperlink{class_t_raw_input_ad56922f15c7b6840f75b692c5a3505e3}{TRawInput::getSource}}()\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ En\ caso\ de\ que\ m\_source\ no\ sea\ nullptr,\ devolvemos\ el\ contenido\ de\ m\_source}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00033}00033\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ donde\ m\_source\ es\ nullptr,\ devolvemos\ un\ objeto\ QString\ vacío}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QString();\ \textcolor{comment}{//\ Otra\ opción\ podría\ ser\ lanzar\ una\ excepción/devolver\ un\ valor\ predeterminado}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00039}\mbox{\hyperlink{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_raw_input_a62b8c523e341e8f90e3071c8936e1060}{TRawInput::setSource}}(QString*\ v\_source)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Liberamos\ el\ objeto\ anterior}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Asignamos\ una\ nueva\ fuente\ de\ datos}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ =\ \textcolor{keyword}{new}\ QString(*v\_source);\ \textcolor{comment}{//\ Copiamos\ el\ contenido\ del\ QString\ proporcionado}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00048}00048\ \textcolor{comment}{//\ Devuelve\ si\ hay\ una\ fuente\ cargada}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00050}\mbox{\hyperlink{class_t_raw_input_aef337842048b587b0af19eee3d699a49}{00050}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_aef337842048b587b0af19eee3d699a49}{TRawInput::getLoaded}}()\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\_loaded}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00054}00054\ \textcolor{comment}{//\ Operación\ de\ carga\ desde\ archivo}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00056}\mbox{\hyperlink{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}{00056}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_raw_input_a0a44057b5f032f8edb54208f0bc083f2}{TRawInput::loadFromFile}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Verificamos\ si\ m\_source\ está\ configurado\ y\ no\ vacío}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}-\/>isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Error:\ m\_source\ no\ configurada\ o\ vacía"{}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Intentamos\ abrir\ el\ archivo\ en\ modo\ de\ solo\ lectura\ y\ texto}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00064}00064\ \ \ \ \ QFile\ file(*\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}});}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::ReadOnly\ |\ QIODevice::Text))\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Error:\ no\ se\ pudo\ abrir\ el\ archivo"{}}\ <<\ *\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ Leemos\ el\ contenido\ del\ archivo\ y\ lo\ almacenamos\ en\ m\_source}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00071}00071\ \ \ \ \ QTextStream\ in(\&file);}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00072}00072\ \ \ \ \ *\mbox{\hyperlink{class_t_raw_input_a95d9236484fdd8209ed370fc91636260}{m\_source}}\ =\ in.readAll();\ \textcolor{comment}{//\ Lee\ todo\ el\ contenido\ del\ archivo\ y\ lo\ almacena\ en\ m\_source}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ Marcamos\ m\_loaded\ como\ true\ e\ indicamos\ que\ la\ carga\ desde\ el\ archivo\ fue\ exitosa}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{class_t_raw_input_a65e20748272072f3844a0b4aa5b77f3b}{m\_loaded}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00081}00081\ \textcolor{comment}{//METANODOS}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00082}\mbox{\hyperlink{class_t_model_metabolite_ad3a834cfaa0027c0c001f79ed5b1c171}{00082}}\ \mbox{\hyperlink{class_t_model_metabolite_ad3a834cfaa0027c0c001f79ed5b1c171}{TModelMetabolite::TModelMetabolite}}(QString\ name,\ QString\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{double}\ initValue,\ \textcolor{keywordtype}{double}\ topValue,}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ bottomValue,\ \textcolor{keywordtype}{double}\ value,\ \textcolor{keywordtype}{double}\ precision,\ \textcolor{keywordtype}{bool}\ tag)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00084}00084\ \ \ \ \ :\ m\_name(name),\ m\_id(id),\ m\_initValue(initValue),\ m\_topValue(topValue),\ m\_bottomValue(bottomValue),}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00085}00085\ \ \ \ \ m\_value(value),\ m\_precision(precision),\ m\_tag(tag)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00086}00086\ \{\}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00088}\mbox{\hyperlink{class_t_model_metabolite_aa3061efa2014955817e152e36c79aa77}{00088}}\ QString\ \mbox{\hyperlink{class_t_model_metabolite_aa3061efa2014955817e152e36c79aa77}{TModelMetabolite::getName}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00089}00089\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a8c0f7242a47542dfe5123ffcc46cdf35}{m\_name}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00093}\mbox{\hyperlink{class_t_model_metabolite_a9fae442b0b9ec026d447e441d7c909b0}{00093}}\ QString\ \mbox{\hyperlink{class_t_model_metabolite_a9fae442b0b9ec026d447e441d7c909b0}{TModelMetabolite::getId}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a7b242c850ea6edbbdedc86d5d1fe6ec5}{m\_id}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00098}\mbox{\hyperlink{class_t_model_metabolite_a70f136938c33b64f302afa5022e5867f}{00098}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a70f136938c33b64f302afa5022e5867f}{TModelMetabolite::getInitValue}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_aa9784874f167db7046b7601baa70be6d}{m\_initValue}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00103}\mbox{\hyperlink{class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0}{00103}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0}{TModelMetabolite::getTopValue}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00104}00104\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a54de4cf73ae6a19ec6d1bd4583a11de4}{m\_topValue}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00108}\mbox{\hyperlink{class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f}{00108}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f}{TModelMetabolite::getBottomValue}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a2c85bef444bdf00dca57fba60f882254}{m\_bottomValue}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00113}\mbox{\hyperlink{class_t_model_metabolite_af93f896beec1e7d05956777949cf15c5}{00113}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_af93f896beec1e7d05956777949cf15c5}{TModelMetabolite::getValue}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00114}00114\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a6fbb66fcdc91bb1a3303d3ee8ac09464}{m\_value}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00118}\mbox{\hyperlink{class_t_model_metabolite_a1d422f83319a42d9f69c3035b05d4100}{00118}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a1d422f83319a42d9f69c3035b05d4100}{TModelMetabolite::getPrecision}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00119}00119\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a6fd9eeaedd7cc1485064efa869afb868}{m\_precision}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00123}\mbox{\hyperlink{class_t_model_metabolite_a94a2ae0e59f9e28b53ed20d38d52085c}{00123}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_metabolite_a94a2ae0e59f9e28b53ed20d38d52085c}{TModelMetabolite::getTag}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00124}00124\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_metabolite_a6413752e93c73a0d2de52aca0d065667}{m\_tag}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00128}\mbox{\hyperlink{class_t_model_metabolite_a48fb3378cb1bacaf23ab6ae3d10153c7}{00128}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_metabolite_a48fb3378cb1bacaf23ab6ae3d10153c7}{TModelMetabolite::setValue}}(\textcolor{keywordtype}{double}\ v\_value)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00129}00129\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite_a6fbb66fcdc91bb1a3303d3ee8ac09464}{m\_value}}\ =\ v\_value;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00133}\mbox{\hyperlink{class_t_model_metabolite_a86ba2fb244eeee839dd5672e981f4504}{00133}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_metabolite_a86ba2fb244eeee839dd5672e981f4504}{TModelMetabolite::setTag}}(\textcolor{keywordtype}{bool}\ v\_tag)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00134}00134\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00135}00135\ \ \ \ \ \mbox{\hyperlink{class_t_model_metabolite_a6413752e93c73a0d2de52aca0d065667}{m\_tag}}\ =\ v\_tag;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00138}\mbox{\hyperlink{class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772}{00138}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_metabolite_a01ebf8904bb664cc905ae00a937a4772}{TModelMetabolite::range}}()}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00139}00139\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_t_model_metabolite_a78ed7c1cbb41a4aacd1e5b4636d196f0}{getTopValue}}()\ -\/\ \mbox{\hyperlink{class_t_model_metabolite_a1cb53765ceaffe193b706f390042024f}{getBottomValue}}());}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00143}00143\ \textcolor{comment}{//PARAMETROS}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00144}00144\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_parameter_aea49f0eb41ff510e342ae01e2ac07893}{TModelParameter::s\_counter}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00146}\mbox{\hyperlink{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e}{00146}}\ \mbox{\hyperlink{class_t_model_parameter_a817d0cb0c08676449a3d03ad6f44643e}{TModelParameter::TModelParameter}}(QString\ ID,\ QString\ description,\ \textcolor{keywordtype}{double}\ value,\textcolor{keywordtype}{double}\ precision,\ \textcolor{keywordtype}{bool}\ tag)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00147}00147\ \ \ \ \ :m\_index(s\_counter++),m\_id(ID),\ m\_description(description),\ m\_value(value),\ m\_precision(precision),\ m\_tag(tag)}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00148}00148\ \{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00151}\mbox{\hyperlink{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f}{00151}}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_t_model_parameter_a83fa069ab9c3380a82301508d9c5bc5f}{TModelParameter::getIndex}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_ad386a1692d31aeaf14a7f3ed4e54e19b}{m\_index}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00155}\mbox{\hyperlink{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493}{00155}}\ QString\ \mbox{\hyperlink{class_t_model_parameter_ab2463198eb30e142a5224e54baf1e493}{TModelParameter::getId}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34}{m\_id}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00158}\mbox{\hyperlink{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c}{00158}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a26aac27d0fc2046f601b484af006fa5c}{TModelParameter::setid}}(QString\ v\_id)\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_afb9f4c1184d76e02edd92e86434e7d34}{m\_id}}\ =\ v\_id;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00161}\mbox{\hyperlink{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8}{00161}}\ QString\ \mbox{\hyperlink{class_t_model_parameter_a2293a0189f039ff4bc2876f672c54da8}{TModelParameter::getDescription}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039}{m\_description}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00163}00163\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00164}\mbox{\hyperlink{class_t_model_parameter_a5f40720f839e5867532969ada144c197}{00164}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a5f40720f839e5867532969ada144c197}{TModelParameter::setDescription}}(QString\ v\_description)\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_a9feeea7baa75334d266f1b0be4444039}{m\_description}}\ =\ v\_description;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00166}00166\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00167}\mbox{\hyperlink{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308}{00167}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_a0811b3e1361d282a047fa6229397e308}{TModelParameter::getValue}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea}{m\_value}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00170}\mbox{\hyperlink{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4}{00170}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a8bc16b7862cdfcae772ec38e156c27c4}{TModelParameter::setValue}}(\textcolor{keywordtype}{double}\ v\_value)\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00171}00171\ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_a7293e0e9aebf9b2e3c38a60b97745bea}{m\_value}}\ =\ v\_value;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00172}00172\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00173}\mbox{\hyperlink{class_t_model_parameter_a482544720d3a37088ae717cae45f4096}{00173}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_t_model_parameter_a482544720d3a37088ae717cae45f4096}{TModelParameter::getPrecision}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c}{m\_precision}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00176}\mbox{\hyperlink{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84}{00176}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a8413580356c42ef6e7aa532911492f84}{TModelParameter::setPrecision}}(\textcolor{keywordtype}{double}\ v\_precision)\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00177}00177\ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_aa107ad2d4dd910cdee5317fd826a124c}{m\_precision}}\ =\ v\_precision;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00179}\mbox{\hyperlink{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c}{00179}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_t_model_parameter_ad4efc1b425356fe961c99fb5ab6bd99c}{TModelParameter::getTag}}()\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b}{m\_tag}};}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00181}00181\ \}}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00182}\mbox{\hyperlink{class_t_model_parameter_a267b8c5d64744d5d80db833696219254}{00182}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_model_parameter_a267b8c5d64744d5d80db833696219254}{TModelParameter::setTag}}(\textcolor{keywordtype}{bool}\ v\_tag)\{}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00183}00183\ \ \ \ \ \mbox{\hyperlink{class_t_model_parameter_af7ad134ee619caba08f753724a61ac4b}{m\_tag}}\ =\ v\_tag;}
+\DoxyCodeLine{\Hypertarget{asimov__library_8cpp_source_l00184}00184\ \}}
+
+\end{DoxyCode}

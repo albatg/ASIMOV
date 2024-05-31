@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../Diffnes.qss</file>
+    </qresource>
+</RCC>

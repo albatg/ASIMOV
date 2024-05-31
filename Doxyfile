@@ -797,7 +797,11 @@ SHOW_FILES             = YES
 # Folder Tree View (if specified).
 # The default value is: YES.
 
+<<<<<<< Updated upstream
 SHOW_NAMESPACES        = YES
+=======
+SHOW_NAMESPACES        = NO
+>>>>>>> Stashed changes
 
 # The FILE_VERSION_FILTER tag can be used to specify a program or script that
 # doxygen should invoke to get the current version for each file (typically from
@@ -1312,7 +1316,11 @@ CLANG_DATABASE_PATH    =
 # classes, structs, unions or interfaces.
 # The default value is: YES.
 
+<<<<<<< Updated upstream
 ALPHABETICAL_INDEX     = YES
+=======
+ALPHABETICAL_INDEX     = NO
+>>>>>>> Stashed changes
 
 # The IGNORE_PREFIX tag can be used to specify a prefix (or a list of prefixes)
 # that should be ignored while generating the index headers. The IGNORE_PREFIX
@@ -2892,3 +2900,7 @@ MSCGEN_TOOL            =
 # command).
 
 MSCFILE_DIRS           =
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
